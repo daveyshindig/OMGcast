@@ -1,0 +1,11 @@
+<template name="podcastsList">
+  <div class="podcasts">
+  {{#if Template.subscriptionsReady}}
+    {{#each podcasts}}
+      {{> podcastItem}}
+    {{/each}}
+  {{else}}
+    {{> spinner}}
+  {{/if}}
+  </div>
+</template>

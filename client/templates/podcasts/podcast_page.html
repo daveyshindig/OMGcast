@@ -1,0 +1,22 @@
+<template name="podcastPage">
+  <div class="podcast-page page">
+    {{#if Template.subscriptionsReady}}
+      {{#with podcast}}
+        {{> podcastItem}}
+      {{/with}}
+      <ul class="comments">
+        {{#each comments}}
+          {{> commentItem}}
+        {{/each}}
+      </ul>
+    {{else}}
+      {{>spinner}}
+    {{/if}}
+
+    {{#if currentUser}}
+      {{> commentSubmit}}
+    {{else}}
+      <p>Please log in to leave a comment.</p>
+    {{/if}}
+  </div>
+</template>
