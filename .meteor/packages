@@ -21,3 +21,5 @@ twbs:bootstrap
 kadira:flow-router
 kadira:blaze-layout
 sacha:spin
+ian:accounts-ui-bootstrap-3
+accounts-password

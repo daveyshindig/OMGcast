@@ -3,6 +3,5 @@ Meteor.publish('podcasts', function () {
 });
 
 Meteor.publish('podcast', function (num) {
-  check(num, String);
   return Podcasts.find({ episodeNumber: num });
 });
