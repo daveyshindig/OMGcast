@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'sweden_sansregular';
+    src: url('/fonts/swedensans-webfont.eot');
+    src: url('/fonts/swedensans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/swedensans-webfont.woff2') format('woff2'),
+         url('/fonts/swedensans-webfont.woff') format('woff'),
+         url('/fonts/swedensans-webfont.ttf') format('truetype'),
+         url('/fonts/swedensans-webfont.svg#sweden_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 .grid-block,
 .main,
 .podcast,
@@ -34,24 +47,24 @@ body {
 }
 .info-box {
     float: left;
-    width: 33%;
+    width: 33.33%;
 }
 .info-box:before {
     content: "";
     display: block;
     padding-top: 100%;  /* initial ratio of 1:1*/
 }
-.info-box .info-box__content {
+.info-box__content {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     width: inherit;
-    padding: 0 6px 12px;
+    padding: 20px 15px;
 }
 .info-box__content p {
-    font-size: 1.15em;
+    font-family: 'Sweden Sans';
     line-height: 1.4em;
     padding: 12px 0;
 }
@@ -86,9 +99,11 @@ body {
     *zoom: 1;
     position: relative;
     opacity: 1;
-    width: 33%;
+    width: 33.33%;
     padding: 0;
     border: 0;
+    margin: 0;
+    padding: 1px;
     box-shadow: none;
     border-radius: 0;
 }
@@ -120,14 +135,11 @@ body {
     margin: 7px 12px 0 0;
     float: left;
 }
-.podcast .podcast-content {
-    float: left;
-}
-.podcast .podcast-content img {
+.podcast__cover-img {
     position: relative;
     width: 100%;
 }
-.podcast .podcast-content .podcast-overlay {
+.podcast__overlay {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -135,18 +147,34 @@ body {
     right: 0;
     top: 10%;
     max-width: 80%;
+    background: rgba(256,256,256,.8);
+    font-family: 'Sweden Sans';
 }
-.podcast .podcast-content .podcast-overlay h3 {
+.podcast__overlay h3 {
     text-align: center;
     line-height: 1.4;
     font-size: 18px;
-    background: rgba(256,256,256,.8);
     color: #2f2f2f;
 }
-.podcast-overlay__playButton {
+.podcast__controls {
+    width: 50%;
     margin: auto;
+    padding: 12px 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-content: center;
 }
-.podcast .podcast-content p {
+.podcast__play-btn,
+.podcast__view-btn {
+    width: 60px;
+    height: 60px;
+}
+.podcast__view-btn__img {
+    width: 60px;
+    height: 60px;
+}
+.podcast p {
     margin: 0;
 }
 .podcast .discuss {
