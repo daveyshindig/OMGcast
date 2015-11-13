@@ -38,9 +38,11 @@ body {
 }
 .navbar {
     margin-bottom: 10px;
+    font-family: 'Sweden Sans';
+    border: none;
 }
 .navbar .navbar-inner {
-    border-radius: 0px 0px 3px 3px;
+    border-radius: 0;
 }
 #spinner {
     height: 300px;
@@ -167,12 +169,12 @@ body {
 }
 .podcast__play-btn,
 .podcast__view-btn {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
 }
 .podcast__view-btn__img {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
 }
 .podcast p {
     margin: 0;
@@ -282,4 +284,13 @@ body {
 }
 .hidden {
     visibility: hidden;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:active
+{
+    background: #000;
+    color: #fff;
+    outline: none;
 }
