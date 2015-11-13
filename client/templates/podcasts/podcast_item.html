@@ -3,8 +3,7 @@
     <div class="podcast-content">
       <img src="{{coverImage}}" />
       <div class="hidden podcast-overlay">
-        <a href="{{mp3}}"><h3>{{title}}</h3></a>
-
+        <a href="{{podcastPage episodeNumber}}"><h3>{{title}}<br><small>mixed by</small><br>{{host}}</h3></a>
         <!--<p>
           Mixed by {{host}}
           <a href="{{pathFor 'podcastPage'}}">{{pluralize commentsCount "comment"}}</a>
