@@ -3,15 +3,23 @@
     {{#if Template.subscriptionsReady}}
       {{#with podcast}}
         <div class="podcast-page">
-          <img class="podcast-page__cover-img" src="{{coverImage}}"><br>
-          <span class="podcast-page__title">{{title}}</span>
-          <span class="podcast-page__mixed-by">mixed by</span>
-          <span class="podcast-page__host">{{host}}</span>
-          <div><ol>
-            {{#each tracklist}}
-              <li>{{tracklist.artist}}: "{{tracklist.title}}" {{#if tracklist.remix}}(tracklist.remix){{/if}} {{#if tracklist.label}}[tracklist.label]{{/if}}</li>
-            {{/each}}
-          </ol></div>
+          <img class="podcast-page__cover-img" src="{{coverImage}}">
+          <div class="podcast-page__info">
+            <span class="podcast-page__title">{{title}}</span><br>
+            <span class="podcast-page__host">mixed by {{host}}</span>
+            <div><ol class="podcast-page__playlist">
+              {{#each podcast.playlist}}
+                <li class="podcast-page__track">
+                {{artist}}: "{{title}}" 
+                {{#if remix}}
+                  {{remix}}
+                {{/if}} 
+                {{#if label}}
+                  {{label}}
+                {{/if}}</li>
+              {{/each}}
+            </ol></div>
+          </div>
         </div>
       {{/with}}
       <ul class="comments">
@@ -29,4 +37,4 @@
       <p>Please log in to leave a comment.</p>
     {{/if}}
  -->  </div>
-</template>
+</template> 
