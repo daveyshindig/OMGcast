@@ -2,7 +2,17 @@
   <div class="podcast-page page">
     {{#if Template.subscriptionsReady}}
       {{#with podcast}}
-        {{> podcastItem}}
+        <div class="podcast-page">
+          <img class="podcast-page__cover-img" src="{{coverImage}}"><br>
+          <span class="podcast-page__title">{{title}}</span>
+          <span class="podcast-page__mixed-by">mixed by</span>
+          <span class="podcast-page__host">{{host}}</span>
+          <div><ol>
+            {{#each tracklist}}
+              <li>{{tracklist.artist}}: "{{tracklist.title}}" {{#if tracklist.remix}}(tracklist.remix){{/if}} {{#if tracklist.label}}[tracklist.label]{{/if}}</li>
+            {{/each}}
+          </ol></div>
+        </div>
       {{/with}}
       <ul class="comments">
         {{#each comments}}
