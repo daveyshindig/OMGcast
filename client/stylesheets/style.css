@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'sweden_sansregular';
+    font-family: 'Sweden Sans';
     src: url('/fonts/swedensans-webfont.eot');
     src: url('/fonts/swedensans-webfont.eot?#iefix') format('embedded-opentype'),
          url('/fonts/swedensans-webfont.woff2') format('woff2'),
@@ -8,6 +8,19 @@
          url('/fonts/swedensans-webfont.svg#sweden_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sweden Sans';
+    src: url('/fonts/swedensansbold-webfont.eot');
+    src: url('/fonts/swedensansbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/swedensansbold-webfont.woff2') format('woff2'),
+         url('/fonts/swedensansbold-webfont.woff') format('woff'),
+         url('/fonts/swedensansbold-webfont.ttf') format('truetype'),
+         url('/fonts/swedensansbold-webfont.svg#sweden_sansbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
 }
 
 .grid-block,
@@ -26,6 +39,7 @@
 body {
     background: #fff;
     color: #666666;
+    font-family: 'Sweden Sans';
 }
 img {
     max-width: 100%;
@@ -41,7 +55,6 @@ img {
 }
 .navbar {
     margin-bottom: 10px;
-    font-family: 'Sweden Sans';
     border: none;
 }
 .navbar .navbar-inner {
@@ -58,7 +71,7 @@ img {
 .info-box:before {
     content: "";
     display: block;
-    padding-top: 200%;  /* initial ratio of 1:1 */
+    padding-top: 100%;  /* initial ratio of 1:1 */
 }
 .info-box__content {
     position: absolute;
@@ -70,25 +83,19 @@ img {
     padding: 20px 15px;
 }
 .info-box__content p {
-    font-family: 'Sweden Sans';
     line-height: 1.4em;
-    padding: 12px 0;
 }
-.\.info-box__social { 
+.info-box__social { 
     margin: auto;
-    max-width: 75%;
-    padding-top: 20px;
+    padding: 12px 0;
+    max-width: 66.66%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
 }
-.\.info-box__social a {
+.info-box__social a {
     flex-basis: auto;
-    max-width: 100%;
-}
-.\.info-box__social a img {
-    width: 40px;
-    max-width: 100%;
+    max-width: 25%;
 }
 .logo-img {
     max-width: 100%;
@@ -156,7 +163,6 @@ img {
     top: 10%;
     width: 80%;
     background: rgba(256,256,256,.8);
-    font-family: 'Sweden Sans';
 }
 .podcast__link {
     text-align: center;
@@ -189,7 +195,6 @@ img {
     margin-top: 7px;
 }
 .podcast-page {
-    font-family: "Sweden Sans";
 }
 .podcast-page__cover-img {
     float: left;
@@ -325,6 +330,10 @@ img {
 }
 ol {
     padding: 12px 0 0 24px;
+}
+.index-table img {
+    max-width: 80px;
+    height: auto;
 }
 @media (min-width: 1200px) {
     .info-box,
