@@ -1,24 +1,25 @@
-<template name="podcastPage">
-  <div class="podcast-page page">
+<template name='podcastPage'>
+  <div class='podcast-page page'>
     {{#if Template.subscriptionsReady}}
       {{#with podcast}}
-        <div class="podcast-page">
-          <img class="podcast-page__cover-img" src="{{coverImage}}">
-          <div class="podcast-page__info">
-            <span class="podcast-page__title">{{title}}</span><br>
-            <span class="podcast-page__host">mixed by {{host}}</span>
-            <div><ol class="podcast-page__playlist">
+        <div class='podcast-page'>
+          <img class='podcast-page__cover-img' src='{{coverImage}}'>
+          <div class='podcast-page__info'>
+            <a class='podcast-page__play-btn' href='{{mp3}}'><img src='/img/play.png'></a><br>
+            <span class='podcast-page__title'>{{title}}</span><br>
+            <span class='podcast-page__host'>mixed by {{host}}</span><br>
+            <div><ol class='podcast-page__playlist'>
               {{#with playlist}}
                 {{#each tracks}}
-                  <li class="podcast-page__track">
-                  <b>{{artist}}</b>: "{{title}}"{{#if featuring}} [{{featuring}}]{{/if}}{{#if remix}} ({{remix}}){{/if}}{{#if label}} <small>({{label}})</small>{{/if}}</li>
+                  <li class='podcast-page__track'>
+                  <b>{{artist}}</b>: '{{title}}'{{#if featuring}} [{{featuring}}]{{/if}}{{#if remix}} ({{remix}}){{/if}}{{#if label}} <small>({{label}})</small>{{/if}}</li>
                 {{/each}}
               {{/with}}
             </ol></div>
           </div>
         </div>
       {{/with}}
-      <ul class="comments">
+      <ul class='comments'>
         {{#each comments}}
           {{> commentItem}}
         {{/each}}

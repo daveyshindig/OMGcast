@@ -1,7 +1,7 @@
 Template.podcastPage.onCreated(function () {
-  var self = this;
-  self.autorun(function() {
-  });
+  // var self = this;
+  // self.autorun(function() {
+  // });
 });
 
 Template.podcastPage.helpers({
@@ -16,4 +16,16 @@ Template.podcastPage.helpers({
   }
   // comments: function() {
   //   return Comments.find({podcastId: this._id});
+});
+
+Template.podcastPage.events({
+  'click .podcast-page__play-btn': function (event) {
+    event.preventDefault();
+    var mp3Url = $(event.currentTarget).attr('href');
+    console.dir(mp3Url)
+    Meteor.call('playAudio', mp3Url, function (error, result) {
+      if (error)
+        return alert(error.reason);
+    });
+  }
 });

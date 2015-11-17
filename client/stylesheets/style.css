@@ -195,6 +195,7 @@ img {
     margin-top: 7px;
 }
 .podcast-page {
+    margin-left: 10px;
 }
 .podcast-page__cover-img {
     float: left;
@@ -202,11 +203,10 @@ img {
 }
 .podcast-page__info {
     float: left;
-    margin: 10px 0 0;
+    margin-left: 1.5%;
 }
 .podcast-page__title,
 .podcast-page__host {
-    margin: 0 10px;
     font-size: 1.5em;
 }
 .podcast-page__title {
@@ -216,7 +216,14 @@ img {
     font-size: .9em;
 
 }
+ol.podcast-page__playlist {
+    padding: 12px 0 0 14px;
+}
 .podcast-page__track {
+}
+.podcast-page__play-btn img {
+    max-width: 60px;
+    padding: 8px 0;
 }
 .comments {
     list-style-type: none;
@@ -327,9 +334,6 @@ img {
     background: #000;
     color: #fff;
     outline: none;
-}
-ol {
-    padding: 12px 0 0 24px;
 }
 .index-table img {
     max-width: 80px;

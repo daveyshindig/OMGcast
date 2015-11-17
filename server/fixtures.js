@@ -1,4 +1,4 @@
-if (Podcasts.find().count() === 0) {
+if (Users.find().count() === 0) {
   var daveyId = Accounts.createUser({
       profile: {
         name: 'Davey Shindig'
@@ -9,10 +9,12 @@ if (Podcasts.find().count() === 0) {
     });
 
   Roles.addUserToRoles( daveyId ,  ["admin"] );
+}
 
+if (Podcasts.find().count() === 0) {
   Podcasts.insert({
     title: '808 Mixtapes — v. 107',
-    mp3: 'http://www.808mix.com/808-mixtapes-vol-107.zip/',
+    mp3: '/audio/ff.mp3',
     episodeNumber: '107',
     host: 'Davey Shindig',
     coverImage: '/img/coverart/808-mixtapes-vol-107-super-cw.jpg'
@@ -20,7 +22,7 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 94',
-    mp3: 'http://www.808mix.com/808-mixtapes-vol-094.zip/',
+    mp3: '/audio/ff.mp3',
     episodeNumber: '94',
     host: 'Davey Shindig',
     coverImage: '/img/coverart/808-mixtapes-94.jpg'
@@ -28,12 +30,15 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 19',
-    mp3: 'http://www.808mix.com/808-mixtapes-vol-019.zip/',
+    mp3: '/audio/ff.mp3',
     episodeNumber: '19',
     host: 'Davey Shindig',
     coverImage: '/img/coverart/808-mixtapes-vol-19.jpg'
     });
+};
 
+
+if (Playlists.find().count() === 0) {
   var podcasts = Podcasts.find({}, {fields: {_id: 1}}).fetch();
 
   Playlists.insert({
