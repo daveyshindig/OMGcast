@@ -6,6 +6,10 @@ Meteor.publish('podcast', function (num) {
   return Podcasts.find({ episodeNumber: num });
 });
 
+Meteor.publish('playlists', function () {
+  return Playlists.find();
+});
+
 Meteor.publish('playlist', function (podcastId) {
-  return Podcasts.find({ podcastId: podcastId});
+  return Playlists.find({ podcastId: podcastId });
 });

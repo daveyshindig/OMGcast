@@ -1,4 +1,15 @@
 if (Podcasts.find().count() === 0) {
+  var daveyId = Accounts.createUser({
+      profile: {
+        name: 'Davey Shindig'
+      },
+      username: "davey",
+      email: "davey@example.com",
+      password: "123456",
+    });
+
+  Roles.addUserToRoles( daveyId ,  ["admin"] );
+
   Podcasts.insert({
     title: '808 Mixtapes — v. 107',
     mp3: 'http://www.808mix.com/808-mixtapes-vol-107.zip/',
@@ -22,25 +33,85 @@ if (Podcasts.find().count() === 0) {
     host: 'Davey Shindig',
     coverImage: '/img/coverart/808-mixtapes-vol-19.jpg'
     });
-};
 
-if (Playlists.find().count() === 0) {
+  var podcasts = Podcasts.find({}, {fields: {_id: 1}}).fetch();
+
   Playlists.insert({
-        artist: 'artist',
-        title: 'title',
-        album: 'album',
-        label: 'label'
+    podcastId: podcasts[0]._id,
+    tracks: [{
+      title: 'title1',
+      artist: 'artist1',
+      remix: 'remix1',
+      featuring: 'featuring1',
+      album: 'album1',
+      label: 'label1'
+    }, {
+      title: 'title2',
+      artist: 'artist2',
+      remix: 'remix2',
+      featuring: 'featuring2',
+      album: 'album2',
+      label: 'label2'
+    }, {
+      title: 'title3',
+      artist: 'artist3',
+      remix: 'remix3',
+      featuring: 'featuring3',
+      album: 'album3',
+      label: 'label3'
+    }]
   });
+
   Playlists.insert({
-        artist: 'artist2',
-        title: 'title2',
-        album: 'album2',
-        label: 'label2'
+    podcastId: podcasts[1]._id,
+    tracks: [{
+      title: 'title1',
+      artist: 'artist1',
+      remix: 'remix1',
+      featuring: 'featuring1',
+      album: 'album1',
+      label: 'label1'
+    }, {
+      title: 'title2',
+      artist: 'artist2',
+      remix: 'remix2',
+      featuring: 'featuring2',
+      album: 'album2',
+      label: 'label2'
+    }, {
+      title: 'title3',
+      artist: 'artist3',
+      remix: 'remix3',
+      featuring: 'featuring3',
+      album: 'album3',
+      label: 'label3'
+    }]
   });
+
   Playlists.insert({
-        artist: 'artist3',
-        title: 'title3',
-        album: 'album3',
-        label: 'label3'
+    podcastId: podcasts[2]._id,
+    tracks: [{
+      title: 'title1',
+      artist: 'artist1',
+      remix: 'remix1',
+      featuring: 'featuring1',
+      album: 'album1',
+      label: 'label1'
+    }, {
+      title: 'title2',
+      artist: 'artist2',
+      remix: 'remix2',
+      featuring: 'featuring2',
+      album: 'album2',
+      label: 'label2'
+    }, {
+      title: 'title3',
+      artist: 'artist3',
+      remix: 'remix3',
+      featuring: 'featuring3',
+      album: 'album3',
+      label: 'label3'
+    }]
   });
-}
+
+};

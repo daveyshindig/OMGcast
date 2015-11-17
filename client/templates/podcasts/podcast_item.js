@@ -5,7 +5,7 @@ Template.podcastItem.helpers({
     return a.hostname;
   },
   podcastPage: function(episodeNumber) {
-    var epNum = { podcastId: episodeNumber };
+    var epNum = { episodeNumber: episodeNumber };
     return FlowRouter.path('podcastPage', epNum);
   },
   playButton: function(episodeNumber) {
@@ -36,4 +36,4 @@ Template.podcastItem.events({
       Session.set('audioPath', audioPath);
     }
   }
-});
+}); 

@@ -1,11 +1,11 @@
 Meteor.subscribe('podcasts');
+Meteor.subscribe('playlists');
 
- 
 Meteor.startup(function() {
   var audio = new Howl({
     buffer: true,
     urls: [] // @TODO: Setup a newest episode URL
-  });  
+  });
   Session.set('audioObject', audio);
 });
 

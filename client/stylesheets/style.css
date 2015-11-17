@@ -323,7 +323,9 @@ img {
     color: #fff;
     outline: none;
 }
-
+ol {
+    padding: 12px 0 0 24px;
+}
 @media (min-width: 1200px) {
     .info-box,
     .podcast {

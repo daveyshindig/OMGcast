@@ -8,16 +8,12 @@
             <span class="podcast-page__title">{{title}}</span><br>
             <span class="podcast-page__host">mixed by {{host}}</span>
             <div><ol class="podcast-page__playlist">
-              {{#each podcast.playlist}}
-                <li class="podcast-page__track">
-                {{artist}}: "{{title}}" 
-                {{#if remix}}
-                  {{remix}}
-                {{/if}} 
-                {{#if label}}
-                  {{label}}
-                {{/if}}</li>
-              {{/each}}
+              {{#with playlist}}
+                {{#each tracks}}
+                  <li class="podcast-page__track">
+                  <b>{{artist}}</b>: "{{title}}"{{#if featuring}} [{{featuring}}]{{/if}}{{#if remix}} ({{remix}}){{/if}}{{#if label}} <small>({{label}})</small>{{/if}}</li>
+                {{/each}}
+              {{/with}}
             </ol></div>
           </div>
         </div>

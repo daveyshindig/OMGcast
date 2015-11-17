@@ -21,6 +21,9 @@ twbs:bootstrap
 kadira:flow-router
 kadira:blaze-layout
 sacha:spin
-ian:accounts-ui-bootstrap-3
 accounts-password
 bojicas:howler2
+orionjs:core
+fortawesome:fontawesome
+orionjs:bootstrap
+ian:accounts-ui-bootstrap-3
