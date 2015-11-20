@@ -1,5 +1,5 @@
-Meteor.subscribe('podcasts');
-Meteor.subscribe('playlists');
+// Meteor.subscribe('podcasts');
+// Meteor.subscribe('playlists');
 
 Meteor.startup(function() {
 });

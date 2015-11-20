@@ -20,10 +20,10 @@ Template.podcastItem.events({
   'mouseleave .podcast': function (event) {
     $(event.currentTarget).find('.podcast__overlay').addClass('hidden');
   },
-  'click .podcast__view-btn, click .podcast__overlay h3 a': function (event) {
-    preventDefault();
-    var path = $(event).text();
-    FlowRouter.go( path );
+  'click .podcast__view-btn, click .podcast__link': function (event) {
+    event.preventDefault();
+    var path = $(event.currentTarget).attr('href');
+    FlowRouter.go(path);
   },
   'click .podcast__play-btn': function (event) {
     var episodeNumber = $(event.currentTarget).data('episodenumber');
@@ -36,4 +36,4 @@ Template.podcastItem.events({
       Session.set('audioPath', audioPath);
     }
   }
-}); 
+});

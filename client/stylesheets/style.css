@@ -164,7 +164,7 @@ img {
     width: 80%;
     background: rgba(256,256,256,.8);
 }
-.podcast__link {
+.podcast__link h3 {
     text-align: center;
     margin-bottom: 0;
     line-height: 1.4;

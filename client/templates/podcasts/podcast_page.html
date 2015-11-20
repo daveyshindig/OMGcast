@@ -1,5 +1,5 @@
 <template name='podcastPage'>
-  <div class='podcast-page page'>
+  <div class='page'>
     {{#if Template.subscriptionsReady}}
       {{#with podcast}}
         <div class='podcast-page'>
@@ -21,7 +21,7 @@
       {{/with}}
       <ul class='comments'>
         {{#each comments}}
-          {{> commentItem}}
+          <!-- {{> commentItem}} -->
         {{/each}}
       </ul>
     {{else}}
