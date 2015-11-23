@@ -21,7 +21,8 @@ if (Podcasts.find().count() === 0) {
     mp3: '/audio/ff.mp3',
     episodeNumber: '107',
     host: 'Davey Shindig',
-    coverImage: '/img/coverart/808-mixtapes-vol-107-super-cw.jpg'
+    coverImage: '/img/coverart/808-mixtapes-vol-107-super-cw.jpg',
+    commentCount: 0
   });
 
   Podcasts.insert({
@@ -29,7 +30,8 @@ if (Podcasts.find().count() === 0) {
     mp3: '/audio/ff.mp3',
     episodeNumber: '94',
     host: 'Davey Shindig',
-    coverImage: '/img/coverart/808-mixtapes-94.jpg'
+    coverImage: '/img/coverart/808-mixtapes-94.jpg',
+    commentCount: 0
   });
 
   Podcasts.insert({
@@ -37,7 +39,8 @@ if (Podcasts.find().count() === 0) {
     mp3: '/audio/ff.mp3',
     episodeNumber: '19',
     host: 'Davey Shindig',
-    coverImage: '/img/coverart/808-mixtapes-vol-19.jpg'
+    coverImage: '/img/coverart/808-mixtapes-vol-19.jpg',
+    commentCount: 0
     });
 
   var podcasts = Podcasts.find().fetch();

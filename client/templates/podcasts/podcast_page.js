@@ -4,7 +4,14 @@ Template.podcastPage.onCreated(function () {
     var epNum = FlowRouter.getParam('episodeNumber');
     self.subscribe('podcast', epNum);
     self.subscribe('playlist', epNum);
-    self.subscribe('comments', epNum);
+    // This findOperation runs twice on page load for unknown reasons.
+    var podcast = Podcasts.findOne();
+    // It's undefined for one of those loads, which causes meteor to crash.
+    // Thus, the conditional.
+    if (podcast) {
+      console.log(podcast._id);
+      self.subscribe('comments', podcast._id);
+    }
   })
 });
 
@@ -16,7 +23,7 @@ Template.podcastPage.helpers({
     return Playlists.findOne();
   },
   comments: function() {
-    return Playlists.find();
+    return Comments.find();
   }
 });
 

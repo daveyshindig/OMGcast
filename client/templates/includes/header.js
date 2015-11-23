@@ -16,4 +16,4 @@ Template.header.helpers({
   'click .nav__pause-button': function () {
     
   }
-});
+}); 

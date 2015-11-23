@@ -226,22 +226,29 @@ ol.podcast-page__playlist {
     padding: 8px 0;
 }
 .comments {
+    clear: both;
+}
+.comments__header {
+    padding: 60px 10px 10px;
+    margin: 0;
+    font-size: 18px;
+}
+.comments__list {
     list-style-type: none;
+    padding-left: 0;
+}
+.comments__list h4 {
     margin: 0;
 }
-.comments li h4 {
-    font-size: 16px;
-    margin: 0;
-}
-.comments li h4 .date {
-    font-size: 12px;
-    font-weight: normal;
-}
-.comments li h4 a {
-    font-size: 12px;
-}
-.comments li p:last-child {
+.comments__list p:last-child {
     margin-bottom: 0;
+}
+.comment__author,
+.comment__date {
+    font-size: 16px;
+}
+.comment__date {
+    font-weight: normal;
 }
 .dropdown-menu span {
     display: block;

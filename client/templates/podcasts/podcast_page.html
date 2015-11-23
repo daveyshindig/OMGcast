@@ -17,21 +17,25 @@
               {{/with}}
             </ol></div>
           </div>
+          {{#if comments}}
+          <div class='comments'>
+            <h3 class='comments__header'>Comments</h3>
+            <ul class='comments__list'>
+              {{#each comments}}
+                {{> commentItem}}
+              {{/each}}
+            </ul>
+            {{#if currentUser}}
+              {{> commentSubmit}}
+            {{else}}
+              <p class='comments__text'>Please log in to leave a comment.</p>
+            {{/if}}
+          </div>
+          {{/if}}
         </div>
       {{/with}}
-      <ul class='comments'>
-        {{#each comments}}
-          <!-- {{> commentItem}} -->
-        {{/each}}
-      </ul>
     {{else}}
       {{>spinner}}
     {{/if}}
-
-<!--     {{#if currentUser}}
-      {{> commentSubmit}}
-    {{else}}
-      <p>Please log in to leave a comment.</p>
-    {{/if}}
- -->  </div>
+      </div>
 </template> 
