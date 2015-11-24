@@ -1,12 +1,20 @@
-Meteor.publish('podcasts', function (args) {
-  check(args, Object);
-  return Podcasts.find({}, args);
+Meteor.publish('podcasts', function () {
+  return Podcasts.find();
+});
+
+Meteor.publish('podcastIndex', function () {
+  return Podcasts.find({}, {sort: {episodeNumber: -1, _id: -1}, limit: 0});
 });
 
 Meteor.publish('podcast', function (epNum) {
   check(epNum, String);
   return Podcasts.find({ episodeNumber: Number(epNum) });
 });
+
+// Meteor.publish('latestPodcast', function (epNum) {
+//   check(epNum, String);
+//   return Podcasts.find({ episodeNumber: Number(epNum) });
+// });
 
 Meteor.publish('playlist', function (epNum) {
   check(epNum, String);
@@ -16,6 +24,10 @@ Meteor.publish('playlist', function (epNum) {
 Meteor.publish('comments', function(postId) {
   check(postId, String);
   return Comments.find({ postId: postId });
+});
+
+Meteor.publish('commentsIndex', function() {
+  return Comments.find({sort: {submitted: -1, _id: -1}, limit: 0});
 });
 
 Meteor.publish('notifications', function() {
