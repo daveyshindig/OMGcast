@@ -1,5 +1,6 @@
-Meteor.publish('podcasts', function () {
-  return Podcasts.find();
+Meteor.publish('podcasts', function (args) {
+  check(args, Object);
+  return Podcasts.find({}, args);
 });
 
 Meteor.publish('podcast', function (epNum) {
@@ -17,7 +18,6 @@ Meteor.publish('comments', function(postId) {
   return Comments.find({ postId: postId });
 });
 
-Meteor.publish('notifications', function(userId) { 
-  check(userId, String);
-  return Notifications.find(userId);
+Meteor.publish('notifications', function() {
+  return Notifications.find({userId: this.userId, read: false});
 });

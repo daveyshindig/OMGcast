@@ -1,14 +1,14 @@
-Template.commentSubmit.onCreated( function() { 
+Template.commentSubmit.onCreated( function() {
   Session.set('commentSubmitErrors', {});
 });
 
-Template.commentSubmit.helpers({ 
+Template.commentSubmit.helpers({
   errorMessage: function(field) {
-    return Session.get('commentSubmitErrors')[field]; 
+    return Session.get('commentSubmitErrors')[field];
   },
   errorClass: function (field) {
     return !!Session.get('commentSubmitErrors')[field] ? 'has-error' : '';
-  } 
+  }
 });
 
 Template.commentSubmit.events({
@@ -17,19 +17,19 @@ Template.commentSubmit.events({
     var $body = $(e.target).find('[name=body]');
     var comment = {
       body: $body.val(),
-      podcastId: template.data._id
+      postId: template.data._id
     };
     var errors = {};
     if (! comment.body) {
       errors.body = "Please write something";
-      return Session.set('commentSubmitErrors', errors); 
+      return Session.set('commentSubmitErrors', errors);
     }
-    Meteor.call('commentInsert', comment, function(error, commentId) { 
+    Meteor.call('commentInsert', comment, function(error, commentId) {
       if (error){
-        throwError(error.reason); 
+        throwError(error.reason);
       } else {
         $body.val('');
       }
-    }); 
+    });
   }
 });

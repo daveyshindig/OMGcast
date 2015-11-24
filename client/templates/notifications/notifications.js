@@ -1,7 +1,7 @@
 Template.notifications.onCreated(function () {
   var self = this;
   self.autorun(function() {
-    self.subscribe('notifications', Meteor.userId());
+    self.subscribe('notifications');
   })
 });
 

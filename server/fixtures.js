@@ -16,12 +16,13 @@ if (!Accounts.findUserByUsername('davey')) {
 if (Podcasts.find().count() === 0) {
   var davey = Accounts.findUserByUsername( 'davey' );
 
-  var podcastId = Podcasts.insert({
+  var postId = Podcasts.insert({
     title: '808 Mixtapes — v. 107',
     mp3: '/audio/ff.mp3',
     episodeNumber: '107',
     host: 'Davey Shindig',
     coverImage: '/img/coverart/808-mixtapes-vol-107-super-cw.jpg',
+    userId: davey._id,
     commentCount: 0
   });
 
@@ -31,6 +32,7 @@ if (Podcasts.find().count() === 0) {
     episodeNumber: '94',
     host: 'Davey Shindig',
     coverImage: '/img/coverart/808-mixtapes-94.jpg',
+    userId: davey._id,
     commentCount: 0
   });
 
@@ -40,6 +42,7 @@ if (Podcasts.find().count() === 0) {
     episodeNumber: '19',
     host: 'Davey Shindig',
     coverImage: '/img/coverart/808-mixtapes-vol-19.jpg',
+    userId: davey._id,
     commentCount: 0
     });
 
@@ -124,7 +127,7 @@ if (Podcasts.find().count() === 0) {
   });
 
   Comments.insert({
-    postId: podcastId,
+    postId: postId,
     userId: davey._id,
     author: davey.profile.name,
     submitted: new Date(now - 5 * 3600 * 1000), 
@@ -132,7 +135,7 @@ if (Podcasts.find().count() === 0) {
   });
 
   Comments.insert({
-    postId: podcastId,
+    postId: postId,
     userId: davey._id,
     author: davey.profile.name,
     submitted: new Date(now - 3 * 3600 * 1000), 
