@@ -11,10 +11,9 @@ Meteor.publish('podcast', function (epNum) {
   return Podcasts.find({ episodeNumber: Number(epNum) });
 });
 
-// Meteor.publish('latestPodcast', function (epNum) {
-//   check(epNum, String);
-//   return Podcasts.find({ episodeNumber: Number(epNum) });
-// });
+Meteor.publish('latestPodcast', function () {
+  return Podcasts.findOne({}, {sort: {episodeNumber: -1}});
+});
 
 Meteor.publish('playlist', function (epNum) {
   check(epNum, String);

@@ -12,7 +12,6 @@ Template.layout.onRendered(function() {
       });
     }
   }
-  Session.set('isPlaying', false);
 });
 
 Template.layout.helpers({
