@@ -21,7 +21,7 @@ if (Podcasts.find().count() === 0) {
     mp3: '/audio/ff.mp3',
     episodeNumber: '107',
     host: 'Davey Shindig',
-    coverImage: '/img/coverart/808-mixtapes-vol-107-super-cw.jpg',
+    coverImage: '/img/coverart/808-mixtapes-vol-107.jpg',
     userId: davey._id,
     commentCount: 0
   });
@@ -45,6 +45,107 @@ if (Podcasts.find().count() === 0) {
     userId: davey._id,
     commentCount: 0
     });
+
+  Podcasts.insert({
+    title: '808 Mixtapes — v. 95',
+    mp3: '/audio/ff.mp3',
+    episodeNumber: '95',
+    host: 'Davey Shindig',
+    coverImage: '/img/coverart/808-mixtapes-vol-95.jpg',
+    userId: davey._id,
+    commentCount: 0
+    });
+
+  Podcasts.insert({
+    title: '808 Mixtapes — v. 96',
+    mp3: '/audio/ff.mp3',
+    episodeNumber: '96',
+    host: 'Davey Shindig',
+    coverImage: '/img/coverart/808-mixtapes-vol-96.jpg',
+    userId: davey._id,
+    commentCount: 0
+    });
+
+  Podcasts.insert({
+    title: '808 Mixtapes — v. 97',
+    mp3: '/audio/ff.mp3',
+    episodeNumber: '97',
+    host: 'Davey Shindig',
+    coverImage: '/img/coverart/808-mixtapes-vol-97.jpg',
+    userId: davey._id,
+    commentCount: 0
+    });
+
+  Podcasts.insert({
+    title: '808 Mixtapes — v. 098',
+    mp3: '/audio/ff.mp3',
+    episodeNumber: '098',
+    host: 'Davey Shindig',
+    coverImage: '/img/coverart/808-mixtapes-vol-098.jpg',
+    userId: davey._id,
+    commentCount: 0
+    });
+
+  Podcasts.insert({
+    title: '808 Mixtapes — v. 100',
+    mp3: '/audio/ff.mp3',
+    episodeNumber: '100',
+    host: 'Davey Shindig',
+    coverImage: '/img/coverart/808-mixtapes-vol-100.jpg',
+    userId: davey._id,
+    commentCount: 0
+    });
+
+  Podcasts.insert({
+    title: '808 Mixtapes — v. 101',
+    mp3: '/audio/ff.mp3',
+    episodeNumber: '101',
+    host: 'Davey Shindig',
+    coverImage: '/img/coverart/808-mixtapes-vol-101.jpg',
+    userId: davey._id,
+    commentCount: 0
+    });
+
+  Podcasts.insert({
+    title: '808 Mixtapes — v. 102',
+    mp3: '/audio/ff.mp3',
+    episodeNumber: '102',
+    host: 'Davey Shindig',
+    coverImage: '/img/coverart/808-mixtapes-vol-102.jpg',
+    userId: davey._id,
+    commentCount: 0
+    });
+
+  Podcasts.insert({
+    title: '808 Mixtapes — v. 103',
+    mp3: '/audio/ff.mp3',
+    episodeNumber: '103',
+    host: 'Davey Shindig',
+    coverImage: '/img/coverart/808-mixtapes-vol-103.jpg',
+    userId: davey._id,
+    commentCount: 0
+    });
+
+  Podcasts.insert({
+    title: '808 Mixtapes — v. 104',
+    mp3: '/audio/ff.mp3',
+    episodeNumber: '104',
+    host: 'Davey Shindig',
+    coverImage: '/img/coverart/808-mixtapes-vol-104.jpg',
+    userId: davey._id,
+    commentCount: 0
+    });
+
+  Podcasts.insert({
+    title: '808 Mixtapes — v. 105',
+    mp3: '/audio/ff.mp3',
+    episodeNumber: '105',
+    host: 'Davey Shindig',
+    coverImage: '/img/coverart/808-mixtapes-vol-105.jpg',
+    userId: davey._id,
+    commentCount: 0
+    });
+
 
   var podcasts = Podcasts.find().fetch();
 

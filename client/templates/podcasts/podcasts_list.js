@@ -1,7 +1,8 @@
 Template.podcastsList.onCreated(function () {
   var self = this;
   self.autorun(function() {
-    self.subscribe('podcasts');
+    var limit = FlowRouter.getParam('limit') || 8;
+    self.subscribe('podcasts', {sort: {episodeNumber: -1}, limit: limit});
   })
 });
 

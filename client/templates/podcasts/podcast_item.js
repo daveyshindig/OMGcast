@@ -28,12 +28,5 @@ Template.podcastItem.events({
   'click .podcast__play-btn': function (event) {
     var episodeNumber = $(event.currentTarget).data('episodenumber');
     var audioPath = $(event.currentTarget).data('audiopath');
-    if (Session.get('nowPlaying') == episodeNumber) {
-      Session.set('nowPlaying', false);
-      Session.get('audioObject').pause();
-    } else {
-      Session.set('nowPlaying', episodeNumber);
-      Session.set('audioPath', audioPath);
-    }
   }
 });

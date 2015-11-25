@@ -1,9 +1,9 @@
-Meteor.publish('podcasts', function () {
-  return Podcasts.find();
-});
-
-Meteor.publish('podcastIndex', function () {
-  return Podcasts.find({}, {sort: {episodeNumber: -1, _id: -1}, limit: 0});
+Meteor.publish('podcasts', function (options) {
+  check(options, {
+    sort: Object,
+    limit: Number
+  });
+  return Podcasts.find({}, options);
 });
 
 Meteor.publish('podcast', function (epNum) {
@@ -12,7 +12,7 @@ Meteor.publish('podcast', function (epNum) {
 });
 
 Meteor.publish('latestPodcast', function () {
-  return Podcasts.findOne({}, {sort: {episodeNumber: -1}});
+  return Podcasts.find({}, {sort: {episodeNumber: -1}, limit: 1});
 });
 
 Meteor.publish('playlist', function (epNum) {
