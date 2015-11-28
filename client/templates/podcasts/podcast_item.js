@@ -4,9 +4,14 @@ Template.podcastItem.helpers({
     a.href = this.url;
     return a.hostname;
   },
-  podcastPage: function(episodeNumber) {
+  podcastUrl: function(episodeNumber) {
     var epNum = { episodeNumber: episodeNumber };
-    return FlowRouter.path('podcastPage', epNum);
+    return FlowRouter.path('podcastUrl', epNum);
+  },
+  mp3Url: function (episodeNumber) {
+    var epNum = { episodeNumber: episodeNumber };
+    var podcast = Podcasts.findOne(epNum);
+    return podcast.mp3;
   },
   playButton: function(episodeNumber) {
     return (Session.get('nowPlaying') == episodeNumber) ? '/img/pause.png' : '/img/play.png';
@@ -26,7 +31,24 @@ Template.podcastItem.events({
     FlowRouter.go(path);
   },
   'click .podcast__play-btn': function (event) {
-    var episodeNumber = $(event.currentTarget).data('episodenumber');
-    var audioPath = $(event.currentTarget).data('audiopath');
+    event.preventDefault();
+    var mp3Url = $(event.currentTarget).data('path');
+    var nowPlaying = Session.get('nowPlaying');
+    
+    if (player === null) {
+      player = new Howl({
+        src: [mp3Url]
+      });
+    }
+
+    if (nowPlaying != mp3Url) {
+      player.unload();
+      player = new Howl({
+        src: [mp3Url]
+      });
+    }
+
+    player.playing() ? player.pause() : player.play();
+    Session.set('nowPlaying', mp3Url);
   }
 });

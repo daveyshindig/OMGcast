@@ -118,7 +118,7 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 103',
-    mp3: '/audio/ff.mp3',
+    mp3: '/audio/SexyTerrorist.mp3',
     episodeNumber: '103',
     host: 'Davey Shindig',
     coverImage: '/img/coverart/808-mixtapes-vol-103.jpg',
@@ -128,7 +128,7 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 104',
-    mp3: '/audio/ff.mp3',
+    mp3: '/audio/BirdMachine.mp3',
     episodeNumber: '104',
     host: 'Davey Shindig',
     coverImage: '/img/coverart/808-mixtapes-vol-104.jpg',
@@ -138,7 +138,7 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 105',
-    mp3: '/audio/ff.mp3',
+    mp3: '/audio/Beginning.mp3',
     episodeNumber: '105',
     host: 'Davey Shindig',
     coverImage: '/img/coverart/808-mixtapes-vol-105.jpg',

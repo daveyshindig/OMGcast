@@ -2,16 +2,16 @@
   <div class='podcast'>
     <img class='podcast__cover-img' src='{{coverImage}}' />
     <div class='hidden podcast__overlay'>
-      <a class='podcast__link' href='{{podcastPage episodeNumber}}'><h3>{{title}}<br><small>mixed by</small><br>{{host}}</h3></a>
+      <a class='podcast__link' href='{{podcastUrl episodeNumber}}'><h3>{{title}}<br><small>mixed by</small><br>{{host}}</h3></a>
       <div class='podcast__controls'>
-        <img class='podcast__play-btn' data-episodenumber='{{episodeNumber}}' src='/img/play.png'>
-        <a class='podcast__view-btn' href='{{podcastPage episodeNumber}}'><img class='podcast__view-btn__img' src='/img/view.png'></a>
+        <img class='podcast__play-btn' data-path='{{mp3Url episodeNumber}}' src='/img/play.png'>
+        <a class='podcast__view-btn' href='{{podcastUrl episodeNumber}}'><img class='podcast__view-btn__img' src='/img/view.png'></a>
       </div>
       <!--<p>
         Mixed by {{host}}
-        <a href='{{pathFor 'podcastPage'}}'>{{pluralize commentsCount 'comment'}}</a>
+        <a href='{{pathFor 'podcastUrl'}}'>{{pluralize commentsCount 'comment'}}</a>
       </p>
-    <a href='{{pathFor 'podcastPage'}}' class='discuss btn btn-default'>Discuss</a>-->
+    <a href='{{pathFor 'podcastUrl'}}' class='discuss btn btn-default'>Discuss</a>-->
     </div>
   </div>
 </template>
