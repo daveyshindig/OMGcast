@@ -14,7 +14,7 @@ Template.header.helpers({
 Template.header.events({
   'click .nav__play-btn': function (event) {
     event.preventDefault();
-    var mp3Url = $(event.target).attr('href');
+    var mp3Url = $(event.currentTarget).data('link');
     var nowPlaying = Session.get('nowPlaying');
     
     if (player === null) {
@@ -30,7 +30,13 @@ Template.header.events({
       });
     }
 
-    player.playing() ? player.pause() : player.play();
+    if (player.playing()) {
+      player.pause() 
+      $('.nav__play-img').attr('src', '/img/play-top.png');
+    } else {
+      player.play();
+      $('.nav__play-img').attr('src', '/img/pause-top.png');
+    } 
     Session.set('nowPlaying', mp3Url);
   },
 

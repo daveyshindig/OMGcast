@@ -4,9 +4,9 @@ Template.podcastItem.helpers({
     a.href = this.url;
     return a.hostname;
   },
-  podcastUrl: function(episodeNumber) {
+  podcastPage: function(episodeNumber) {
     var epNum = { episodeNumber: episodeNumber };
-    return FlowRouter.path('podcastUrl', epNum);
+    return FlowRouter.path('podcastPage', epNum);
   },
   mp3Url: function (episodeNumber) {
     var epNum = { episodeNumber: episodeNumber };
@@ -37,18 +37,36 @@ Template.podcastItem.events({
     
     if (player === null) {
       player = new Howl({
-        src: [mp3Url]
+        src: [mp3Url],
+        onEnd: function() {
+          $('.nav__play-img').attr('src', '/img/play-top.png');
+          $('.podcast__play-btn').attr('src', '/img/play.png')
+        }
       });
     }
 
     if (nowPlaying != mp3Url) {
       player.unload();
       player = new Howl({
-        src: [mp3Url]
+        src: [mp3Url],
+        onEnd: function() {
+          $('.nav__play-img').attr('src', '/img/play-top.png');
+          $('.podcast__play-btn').attr('src', '/img/play.png')
+        }
       });
     }
 
-    player.playing() ? player.pause() : player.play();
-    Session.set('nowPlaying', mp3Url);
+    if (player.playing()) {
+      player.pause();
+      $(event.currentTarget).attr('src', '/img/play.png')
+      $('.nav__play-img').attr('src', '/img/play-top.png');
+    } else {
+      player.play();
+      Session.set('nowPlaying', mp3Url);
+      $('.nav__play-btn').data('link', mp3Url); 
+      $('.podcast__play-btn').attr('src', '/img/play.png')
+      $(event.currentTarget).attr('src', '/img/pause.png')
+      $('.nav__play-img').attr('src', '/img/pause-top.png');
+    }
   }
 });

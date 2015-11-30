@@ -17,13 +17,16 @@ Template.podcastPage.onCreated(function () {
 
 Template.podcastPage.helpers({
   podcast: function() {
-    return Podcasts.findOne();
+    var epNum = FlowRouter.getParam('episodeNumber');
+    return Podcasts.findOne({ episodeNumber: Number(epNum)});
   },
   playlist: function() {
-    return Playlists.findOne();
+    var epNum = FlowRouter.getParam('episodeNumber');
+    return Playlists.findOne({episodeNumber: Number(epNum)});
   },
   comments: function() {
-    return Comments.find();
+    var epNum = FlowRouter.getParam('episodeNumber');
+    return Comments.find({episodeNumber: Number(epNum)});
   }
 });
 
