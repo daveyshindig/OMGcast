@@ -34,39 +34,19 @@ Template.podcastItem.events({
     event.preventDefault();
     var mp3Url = $(event.currentTarget).data('path');
     var nowPlaying = Session.get('nowPlaying');
-    
-    if (player === null) {
-      player = new Howl({
-        src: [mp3Url],
-        onEnd: function() {
-          $('.nav__play-img').attr('src', '/img/play-top.png');
-          $('.podcast__play-btn').attr('src', '/img/play.png')
-        }
-      });
-    }
 
     if (nowPlaying != mp3Url) {
-      player.unload();
-      player = new Howl({
-        src: [mp3Url],
-        onEnd: function() {
-          $('.nav__play-img').attr('src', '/img/play-top.png');
-          $('.podcast__play-btn').attr('src', '/img/play.png')
-        }
-      });
+      player.setSrc(mp3Url);
+      Session.set('nowPlaying', mp3Url);
     }
 
-    if (player.playing()) {
-      player.pause();
-      $(event.currentTarget).attr('src', '/img/play.png')
-      $('.nav__play-img').attr('src', '/img/play-top.png');
-    } else {
+    if (player.paused) {
       player.play();
-      Session.set('nowPlaying', mp3Url);
-      $('.nav__play-btn').data('link', mp3Url); 
-      $('.podcast__play-btn').attr('src', '/img/play.png')
-      $(event.currentTarget).attr('src', '/img/pause.png')
-      $('.nav__play-img').attr('src', '/img/pause-top.png');
+      $('.podcast__play-btn').attr('src', '/img/play.png');
+      $(event.currentTarget).attr('src', '/img/pause.png');
+    } else {
+      player.pause();
+      $(event.currentTarget).attr('src', '/img/play.png');
     }
   }
 });

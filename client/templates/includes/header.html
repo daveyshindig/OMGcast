@@ -20,7 +20,12 @@
           </ul>
         </li>
         <li class='nav-item'><a href='#'>News</a></li>
-        <li class='nav__play-btn' data-link='{{latest.mp3}}'><a href='#'><img class='nav__play-img' src='/img/play-top.png'></a></li>
+        <li class='nav-item'>
+          <div class="audio-player">
+            <audio id="audio-player" src="/audio/ff.mp3" type="audio/mp3" controls="controls"></audio>
+          </div>
+        </li>
+<!--         <li class='nav__play-btn' data-link='{{latest.mp3}}'><a href='#'><img class='nav__play-img' src='/img/play-top.png'></a></li> -->
         {{#if currentUser}}
           <li class='dropdown'>
             {{> notifications}}
