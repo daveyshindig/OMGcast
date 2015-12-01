@@ -8,6 +8,6 @@ Template.newsItem.onCreated(function () {
 
 Template.newsItem.helpers({
   post: function () {
-    return Post.findOne();
+    return Posts.findOne();
   }
 });
