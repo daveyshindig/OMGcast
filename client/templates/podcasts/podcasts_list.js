@@ -7,7 +7,10 @@ Template.podcastsList.onCreated(function () {
 });
 
 Template.podcastsList.helpers({
-  podcasts: function() {
+  podcasts: function () {
     return Podcasts.find();
+  },
+  aboutPage: function () {
+    return FlowRouter.path('aboutPage');
   }
 });

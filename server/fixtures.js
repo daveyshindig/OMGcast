@@ -242,6 +242,22 @@ if (Podcasts.find().count() === 0) {
     submitted: new Date(now - 3 * 3600 * 1000), 
     body: 'I\'m replying to myself!'
   });
+
+  Posts.insert({
+    userId: davey._id,
+    author: davey.profile.name,
+    submitted: new Date(now - 3 * 3600 * 1000), 
+    title: 'Wonderful News!',
+    body: 'Wonderful news! It\'s so great. Etc etc blah blah',
+    slug: 'wonderful-news'
+  });
+
+  Posts.insert({
+    userId: davey._id,
+    author: davey.profile.name,
+    submitted: new Date(now - 3 * 3600 * 1000), 
+    title: 'Add\'l Good News',
+    body: 'More news! It\'s also great. Etc etc blah blah',
+    slug: 'addl-good-news'
+  });
 };
-
-

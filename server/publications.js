@@ -25,10 +25,23 @@ Meteor.publish('comments', function(postId) {
   return Comments.find({ postId: postId });
 });
 
-Meteor.publish('commentsIndex', function() {
+Meteor.publish('commentsIndex', function () {
   return Comments.find({sort: {submitted: -1, _id: -1}, limit: 0});
 });
 
-Meteor.publish('notifications', function() {
+Meteor.publish('notifications', function () {
   return Notifications.find({userId: this.userId, read: false});
+});
+
+Meteor.publish('posts', function (options) {
+  check(options, {
+    sort: Object,
+    limit: Number
+  });
+  return Posts.find({}, options);
+});
+
+Meteor.publish('singlePost', function (slug) {
+  check(slug, String);
+  return Posts.find({slug: slug});
 });

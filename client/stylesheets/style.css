@@ -30,7 +30,6 @@
 .comment-form {
     background: #fff;
     border-radius: 3px;
-    padding: 10px;
     margin-bottom: 10px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
@@ -203,7 +202,6 @@ img {
 }
 .podcast-page__info {
     float: left;
-    margin-left: 1.5%;
 }
 .podcast-page__title,
 .podcast-page__host {
@@ -229,7 +227,7 @@ ol.podcast-page__playlist {
 }
 .podcast-page__play-btn {
     position: absolute;
-    max-width: 60px;
+    width: 120px;
     top: 0; bottom: 0; left: 0; right: 0;
     margin: auto;
 }
@@ -237,7 +235,7 @@ ol.podcast-page__playlist {
     clear: both;
 }
 .comments__header {
-    padding: 60px 10px 10px;
+    padding: 60px 0 10px;
     margin: 0;
     font-size: 18px;
 }
@@ -364,6 +362,14 @@ ol.podcast-page__playlist {
     .podcast__controls {
         width: 50%;
     }
+    .podcast-page__play-btn {
+        width: 90px;
+    }
+}
+@media (max-width: 992px) {
+    .podcast-page__play-btn {
+        width: 90px;
+    }
 }
 @media (min-width: 768px) {
     .podcast__link { 
@@ -381,6 +387,15 @@ ol.podcast-page__playlist {
     .podcast {
         width: 50%;
     }
+    .podcast-page__play-btn {
+        width: 120px;
+    }
+    .podcast-page__cover-div {
+        width: 100%;
+    }
+    .podcast-page__info {
+        padding-top: 30px;
+    }
 }
 @media (max-width: 430px) {
     .info-box,
@@ -396,5 +411,8 @@ ol.podcast-page__playlist {
     }
     .info-box__show-description {
         padding-bottom: 20px;
+    }
+    .podcast-page__play-btn {
+        width: 90px;
     }
 }

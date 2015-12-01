@@ -9,7 +9,6 @@ Template.podcastPage.onCreated(function () {
     // It's undefined for one of those loads, which causes meteor to crash.
     // Thus, the conditional.
     if (podcast) {
-      console.log(podcast._id);
       self.subscribe('comments', podcast._id);
     }
   })
@@ -32,20 +31,44 @@ Template.podcastPage.helpers({
 
 Template.podcastPage.events({
   'click .podcast-page__play-btn': function (event) {
-    // event.preventDefault();
-    // var mp3Url = $(event.currentTarget).attr('href');
-    // console.dir('mp3Url: ' + mp3Url);
-    // var sound = Session.get('sound');
-    // if (!sound) {
-    //   sound = new Howl({
-    //     buffer: true,
-    //     src: [mp3Url]
-    //   });
-    //   Session.set('sound', sound);
-    // }
-    // else {
-    //   sound.src = [mp3Url];
-    // }
-    // sound.play();
+    event.preventDefault();
+    var mp3Url = $(event.currentTarget).data('path');
+    var nowPlaying = Session.get('nowPlaying');
+    
+    if (player === null) {
+      player = new Howl({
+        src: [mp3Url],
+        onEnd: function() {
+          $('.nav__play-img').attr('src', '/img/play-top.png');
+          $('.podcast-page__play-btn').attr('src', '/img/play.png')
+        }
+      });
+      nowPlaying = mp3Url;
+      Session.set('nowPlaying', mp3Url);
+    }
+
+    if (player && nowPlaying != mp3Url) {
+      player.unload();
+      player = new Howl({
+        src: [mp3Url],
+        onEnd: function() {
+          $('.nav__play-img').attr('src', '/img/play-top.png');
+          $('.podcast-page__play-btn').attr('src', '/img/play.png')
+        }
+      });
+    }
+
+    if (player.playing()) {
+      player.pause();
+      $(event.currentTarget).attr('src', '/img/play.png')
+      $('.nav__play-img').attr('src', '/img/play-top.png');
+    } else {
+      player.play();
+      Session.set('nowPlaying', mp3Url);
+      $('.nav__play-btn').data('link', mp3Url); 
+      $('.podcast-page__play-btn').attr('src', '/img/play.png')
+      $(event.currentTarget).attr('src', '/img/pause.png')
+      $('.nav__play-img').attr('src', '/img/pause-top.png');
+    }
   }
 });
