@@ -3,17 +3,7 @@ Template.podcastPage.onCreated(function () {
   self.autorun(function() {
     var epNum = FlowRouter.getParam('episodeNumber');
     self.subscribe('podcast', epNum);
-    self.subscribe('playlist', epNum, {
-      onReady: function () {
-        var epNum = FlowRouter.getParam('episodeNumber');
-        var path = Podcasts.findOne({ episodeNumber: Number(epNum) }).mp3;
-        var nowPlaying = Session.get('nowPlaying');
-
-        if (player && (path == nowPlaying) && !player.paused) {
-          $('.podcast-page__play-btn').attr('src', '/img/pause.png');
-        }
-      }
-    });
+    self.subscribe('playlist', epNum);
     // This findOperation runs twice on page load for unknown reasons.
     var podcast = Podcasts.findOne();
     // It's undefined for one of those loads, which causes meteor to crash.
@@ -22,9 +12,6 @@ Template.podcastPage.onCreated(function () {
       self.subscribe('comments', podcast._id);
     }
   })
-});
-
-Template.podcastPage.onRendered(function () {
 });
 
 Template.podcastPage.helpers({
@@ -39,6 +26,18 @@ Template.podcastPage.helpers({
   comments: function() {
     var epNum = FlowRouter.getParam('episodeNumber');
     return Comments.find({episodeNumber: Number(epNum)});
+  },
+  buttonImage: function () {
+    var epNum = FlowRouter.getParam('episodeNumber');
+    var podcast = Podcasts.findOne({ episodeNumber: Number(epNum)})            
+    var nowPlaying = Session.get(nowPlaying);
+
+    console.log(podcast.mp3 == nowPlaying);
+    if (player && !player.paused && (podcast.mp3 == nowPlaying)) {
+      return '/img/pause.png'
+    } else {
+      return '/img/play.png'
+    }
   }
 });
 
@@ -55,10 +54,10 @@ Template.podcastPage.events({
 
     if (player.paused) {
       player.play();
-      $(event.currentTarget).attr('src', '/img/pause.png');
+      // $(event.currentTarget).attr('src', '/img/pause.png');
     } else {
       player.pause();
-      $(event.currentTarget).attr('src', '/img/play.png');
+      // $(event.currentTarget).attr('src', '/img/play.png');
     }
   }
 });

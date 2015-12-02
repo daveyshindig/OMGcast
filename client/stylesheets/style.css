@@ -59,6 +59,14 @@ img {
 .navbar .navbar-inner {
     border-radius: 0;
 }
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+    color: #333;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav > li > a:hover {
+    color: #777;
+}
 .nav__play-img {
     max-height: 12px;
     width: auto;
@@ -259,6 +267,9 @@ ol.podcast-page__playlist {
 .comment__date {
     font-weight: normal;
 }
+.post {
+    padding: 0 15px;
+}
 .dropdown-menu span {
     display: block;
     padding: 3px 20px;
@@ -304,6 +315,7 @@ ol.podcast-page__playlist {
     max-width: 80px;
     height: auto;
 }
+
 .errors {
     position: fixed;
     z-index: 10000;
@@ -412,9 +424,9 @@ div.audio-player {
   position: absolute;
   display: none;
   width: 33px;
-  height: 23px;
-  top: -26px;
-  margin-left: -17px;
+  height: 16px;
+  top: -23px;
+  margin-left: -20px;
   z-index: 9999;
   background: url('/img/time-box.png');
 }
@@ -422,10 +434,10 @@ div.audio-player {
 .mejs-controls .mejs-time-rail .mejs-time-float-current {
   width: 33px;
   display: block;
-  left: 0;
-  top: 4px;
+  left: -3px;
+  top: 0;
   font-family: 'Sweden Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: bold;
   color: #666;
   text-align: center;

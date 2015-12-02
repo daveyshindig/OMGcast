@@ -1,6 +1,8 @@
 <template name='newsItem'>
-  {{#with post}}
-    <h1>{{title}}</h1>
-    <div>{{{body}}}</div>
-  {{/with}}
+  <div class='post'>
+    {{#with post}}
+      <h1>{{title}}</h1>
+      <div>{{{body}}}</div>
+    {{/with}}
+  </div>
 </template>
