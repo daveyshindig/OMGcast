@@ -3,7 +3,17 @@ Template.podcastPage.onCreated(function () {
   self.autorun(function() {
     var epNum = FlowRouter.getParam('episodeNumber');
     self.subscribe('podcast', epNum);
-    self.subscribe('playlist', epNum);
+    self.subscribe('playlist', epNum, {
+      onReady: function () {
+        var epNum = FlowRouter.getParam('episodeNumber');
+        var path = Podcasts.findOne({ episodeNumber: Number(epNum) }).mp3;
+        var nowPlaying = Session.get('nowPlaying');
+
+        if (player && (path == nowPlaying) && !player.paused) {
+          $('.podcast-page__play-btn').attr('src', '/img/pause.png');
+        }
+      }
+    });
     // This findOperation runs twice on page load for unknown reasons.
     var podcast = Podcasts.findOne();
     // It's undefined for one of those loads, which causes meteor to crash.
@@ -12,6 +22,9 @@ Template.podcastPage.onCreated(function () {
       self.subscribe('comments', podcast._id);
     }
   })
+});
+
+Template.podcastPage.onRendered(function () {
 });
 
 Template.podcastPage.helpers({
