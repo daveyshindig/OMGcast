@@ -3,14 +3,13 @@ Template.podcastPage.onCreated(function () {
   self.autorun(function() {
     var epNum = FlowRouter.getParam('episodeNumber');
     self.subscribe('podcast', epNum);
-    self.subscribe('playlist', epNum);
-    // This findOperation runs twice on page load for unknown reasons.
-    var podcast = Podcasts.findOne();
-    // It's undefined for one of those loads, which causes meteor to crash.
-    // Thus, the conditional.
-    if (podcast) {
-      self.subscribe('comments', podcast._id);
-    }
+    self.subscribe('playlist', epNum, {
+      onReady: function () {
+        var podcast = Podcasts.findOne({ episodeNumber: Number(epNum) });
+        console.log(epNum);
+        self.subscribe('comments', podcast._id);
+      }
+    });
   })
 });
 
@@ -24,15 +23,13 @@ Template.podcastPage.helpers({
     return Playlists.findOne({episodeNumber: Number(epNum)});
   },
   comments: function() {
-    var epNum = FlowRouter.getParam('episodeNumber');
-    return Comments.find({episodeNumber: Number(epNum)});
+    return Comments.find();
   },
   buttonImage: function () {
     var epNum = FlowRouter.getParam('episodeNumber');
-    var podcast = Podcasts.findOne({ episodeNumber: Number(epNum)})            
+    var podcast = Podcasts.findOne({ episodeNumber: Number(epNum)});
     var nowPlaying = Session.get(nowPlaying);
 
-    console.log(podcast.mp3 == nowPlaying);
     if (player && !player.paused && (podcast.mp3 == nowPlaying)) {
       return '/img/pause.png'
     } else {
