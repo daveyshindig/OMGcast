@@ -90,7 +90,6 @@ img {
     left: 0;
     bottom: 0;
     right: 0;
-    width: inherit;
     padding: 20px 15px;
 }
 .info-box__content p {
@@ -131,14 +130,6 @@ img {
     padding: 0;
     box-shadow: none;
     border-radius: 0;
-}
-.podcast:before,
-.podcast:after {
-    content: "";
-    display: table;
-}
-.podcast:after {
-    clear: both;
 }
 .podcast.invisible {
     opacity: 0;

@@ -1,6 +1,6 @@
 <template name='podcastsList'>
-  <div class='podcasts'> 
-  <div class='info-box'>
+  <div class='podcasts'>
+  <div class='info-box podcast'>
     <div class='info-box__content'>
       <a href='{{newsPage}}'><img class='logo-img' src='/img/808-mixtapes-logo.jpg'></a>
       <div class='info-box__social'>
@@ -16,6 +16,9 @@
     {{#each podcasts}}
       {{> podcastItem}}
     {{/each}}
+    <script>
+      $('.podcasts').masonry({ itemSelector: '.podcast' });
+    </script>
   {{else}}
     {{> spinner}}
   {{/if}}
