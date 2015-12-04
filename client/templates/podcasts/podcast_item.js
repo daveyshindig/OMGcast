@@ -8,13 +8,9 @@ Template.podcastItem.helpers({
     var epNum = { episodeNumber: episodeNumber };
     return FlowRouter.path('podcastPage', epNum);
   },
-  mp3Url: function (episodeNumber) {
-    var epNum = { episodeNumber: episodeNumber };
-    var podcast = Podcasts.findOne(epNum);
-    return podcast.mp3;
-  },
-  playButton: function(episodeNumber) {
-    return (Session.get('nowPlaying') == episodeNumber) ? '/img/pause.png' : '/img/play.png';
+  isPlaying: function(mp3) {
+    var isPlaying = Session.get('nowLoaded') == mp3 && !Session.get('paused');
+    return isPlaying;
   }
 });
 
@@ -33,20 +29,17 @@ Template.podcastItem.events({
   'click .podcast__play-btn': function (event) {
     event.preventDefault();
     var mp3Url = $(event.currentTarget).data('path');
-    var nowPlaying = Session.get('nowPlaying');
+    var nowLoaded = Session.get('nowLoaded');
 
-    if (nowPlaying != mp3Url) {
+    if (nowLoaded != mp3Url) {
       player.setSrc(mp3Url);
-      Session.set('nowPlaying', mp3Url);
+      Session.set('nowLoaded', mp3Url);
     }
 
     if (player.paused) {
       player.play();
-      $('.podcast__play-btn').attr('src', '/img/play.png');
-      $(event.currentTarget).attr('src', '/img/pause.png');
     } else {
       player.pause();
-      $(event.currentTarget).attr('src', '/img/play.png');
     }
   }
 });

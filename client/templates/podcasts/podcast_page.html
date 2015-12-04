@@ -6,7 +6,7 @@
           <div class='podcast-page__box-1'>
             <div class='podcast-page__cover-div'>
               <img class='podcast-page__cover-img' src='{{coverImage}}'>
-              <img class='podcast-page__play-btn' data-path='{{mp3}}' src='{{buttonImage}}'>
+              <img class='podcast-page__play-btn' data-path='{{mp3}}' src={{#if isPlaying mp3}}/img/pause.png{{else}}/img/play.png{{/if}}>
             </div>
             <div class='podcast-page__info'>
               <span class='podcast-page__title'>{{title}}</span><br>
