@@ -1,0 +1,17 @@
+<template name="search">
+  <div class='dig'>
+    {{> EasySearch.Input index=podcastsIndex}}
+
+    <ul>
+      {{#EasySearch.Each index=podcastsIndex}}
+        <li>{{title}}</li>
+      {{/EasySearch.Each}}
+    </ul>
+
+    {{> EasySearch.LoadMore index=podcastsIndex}}
+
+    {{#EasySearch.IfNoResults index=podcastsIndex}}
+      <div class="no-results">No results found!</div>
+    {{/EasySearch.IfNoResults}}
+  </div>
+</template>

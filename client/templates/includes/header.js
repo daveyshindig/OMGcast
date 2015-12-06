@@ -48,5 +48,10 @@ Template.header.events({
   'click .nav-item': function (event) {
     $('.nav-item').removeClass('active');
     $(event.currentTarget).addClass('active');
+  },
+  'click .dig__icon': function (event) {
+    var $dig = $('.dig');
+    $dig.is(':hidden') ? $dig.slideDown('fast')
+                       : $dig.slideUp('fast');
   }
 });
