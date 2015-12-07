@@ -6,7 +6,6 @@ Template.podcastPage.onCreated(function () {
     self.subscribe('playlist', epNum, {
       onReady: function () {
         var podcast = Podcasts.findOne({ episodeNumber: Number(epNum) });
-        console.log(epNum);
         self.subscribe('comments', podcast._id);
       }
     });

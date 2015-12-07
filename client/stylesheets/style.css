@@ -339,7 +339,6 @@ ol.podcast-page__playlist {
   border: none;
   outline: none;
 }
-
 div.audio-player {
   position: relative;
   width: 165px;
@@ -347,13 +346,11 @@ div.audio-player {
   margin: 7px 5px 0 0;
   padding: 15px;
 }
-
 .mejs-container,
 .mejs-container .mejs-controls {
     background: none;
     background-image: none;
 }
-
 .mejs-offscreen { display: none !important; }
 
 /* play/pause control */
@@ -366,7 +363,6 @@ div.audio-player {
   height: 13px;
   background: url('/img/playpause.png') no-repeat scroll;
 }
-
 .mejs-controls .mejs-pause button { background-position: 0 -12px; }
 
 /* time scrubber bar */
@@ -382,7 +378,6 @@ div.audio-player {
   left: 25px;
   cursor: pointer;
 }
-
 .mejs-controls .mejs-time-rail .mejs-time-total {
   background: #000;
   width: 110px !important; /* fixes display bug using jQuery 1.8+ */
@@ -409,7 +404,6 @@ div.audio-player {
   top: -4px;
   background: url('/img/handle-lg.png') no-repeat;
 }
-
 /* time progress tooltip */
 .mejs-controls .mejs-time-rail .mejs-time-float {
   position: absolute;
@@ -421,7 +415,6 @@ div.audio-player {
   z-index: 9999;
   background: url('/img/time-box.png');
 }
-
 .mejs-controls .mejs-time-rail .mejs-time-float-current {
   width: 33px;
   display: block;
@@ -434,7 +427,14 @@ div.audio-player {
   text-align: center;
   z-index: 9999;
 }
-
+.dig {
+    display: none;
+    padding: 0 15px;
+}
+.dig__icon { 
+    max-width: 20px;
+    margin: 15px 6px;
+}
 
 @-webkit-keyframes fadeOut {
     0% {
