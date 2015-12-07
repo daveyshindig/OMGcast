@@ -12,7 +12,12 @@ Meteor.publish('podcast', function (epNum) {
 });
 
 Meteor.publish('latestPodcast', function () {
-  return Podcasts.find({}, {sort: {episodeNumber: -1}, limit: 1});
+  return Podcasts.find({}, { sort: {episodeNumber: -1}, limit: 1 });
+});
+
+
+Meteor.publish('podcasts', function(options) {
+  return Podcasts.find({}, {fields: {tags: 1}})
 });
 
 Meteor.publish('playlist', function (epNum) {
@@ -45,3 +50,4 @@ Meteor.publish('singlePost', function (slug) {
   check(slug, String);
   return Posts.find({slug: slug});
 });
+

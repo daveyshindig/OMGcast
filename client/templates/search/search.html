@@ -1,17 +1,23 @@
 <template name="search">
   <div class='dig'>
-    {{> EasySearch.Input index=podcastsIndex}}
-
-    <ul>
+    <div class='dig__text-box'>
+      <button class='dig__hash-btn'><img src='/img/hash.png'></button>
+      {{> EasySearch.Input index=podcastsIndex}}
+      
+    </div>
+    <div class='dig__results'>
       {{#EasySearch.Each index=podcastsIndex}}
-        <li>{{title}}</li>
+        <div class='dig__result'>
+          <a class='dig__link' href='/podcast/{{episodeNumber}}'><img src='{{coverImage}}'></a>
+        </div>
       {{/EasySearch.Each}}
-    </ul>
 
-    {{> EasySearch.LoadMore index=podcastsIndex}}
+      {{> EasySearch.LoadMore index=podcastsIndex}}
 
-    {{#EasySearch.IfNoResults index=podcastsIndex}}
-      <div class="no-results">No results found!</div>
-    {{/EasySearch.IfNoResults}}
+      {{#EasySearch.IfNoResults index=podcastsIndex}}
+        <div class="no-results">No results found.</div>
+      {{/EasySearch.IfNoResults}}
+    </div>
   </div>
+  <div class='clear'></div>
 </template>
