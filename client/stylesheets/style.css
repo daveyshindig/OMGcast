@@ -115,8 +115,7 @@ img {
 .podcasts {
     display: flex;
     flex-flow: row wrap;
-    align-content: stretch;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 .podcast {
     /* For modern browsers */
@@ -429,13 +428,27 @@ div.audio-player {
 }
 .dig {
     display: none;
-    padding: 0 15px;
+    padding: 0 15px 10px;
 }
 .dig__icon { 
-    max-width: 20px;
-    margin: 15px 6px;
+    max-width: 14px;
+    margin: 18px 6px;
+    cursor: pointer;
 }
-
+.dig__hash-btn {
+    position: relative;
+    top: 0;
+    width: 30px;
+    height: 30px;
+}
+.dig__text-box input {
+    position: relative;
+    left: 5px; top: 1px;
+    height: 30px;
+}
+.dig__no-results { 
+    margin-left: 15px;
+}
 @-webkit-keyframes fadeOut {
     0% {
         opacity: 0;

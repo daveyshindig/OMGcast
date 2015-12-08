@@ -1,26 +1,32 @@
 <template name='podcastsList'>
-  <div class='podcasts'>
-  <div class='info-box podcast'>
-    <div class='info-box__content'>
-      <a href='{{newsPage}}'><img class='logo-img' src='/img/808-mixtapes-logo.jpg'></a>
-      <div class='info-box__social'>
-        <a href='mailto:davey@ktuh.org'><img src='/img/email.png'></a>
-        <a href='http://808mixtapes.tumblr.com'><img src='/img/tumblr.png'></a>
-        <a href='http://twitter.com/daveyshindig'><img src='/img/twitter.png'></a>
-        <a href='http://facebook.com/davey.shindig'><img src='/img/facebook.png'></a>
-      </div>
-      <p class='info-box__show-description'>808 MIXTAPES is a radio show and mixtape series that showcases local DJs, as well as those who visit Hawaii. Listen to it live, Fridays 6-9pm, on <a href='http://ktuh.org/'>KTUH 90.3 FM Honolulu, 91.3 FM North Shore.</a> Or listen to the complete mix series here.</p>
-    </div>
+  <div class='dig dig__text-box'>
+    <button class='dig__hash-btn'><img src='/img/hash.png'></button>
+    {{> EasySearch.Input index=podcastsIndex timeout=200}}
+    {{#EasySearch.IfNoResults index=podcastsIndex}}
+      <span class="dig__no-results">No results found.</span>
+    {{/EasySearch.IfNoResults}}
   </div>
-  {{#if Template.subscriptionsReady}}
-    {{#each podcasts}}
+  <div class='clear'></div>
+  <div class='podcasts'>
+    <div class='info-box podcast'>
+      <div class='info-box__content'>
+        <a href='{{newsPage}}'><img class='logo-img' src='/img/808-mixtapes-logo.jpg'></a>
+        <div class='info-box__social'>
+          <a href='mailto:davey@ktuh.org'><img src='/img/email.png'></a>
+          <a href='http://808mixtapes.tumblr.com'><img src='/img/tumblr.png'></a>
+          <a href='http://twitter.com/daveyshindig'><img src='/img/twitter.png'></a>
+          <a href='http://facebook.com/davey.shindig'><img src='/img/facebook.png'></a>
+        </div>
+        <p class='info-box__show-description'>808 MIXTAPES is a radio show and mixtape series that showcases local DJs, as well as those who visit Hawaii. Listen to it live, Fridays 6-9pm, on <a href='http://ktuh.org/'>KTUH 90.3 FM Honolulu, 91.3 FM North Shore.</a> Or listen to the complete mix series here.</p>
+      </div>
+    </div>
+    {{#EasySearch.Each index=podcastsIndex}}
       {{> podcastItem}}
-    {{/each}}
-    <script>
+    {{/EasySearch.Each}}
+
+    {{> EasySearch.LoadMore index=podcastsIndex}}
+    <script type="text/javascript">
       $('.podcasts').masonry({ itemSelector: '.podcast' });
     </script>
-  {{else}}
-    {{> spinner}}
-  {{/if}}
   </div>
 </template>
