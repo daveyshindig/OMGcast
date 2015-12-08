@@ -1,6 +1,4 @@
 Template.podcastItem.onRendered(function () {
-    $('.podcasts').masonry('destroy');
-    $('.podcasts').masonry({ itemSelector: '.podcast' });
 });
 
 Template.podcastItem.helpers({

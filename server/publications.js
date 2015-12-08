@@ -15,11 +15,6 @@ Meteor.publish('latestPodcast', function () {
   return Podcasts.find({}, { sort: {episodeNumber: -1}, limit: 1 });
 });
 
-
-Meteor.publish('podcasts', function(options) {
-  return Podcasts.find({}, {fields: {tags: 1}})
-});
-
 Meteor.publish('playlist', function (epNum) {
   check(epNum, String);
   return Playlists.find({ episodeNumber: Number(epNum) });
