@@ -33,9 +33,9 @@ Template.header.onRendered(function () {
 });
 
 Template.header.helpers({
-  latest: function () {
-    return Podcasts.findOne();
-  }
+  aboutPage: () => FlowRouter.path('aboutPage'),
+  newsPage: () => FlowRouter.path('news'),
+  latest: () => Podcasts.findOne()
 });
 
 Template.header.events({
@@ -45,13 +45,9 @@ Template.header.events({
     var nowLoaded = Session.get('nowLoaded');
     Session.set('nowLoaded', mp3Url);
   },
-  'click .nav-item': function (event) {
-    $('.nav-item').removeClass('active');
-    $(event.currentTarget).addClass('active');
-  },
   'click .dig__icon': function (event) {
-    var $dig = $('.dig');
-    $dig.is(':hidden') ? $dig.slideDown('fast')
-                       : $dig.slideUp('fast');
+    if (FlowRouter.getRouteName() != 'home')
+      FlowRouter.go('/');
+      Session.set('isSearching', !Session.get('isSearching'));
   }
 });

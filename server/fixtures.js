@@ -37,7 +37,7 @@ if (Podcasts.find().count() === 0) {
     commentCount: 0,
     tags: ['house', 'disco', 'electro-pop']
   });
- 
+
   Podcasts.insert({
     title: '808 Mixtapes — v. 19',
     mp3: '/audio/ff.mp3',
@@ -53,7 +53,7 @@ if (Podcasts.find().count() === 0) {
     title: '808 Mixtapes — v. 95',
     mp3: '/audio/ff.mp3',
     episodeNumber: '95',
-    host: 'Davey Shindig',
+    host: 'Haircuts for Men',
     coverImage: '/img/coverart/808-mixtapes-vol-95.jpg',
     userId: davey._id,
     commentCount: 0,
@@ -64,7 +64,7 @@ if (Podcasts.find().count() === 0) {
     title: '808 Mixtapes — v. 96',
     mp3: '/audio/ff.mp3',
     episodeNumber: '96',
-    host: 'Davey Shindig',
+    host: 'Jon Jon',
     coverImage: '/img/coverart/808-mixtapes-vol-96.jpg',
     userId: davey._id,
     commentCount: 0,
@@ -75,7 +75,7 @@ if (Podcasts.find().count() === 0) {
     title: '808 Mixtapes — v. 97',
     mp3: '/audio/ff.mp3',
     episodeNumber: '97',
-    host: 'Davey Shindig',
+    host: 'Weaver Beats',
     coverImage: '/img/coverart/808-mixtapes-vol-97.jpg',
     userId: davey._id,
     commentCount: 0,
@@ -86,7 +86,7 @@ if (Podcasts.find().count() === 0) {
     title: '808 Mixtapes — v. 098',
     mp3: '/audio/ff.mp3',
     episodeNumber: '098',
-    host: 'Davey Shindig',
+    host: 'The ADHDJ',
     coverImage: '/img/coverart/808-mixtapes-vol-098.jpg',
     userId: davey._id,
     commentCount: 0,
@@ -97,7 +97,7 @@ if (Podcasts.find().count() === 0) {
     title: '808 Mixtapes — v. 100',
     mp3: '/audio/ff.mp3',
     episodeNumber: '100',
-    host: 'Davey Shindig',
+    host: 'MEDS',
     coverImage: '/img/coverart/808-mixtapes-vol-100.jpg',
     userId: davey._id,
     commentCount: 0,
@@ -123,7 +123,7 @@ if (Podcasts.find().count() === 0) {
     coverImage: '/img/coverart/808-mixtapes-vol-102.jpg',
     userId: davey._id,
     commentCount: 0,
-    tags: ['dream-pop', 'chillwave']    
+    tags: ['dream-pop', 'chillwave']
   });
 
   Podcasts.insert({
@@ -141,7 +141,7 @@ if (Podcasts.find().count() === 0) {
     title: '808 Mixtapes — v. 104',
     mp3: '/audio/BirdMachine.mp3',
     episodeNumber: '104',
-    host: 'Davey Shindig',
+    host: 'Ashan & Partius',
     coverImage: '/img/coverart/808-mixtapes-vol-104.jpg',
     userId: davey._id,
     commentCount: 0,
@@ -244,7 +244,7 @@ if (Podcasts.find().count() === 0) {
     postId: postId,
     userId: davey._id,
     author: davey.profile.name,
-    submitted: new Date(now - 5 * 3600 * 1000), 
+    submitted: new Date(now - 5 * 3600 * 1000),
     body: 'Nice mix obvz!'
   });
 
@@ -252,14 +252,14 @@ if (Podcasts.find().count() === 0) {
     postId: postId,
     userId: davey._id,
     author: davey.profile.name,
-    submitted: new Date(now - 3 * 3600 * 1000), 
+    submitted: new Date(now - 3 * 3600 * 1000),
     body: 'I\'m replying to myself!'
   });
 
   Posts.insert({
     userId: davey._id,
     author: davey.profile.name,
-    submitted: new Date(now - 3 * 3600 * 1000), 
+    submitted: new Date(now - 3 * 3600 * 1000),
     title: 'Wonderful News!',
     body: 'Wonderful news! It\'s so great. Etc etc blah blah',
     slug: 'wonderful-news'
@@ -268,7 +268,7 @@ if (Podcasts.find().count() === 0) {
   Posts.insert({
     userId: davey._id,
     author: davey.profile.name,
-    submitted: new Date(now - 3 * 3600 * 1000), 
+    submitted: new Date(now - 3 * 3600 * 1000),
     title: 'Add\'l Good News',
     body: 'More news! It\'s also great. Etc etc blah blah',
     slug: 'addl-good-news'

@@ -76,7 +76,7 @@ img {
 }
 .info-box {
     float: left;
-    width: 33.33%;
+    width: calc(33.33% - 1px);
     padding: 0;
 }
 .info-box:before {
@@ -95,17 +95,13 @@ img {
 .info-box__content p {
     line-height: 1.4em;
 }
-.info-box__social { 
+.info-box__social {
     margin: auto;
     padding: 12px 0;
     max-width: 66.66%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
 }
-.info-box__social a {
-    flex-basis: auto;
-    max-width: 25%;
+.info-box__social img {
+    max-width: 23%;
 }
 .logo-img {
     max-width: 100%;
@@ -118,12 +114,9 @@ img {
     justify-content: flex-start;
 }
 .podcast {
-    /* For modern browsers */
-    /* For IE 6/7 (trigger hasLayout) */
-    *zoom: 1;
     position: relative;
     opacity: 1;
-    width: 33.33333%;
+    width: calc(33.33333% - 1px);
     border: 0;
     margin: 0;
     padding: 0;
@@ -367,7 +360,7 @@ div.audio-player {
 /* time scrubber bar */
 .mejs-controls div.mejs-time-rail { width: 130px; }
 
-.mejs-controls .mejs-time-rail a, 
+.mejs-controls .mejs-time-rail a,
 .mejs-controls .mejs-time-rail span {
   position: absolute;
   display: block;
@@ -430,7 +423,7 @@ div.audio-player {
     display: none;
     padding: 0 15px 10px;
 }
-.dig__icon { 
+.dig__icon {
     max-width: 14px;
     margin: 18px 6px;
     cursor: pointer;
@@ -446,7 +439,7 @@ div.audio-player {
     left: 5px; top: 1px;
     height: 30px;
 }
-.dig__no-results { 
+.dig__no-results {
     margin-left: 15px;
 }
 @-webkit-keyframes fadeOut {
@@ -481,7 +474,7 @@ div.audio-player {
 @media (min-width: 1200px) {
     .info-box,
     .podcast {
-        width: 25%;
+        width: calc(25% - 1px);
     }
 }
 @media (min-width: 992px) {
@@ -498,7 +491,7 @@ div.audio-player {
     }
 }
 @media (min-width: 768px) {
-    .podcast__link { 
+    .podcast__link {
         font-size: 18px;
     }
     .podcast__view-btn__img,
@@ -507,11 +500,14 @@ div.audio-player {
         height: 45px;
         width: 45px;
     }
+    .dig__icon {
+        margin-left: 15px;
+    }
 }
 @media (max-width: 666px) {
     .info-box,
     .podcast {
-        width: 50%;
+        width: calc(50% - 1px);
     }
     .podcast-page__play-btn {
         width: 120px;
@@ -524,6 +520,12 @@ div.audio-player {
     }
 }
 @media (max-width: 430px) {
+    .info-box:before {
+        padding-top: 0%;
+    }
+    .info-box__content {
+        position: static;
+    }
     .info-box,
     .podcast {
         width: 100%;

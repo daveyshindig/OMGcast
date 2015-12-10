@@ -1,6 +1,4 @@
 Template.podcastsList.helpers({
-  aboutPage: function () {
-    return FlowRouter.path('aboutPage');
-  },
-  podcastsIndex: () => PodcastsIndex // instanceof EasySearch.Index
+  podcastsIndex: () => PodcastsIndex, // instanceof EasySearch.Index
+  isSearching: () => Session.get('isSearching')
 });
