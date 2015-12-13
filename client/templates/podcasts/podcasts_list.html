@@ -1,11 +1,20 @@
 <template name='podcastsList'>
   {{#if isSearching}}
-    <div class='dig dig__text-box'>
-      <button class='dig__hash-btn'><img src='/img/hash.png'></button>
-      {{> EasySearch.Input index=podcastsIndex timeout=200}}
-      {{#EasySearch.IfNoResults index=podcastsIndex}}
-        <span class="dig__no-results">No results found.</span>
-      {{/EasySearch.IfNoResults}}
+    <div class='dig'>
+      <div class='dig__text-box'>
+        <button class='dig__hash-btn'><img src='/img/hash.png'></button>
+        {{> EasySearch.Input index=podcastsIndex timeout=300}}
+        {{#EasySearch.IfNoResults index=podcastsIndex}}
+          <span class="dig__no-results">No results found.</span>
+        {{/EasySearch.IfNoResults}}
+      </div>
+      {{#if hashesOpen}}
+        <div class='dig__hash-box'>
+          {{#each hashes}}
+            <button class='dig__hash'>#{{this}}</button>{{#if moreHashes}}<button class='dig__more-hashes'>More</button>{{/if}}
+          {{/each}}
+        </div>
+      {{/if}}
     </div>
   {{/if}}
   <div class='clear'></div>
@@ -27,9 +36,4 @@
     {{/EasySearch.Each}}
   </div>
     {{> EasySearch.LoadMore index=podcastsIndex}}
-  <script type="text/javascript">
-    $('.podcasts').masonry({
-      itemSelector: '.podcast'
-    });
-  </script>
 </template>

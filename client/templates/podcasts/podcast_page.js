@@ -9,7 +9,7 @@ Template.podcastPage.onCreated(function () {
         self.subscribe('comments', podcast._id);
       }
     });
-  })
+  });
 });
 
 Template.podcastPage.helpers({

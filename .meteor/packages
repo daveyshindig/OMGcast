@@ -30,6 +30,5 @@ orionjs:relationships
 check
 audit-argument-checks
 delgermurun:mediaelementjs
-mrt:jquery-masonry
 easy:search
 iamkevingreen:imagesloaded

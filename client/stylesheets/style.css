@@ -442,6 +442,13 @@ div.audio-player {
 .dig__no-results {
     margin-left: 15px;
 }
+.dig__hash-box {
+    padding: 10px 0 0;
+}
+.dig__hash {
+    padding: 5px;
+    border: 1px #333;
+}
 @-webkit-keyframes fadeOut {
     0% {
         opacity: 0;

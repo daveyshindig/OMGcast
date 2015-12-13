@@ -1,6 +1,6 @@
 <template name='podcastItem'>
   <div class='podcast'>
-    <img class='podcast__cover-img' src='{{coverImage}}' />
+    <img class='podcast__cover-img' src='{{coverImage}}'>
     <div class='hidden podcast__overlay'>
       <a class='podcast__link' href='{{podcastPage episodeNumber}}'><h3>{{title}}<br><small>mixed by</small><br>{{host}}</h3></a>
       <div class='podcast__controls'>
@@ -9,9 +9,4 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript">
-    $('.podcast').imagesLoaded(function() {
-      $('.podcasts').masonry('reload');
-    });
-  </script>
 </template>

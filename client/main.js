@@ -6,4 +6,6 @@ window.addEventListener('resize', function() {
   $('.podcasts').masonry('reload');
 });
 
+Session.set('hashesOpen', false);
 Session.set('isSearching', false);
+Session.set('numTags', 10);

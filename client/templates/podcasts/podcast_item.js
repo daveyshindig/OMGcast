@@ -1,3 +1,10 @@
+Template.podcastItem.onRendered(function () {  
+  $('.podcast').imagesLoaded(function() {
+    $('.podcasts').masonry('reloadItems')
+                  .masonry('layout');
+  });
+});
+
 Template.podcastItem.helpers({
   domain: function () {
     var a = document.createElement('a');

@@ -33,7 +33,7 @@ Template.header.onRendered(function () {
 });
 
 Template.header.helpers({
-  aboutPage: () => FlowRouter.path('aboutPage'),
+  aboutPage: () => FlowRouter.path('about'),
   newsPage: () => FlowRouter.path('news'),
   latest: () => Podcasts.findOne()
 });
