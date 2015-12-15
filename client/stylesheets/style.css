@@ -23,6 +23,18 @@
 
 }
 
+/* Search icon by IcoMoon, made with http://icomoon.io/app/ */
+@font-face {
+    font-family: 'icomoon';
+    src:url('/fonts/icomoon.eot');
+    src:url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/icomoon.woff') format('woff'),
+        url('/fonts/icomoon.ttf') format('truetype'),
+        url('/fonts/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .grid-block,
 .main,
 .podcast,
@@ -261,14 +273,15 @@ ol.podcast-page__playlist {
     color: #bbb;
     white-space: nowrap;
 }
-.load-more {
+.load-more-button button {
     display: block;
+    height: 45px;
+    margin: 10px auto;
+    border: 1px solid #aaa;
     border-radius: 3px;
-    background: rgba(0, 0, 0, 0.05);
     text-align: center;
-    height: 60px;
-    line-height: 60px;
-    margin-bottom: 10px;
+    line-height: 45px;
+    background: none;
 }
 .load-more:hover {
     text-decoration: none;
@@ -364,7 +377,7 @@ div.audio-player {
 .mejs-controls .mejs-time-rail span {
   position: absolute;
   display: block;
-  width: 110px;
+  width: 75px;
   height: 2px;
   top: 7px;
   left: 25px;
@@ -372,7 +385,7 @@ div.audio-player {
 }
 .mejs-controls .mejs-time-rail .mejs-time-total {
   background: #000;
-  width: 110px !important; /* fixes display bug using jQuery 1.8+ */
+  width: 75px !important; /* fixes display bug using jQuery 1.8+ */
 }
 .mejs-controls .mejs-time-rail .mejs-time-loaded {
   top: 0;
@@ -423,6 +436,97 @@ div.audio-player {
     display: none;
     padding: 0 15px 10px;
 }
+.sb-search {
+    position: relative;
+    margin-top: 10px;
+    width: 0%;
+    min-width: 60px;
+    height: 60px;
+    float: right;
+    overflow: hidden;
+
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    transition: width 0.3s;
+
+    -webkit-backface-visibility: hidden;
+}
+.sb-search-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    outline: none;
+    background: #fff;
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    z-index: 10;
+    padding: 20px 65px 20px 20px;
+    font-family: inherit;
+    font-size: 20px;
+    color: #2c3e50;
+}
+input[type="search"].sb-search-input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+}
+.sb-search-input::-webkit-input-placeholder,
+.sb-search-input:-moz-placeholder,
+.sb-search-input::-moz-placeholder,
+.sb-search-input:-ms-input-placeholder {
+    color: #efb480;
+}
+.sb-icon-search,
+.sb-search-submit  {
+    width: 60px;
+    height: 60px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+}
+.sb-search-submit {
+    background: #fff; /* IE needs this */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+    filter: alpha(opacity=0); /* IE 5-7 */
+    opacity: 0;
+    color: transparent;
+    border: none;
+    outline: none;
+    z-index: -1;
+}
+.sb-icon-search {
+    color: #fff;
+    background: #e67e22;
+    z-index: 90;
+    font-size: 22px;
+    font-family: 'icomoon';
+    -webkit-font-smoothing: antialiased;
+}
+.sb-icon-search:before {
+    content: "\e000";
+}
+.sb-search.sb-search-open,
+.no-js .sb-search {
+    width: 100%;
+}
+.sb-search.sb-search-open .sb-icon-search,
+.no-js .sb-search .sb-icon-search {
+    background: #da6d0d;
+    color: #fff;
+    z-index: 11;
+}
+.sb-search.sb-search-open .sb-search-submit,
+.no-js .sb-search .sb-search-submit {
+    z-index: 90;
+}
+
 .dig__icon {
     max-width: 14px;
     margin: 18px 6px;
@@ -447,8 +551,24 @@ div.audio-player {
 }
 .dig__hash {
     padding: 5px;
+    margin-top: 3px;
     border: 1px #333;
 }
+
+.shindig__big-pic {
+    float: left;
+    margin-bottom: 10px;
+}
+.shindig__header {
+    margin-top: 0;
+}
+.shindig__bio-img {
+    float: left;
+    height: 40px;
+    padding: 3px 10px 0 0;
+}
+
+
 @-webkit-keyframes fadeOut {
     0% {
         opacity: 0;
@@ -482,6 +602,14 @@ div.audio-player {
     .info-box,
     .podcast {
         width: calc(25% - 1px);
+    }
+    .shindig__big-pic {
+        max-width: 50%;
+        padding: 0 15px 0 0;
+    }
+    .shindig__bio {
+        float: left;
+        max-width: 50%;
     }
 }
 @media (min-width: 992px) {

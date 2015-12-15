@@ -3,7 +3,7 @@ Template.podcastsList.onCreated(function() {
   self.autorun(function() {
     Meteor.subscribe('tags');
   })
-})
+});
 
 Template.podcastsList.onRendered(function () {
   var $podcasts = $('.podcasts');
