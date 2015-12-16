@@ -12,7 +12,7 @@
     <div class='collapse navbar-collapse' id='navigation'>
       <ul class='nav navbar-nav navbar-right'>
         <li class='{{activePage 'home' 'podcastPage'}} nav-item nav-item__mixes'>
-          <a href='/'>Mixes</a>
+          <a href='/'>Mix</a>
         </li>
         <li class='{{activePage 'news' 'newsPage'}} nav-item nav-item__news'><a href={{newsPage}}>News</a></li>
         <li class='nav-item'>
@@ -20,13 +20,8 @@
             <audio id='audio-player' src='/audio/Interlude1.mp3' type='audio/mp3' controls='controls'></audio>
           </div>
         </li>
-        <li id='sb-search' class='nav-item sb-search'>
-          <form>
-            <input class='sb-search-input' placeholder='Enter your search term...' type='search' value='' name='search' id='search'>
-            <input class='sb-search-submit' type='submit' value=''>
-            <span class='sb-icon-search'></span>
-          </form>
-          <!-- <img class='dig__icon' src='/img/search.png'> -->
+        <li class='nav-item'>
+          <img class='dig__icon' src='/img/search.png'>
         </li>
       {{> loginButtons}}
       </ul>

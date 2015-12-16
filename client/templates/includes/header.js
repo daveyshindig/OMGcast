@@ -46,8 +46,19 @@ Template.header.events({
     Session.set('nowLoaded', mp3Url);
   },
   'click .dig__icon': function (event) {
-    if (FlowRouter.getRouteName() != 'home')
+    var rerouted = false;
+
+    if (FlowRouter.getRouteName() != 'home') {
       FlowRouter.go('/');
-      Session.set('isSearching', !Session.get('isSearching'));
+      rerouted = true;
+    }
+
+    if (rerouted)
+      Session.set('isSearching', true);
+    else
+      Session.set('isSearching', Session.get('isSearching'));
+
+    $('.dig').toggleClass('hidden');
+    $('.dig__text-box input').focus();
   }
 });
