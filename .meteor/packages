@@ -33,3 +33,7 @@ delgermurun:mediaelementjs
 easy:search
 iamkevingreen:imagesloaded
 orionjs:summernote
+orionjs:image-attribute
+orionjs:s3
+orionjs:filesystem
+orionjs:file-attribute

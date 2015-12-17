@@ -54,6 +54,7 @@ jquery@1.11.4
 kadira:blaze-layout@2.2.0
 kadira:flow-router@2.8.0
 launch-screen@1.0.4
+lepozepo:s3@5.1.5
 less@2.5.1
 livedata@1.0.15
 localstorage@1.0.5
@@ -86,9 +87,12 @@ orionjs:collections@1.6.0
 orionjs:config@1.6.0
 orionjs:core@1.6.0
 orionjs:dictionary@1.6.0
+orionjs:file-attribute@1.6.0
 orionjs:filesystem@1.6.0
+orionjs:image-attribute@1.6.0
 orionjs:lang-en@1.6.0
 orionjs:relationships@1.6.0
+orionjs:s3@1.6.1
 orionjs:summernote@1.6.0
 peerlibrary:assert@0.2.5
 peerlibrary:base-component@0.10.0
