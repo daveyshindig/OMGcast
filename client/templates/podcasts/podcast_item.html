@@ -2,18 +2,20 @@
   <div class='podcast'>
     <img class='podcast__cover-img' src='{{coverImage}}'>
     <div class='hidden podcast__overlay'>
-      <div class='podcast__details hidden'>
-        <a class='podcast__link' href='{{podcastPage episodeNumber}}'><h3>{{title}}<br><small>mixed by</small><br>{{host}}</h3></a>
-        {{#with playlist}}
-          {{#each tracks}}
-            <li class='podcast-page__track'>
-            <b>{{artist}}</b>: '{{title}}'{{#if featuring}} [{{featuring}}]{{/if}}{{#if remix}} ({{remix}}){{/if}}{{#if label}} <small>({{label}})</small>{{/if}}</li>
-          {{/each}}
-        {{/with}}
-      </div>
       <div class='podcast__controls'>
         <img class='podcast__play-btn' data-path='{{mp3}}' src={{#if isPlaying mp3}}/img/pause.png{{else}}/img/play.png{{/if}}>
         <img class='podcast__view-btn' src='/img/view.png'>
+      </div>
+      <div class='podcast__details hidden'>
+        <a class='podcast__link' href='{{podcastPage episodeNumber}}'><h3>{{title}}<br><small>mixed by</small><br>{{host}}</h3></a>
+        {{#with playlist}}
+          <ol class='podcast__playlist'>
+          {{#each tracks}}
+            <li class='podcast__track'>
+            <b>{{artist}}</b>: '{{title}}'{{#if featuring}} [{{featuring}}]{{/if}}{{#if remix}} ({{remix}}){{/if}}{{#if label}} <small>({{label}})</small>{{/if}}</li>
+          {{/each}}
+          </ol>
+        {{/with}}
       </div>
     </div>
   </div>

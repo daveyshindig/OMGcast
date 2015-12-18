@@ -26,7 +26,9 @@ Template.podcastItem.helpers({
     var isPlaying = Session.get('nowLoaded') == mp3 && !Session.get('paused');
     return isPlaying;
   },
-  playlist: function () { Playlists.findOne(); }
+  playlist: function () {
+    return Playlists.findOne();
+  }
 });
 
 Template.podcastItem.events({
@@ -61,9 +63,11 @@ Template.podcastItem.events({
     var $podcast = $(event.target).closest('.podcast');
     var $details = $(event.target).parents('.podcast__overlay')
                                   .children('.podcast__details');
+    var $controls = $(event.target).parent('.podcast__controls');
 
-    $podcast.toggleClass('dbl-wide');
+    $podcast.toggleClass('podcast_dbl-wide');
     $details.toggleClass('hidden');
+    $controls.toggleClass('podcast__controls_move-up');
     $('.podcasts').masonry('layout');
   }
 });
