@@ -6,6 +6,11 @@ Template.newsItem.onCreated(function () {
   })
 });
 
+Template.newsItem.onRendered(function () {
+  var title = Posts.findOne().title;
+  Session.set('documentTitle', '808NEWS - ' + title);
+});
+
 Template.newsItem.helpers({
   post: function () {
     return Posts.findOne();

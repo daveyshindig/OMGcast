@@ -9,3 +9,4 @@ window.addEventListener('resize', function() {
 Session.set('hashesOpen', false);
 Session.set('isSearching', false);
 Session.set('numTags', 10);
+Session.set('documentTitle', '808MIX');

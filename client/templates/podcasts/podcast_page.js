@@ -12,6 +12,11 @@ Template.podcastPage.onCreated(function () {
   });
 });
 
+Template.podcastPage.onRendered(function () {
+  Session.set('documentTitle', '808MiX - v.' +
+              FlowRouter.getParam('episodeNumber'));
+});
+
 Template.podcastPage.helpers({
   podcast: function() {
     var epNum = FlowRouter.getParam('episodeNumber');

@@ -135,6 +135,9 @@ img {
     box-shadow: none;
     border-radius: 0;
 }
+.dbl-wide {
+    width: calc(66.66666% - 2px);
+}
 .podcast.invisible {
     opacity: 0;
 }
@@ -521,6 +524,9 @@ div.audio-player {
     .podcast {
         width: calc(25% - 1px);
     }
+    .dbl-wide {
+        width: calc(50% - 2px);
+    }
     .shindig__big-pic {
         max-width: 50%;
         padding: 0 15px 0 0;
@@ -567,6 +573,9 @@ div.audio-player {
     .podcast {
         width: calc(50% - 1px);
     }
+    .dbl-wide {
+        width: calc(100% - 2px);
+    }
     .podcast-page__play-btn {
         width: 120px;
     }
@@ -586,6 +595,9 @@ div.audio-player {
     }
     .info-box,
     .podcast {
+        width: 100%;
+    }
+    .dbl-wide {
         width: 100%;
     }
     .info-box__content {

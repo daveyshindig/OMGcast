@@ -162,83 +162,33 @@ if (Podcasts.find().count() === 0) {
 
   var podcasts = Podcasts.find().fetch();
 
-  Playlists.insert({
-    episodeNumber: podcasts[0].episodeNumber,
-    tracks: [{
-      title: 'title1',
-      artist: 'artist1',
-      remix: 'remix1',
-      featuring: 'featuring1',
-      album: 'album1',
-      label: 'label1'
-    }, {
-      title: 'title2',
-      artist: 'artist2',
-      remix: 'remix2',
-      featuring: 'featuring2',
-      album: 'album2',
-      label: 'label2'
-    }, {
-      title: 'title3',
-      artist: 'artist3',
-      remix: 'remix3',
-      featuring: 'featuring3',
-      album: 'album3',
-      label: 'label3'
-    }]
-  });
-
-  Playlists.insert({
-    episodeNumber: podcasts[1].episodeNumber,
-    tracks: [{
-      title: 'title1',
-      artist: 'artist1',
-      remix: 'remix1',
-      featuring: 'featuring1',
-      album: 'album1',
-      label: 'label1'
-    }, {
-      title: 'title2',
-      artist: 'artist2',
-      remix: 'remix2',
-      featuring: 'featuring2',
-      album: 'album2',
-      label: 'label2'
-    }, {
-      title: 'title3',
-      artist: 'artist3',
-      remix: 'remix3',
-      featuring: 'featuring3',
-      album: 'album3',
-      label: 'label3'
-    }]
-  });
-
-  Playlists.insert({
-    episodeNumber: podcasts[2].episodeNumber,
-    tracks: [{
-      title: 'title1',
-      artist: 'artist1',
-      remix: 'remix1',
-      featuring: 'featuring1',
-      album: 'album1',
-      label: 'label1'
-    }, {
-      title: 'title2',
-      artist: 'artist2',
-      remix: 'remix2',
-      featuring: 'featuring2',
-      album: 'album2',
-      label: 'label2'
-    }, {
-      title: 'title3',
-      artist: 'artist3',
-      remix: 'remix3',
-      featuring: 'featuring3',
-      album: 'album3',
-      label: 'label3'
-    }]
-  });
+  for (var i = 0; i < podcasts.length; i++) {
+    Playlists.insert({
+      episodeNumber: podcasts[i].episodeNumber,
+      tracks: [{
+        title: 'title1',
+        artist: 'artist1',
+        remix: 'remix1',
+        featuring: 'featuring1',
+        album: 'album1',
+        label: 'label1'
+      }, {
+        title: 'title2',
+        artist: 'artist2',
+        remix: 'remix2',
+        featuring: 'featuring2',
+        album: 'album2',
+        label: 'label2'
+      }, {
+        title: 'title3',
+        artist: 'artist3',
+        remix: 'remix3',
+        featuring: 'featuring3',
+        album: 'album3',
+        label: 'label3'
+      }]
+    });
+  }
 
   Comments.insert({
     postId: postId,

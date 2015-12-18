@@ -112,12 +112,14 @@ sha@1.0.4
 softwarerero:accounts-t9n@1.1.6
 spacebars@1.0.7
 spacebars-compiler@1.0.7
+spiderable@1.0.9
 srp@1.0.4
 standard-minifiers@1.0.2
 stylus@2.511.1
 summernote:standalone@0.6.16
 templating@1.1.5
 templating-tools@1.0.0
+tomwasd:flow-router-seo@0.0.3
 tracker@1.0.9
 twbs:bootstrap@3.3.5
 ui@1.0.8

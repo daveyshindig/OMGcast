@@ -34,6 +34,7 @@ easy:search
 iamkevingreen:imagesloaded
 orionjs:summernote
 orionjs:image-attribute
-orionjs:s3
-orionjs:filesystem
 orionjs:file-attribute
+orionjs:s3
+spiderable
+tomwasd:flow-router-seo

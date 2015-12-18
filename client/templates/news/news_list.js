@@ -6,6 +6,10 @@ Template.newsList.onCreated(function () {
   })
 });
 
+Template.newsList.onRendered(function () {
+  Session.set('documentTitle', '808NEWS');
+});
+
 Template.newsList.helpers({
   posts: function () {
     return Posts.find();
