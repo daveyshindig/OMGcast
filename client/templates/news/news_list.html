@@ -1,7 +1,7 @@
 <template name='newsList'>
   <h1>808 NEWS</h1>
   {{#each posts}}
-    <h3>{{title}}</h3>
+    <a href={{newsItemPath slug}}><h3>{{title}}</h3></a>
     <div>{{{body}}}</div>
   {{/each}}
 </template>

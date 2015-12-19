@@ -43,7 +43,7 @@ Meteor.publish('posts', function (options) {
 
 Meteor.publish('singlePost', function (slug) {
   check(slug, String);
-  return Posts.find({slug: slug});
+  return Posts.find({ slug: slug });
 });
 
 Meteor.publish('tags', function() {

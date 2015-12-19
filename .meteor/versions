@@ -119,6 +119,7 @@ stylus@2.511.1
 summernote:standalone@0.6.16
 templating@1.1.5
 templating-tools@1.0.0
+todda00:friendly-slugs@0.3.6
 tomwasd:flow-router-seo@0.0.3
 tracker@1.0.9
 twbs:bootstrap@3.3.5
