@@ -1,9 +1,9 @@
 <template name='podcastItem'>
   <div class='podcast'>
-    <img class='podcast__cover-img' src='{{coverImage}}'>
+    <img class='podcast__cover-img' src='{{coverImage.url}}'>
     <div class='hidden podcast__overlay'>
       <div class='podcast__controls'>
-        <img class='podcast__play-btn' data-path='{{mp3}}' src={{#if isPlaying mp3}}/img/pause.png{{else}}/img/play.png{{/if}}>
+        <img class='podcast__play-btn' data-path='{{mp3.url}}' src={{#if isPlaying mp3.url}}/img/pause.png{{else}}/img/play.png{{/if}}>
         <img class='podcast__view-btn' src='/img/view.png'>
       </div>
       <div class='podcast__details hidden'>
@@ -16,6 +16,11 @@
           {{/each}}
           </ol>
         {{/with}}
+        <div class='podcast__tags'>
+          {{#each tags}}
+            #{{this}}
+          {{/each}}
+        </div>
       </div>
     </div>
   </div>

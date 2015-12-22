@@ -60,12 +60,15 @@ Template.podcastItem.events({
     }
   },
   'click .podcast__view-btn': function (event) {
-    var $podcast = $(event.target).closest('.podcast');
+    var $thisPodcast = $(event.target).closest('.podcast');
     var $details = $(event.target).parents('.podcast__overlay')
                                   .children('.podcast__details');
     var $controls = $(event.target).parent('.podcast__controls');
 
-    $podcast.toggleClass('podcast_dbl-wide');
+    $('.podcast').not($thisPodcast).removeClass('podcast_dbl-wide');
+    $('.podcast__details').not($details).addClass('hidden');
+    $('.podcast__controls').not($controls).removeClass('podcast__controls_move-up');
+    $thisPodcast.toggleClass('podcast_dbl-wide');
     $details.toggleClass('hidden');
     $controls.toggleClass('podcast__controls_move-up');
     $('.podcasts').masonry('layout');

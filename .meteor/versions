@@ -64,6 +64,7 @@ meteor@1.1.10
 meteor-base@1.0.1
 meteor-platform@1.2.3
 meteorhacks:inject-initial@1.0.3
+meteorhacks:picker@1.0.3
 minifiers@1.1.7
 minimongo@1.0.10
 mobile-experience@1.0.1
@@ -105,6 +106,7 @@ reactive-var@1.0.6
 reload@1.1.4
 retry@1.0.4
 routepolicy@1.0.6
+rss@0.1.0
 sacha:spin@2.3.1
 service-configuration@1.0.5
 session@1.1.1

@@ -46,6 +46,11 @@ Meteor.publish('singlePost', function (slug) {
   return Posts.find({ slug: slug });
 });
 
-Meteor.publish('tags', function() {
+Meteor.publish('tags', function () {
   return Podcasts.find({}, {fields: {tags: 1}});
 });
+
+Meteor.publish('album', function (slug) {
+  check(slug, String);
+  return Photos.find({ title: slug });
+})
