@@ -56,6 +56,6 @@ Template.podcastsList.events({
     var $input = $('.dig__text-box input');
 
     $input.val(hash);
-    $input.keyup()
+    $input.keyup();
   }
 });

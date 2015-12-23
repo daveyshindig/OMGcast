@@ -72,5 +72,17 @@ Template.podcastItem.events({
     $details.toggleClass('hidden');
     $controls.toggleClass('podcast__controls_move-up');
     $('.podcasts').masonry('layout');
+  },
+  'click .podcast__tag': function (event) {
+    var $str = $(event.target).text().slice(1);
+    var $input = $('.dig__text-box input');
+    if (Session.equals('isSearching', false)) {
+      Session.set('isSearching', true);
+      $('.dig').removeClass('hidden');
+    }
+
+    $input.val($str);
+    $input.keyup();
   }
 });
+

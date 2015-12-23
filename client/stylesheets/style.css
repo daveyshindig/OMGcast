@@ -99,6 +99,9 @@ img {
     display: block;
     padding-top: 200%;
 }
+.info-box a {
+    color: #f9423a;
+}
 .info-box__content {
     position: absolute;
     top: 0;
@@ -196,13 +199,17 @@ img {
     text-align: center;
     padding: 10px 0;
     height: 60%;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .podcast__tags {
     padding: 10px 0 0;
     text-align: center;
     font-size: .85em;
     color: #666;
+}
+.podcast__tag {
+    cursor: pointer;
 }
 .podcast__link h3 {
     text-align: center;
