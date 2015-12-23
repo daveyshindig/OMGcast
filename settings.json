@@ -1,9 +1,0 @@
-{
-  "awsBucket": "my-example-staging",
-  "awsAccessKeyId": "AKIAJTPVVZ3RNDUMGPQQ",
-  "awsSecretKey": "40EPxhEdpuU8zSPDAPZPvKPHmq7CLowopJiFU2ux",
-  "emailUsername": "davey@ktuh.org",
-  "emailPassword": "recurrencerelation335",
-  "emailServer": "smtp.gmail.com",
-  "emailPort": "465"
-}
