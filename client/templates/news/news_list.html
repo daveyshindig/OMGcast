@@ -4,4 +4,11 @@
     <a href={{newsItemPath slug}}><h3>{{title}}</h3></a>
     <div>{{{body}}}</div>
   {{/each}}
+  {{#if Template.subscriptionsReady}}
+    {{#if currentUser}}
+      {{> chapp_form}}
+    {{else}}
+      <p class='comments__text'>Please log in to leave a comment.</p>
+    {{/if}}
+  {{/if}}
 </template>
