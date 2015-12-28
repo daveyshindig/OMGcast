@@ -383,7 +383,13 @@ ol.podcast-page__playlist {
 .hidden {
     visibility: hidden;
 }
-
+#login-dropdown-list .btn {
+    background-color: #666;
+}
+#login-other-options a {
+    color: #666;
+    border-color: #333;
+}
 
 /** audio player styles **/
 .audio-player, .audio-player div, .audio-player h2, .audio-player a, .audio-player span, .audio-player button {
@@ -530,7 +536,42 @@ div.audio-player {
     padding: 3px 10px 0 0;
 }
 
-
+.chat__wrapper {
+    width:100%;
+    height:100%;
+    position:relative;
+    padding:0;
+}
+.chat__form {
+    width:100%;
+    height:11%;
+    padding-bottom: 1%;
+}
+.chat__input-div {
+    width:89%;
+    float:left;
+    height:100%;
+}
+#chat__input {
+    width:100%;
+    height:100%;
+    padding:0;
+    border:1px inset;
+}
+.chat__button {
+    width:10%;
+    height:100%;
+    float:right;
+    border:1px;
+}
+#chat__text {
+    height: 250px;
+    overflow: auto;
+}
+.chat__date,
+.chat__username {
+    color: #666;
+}
 @-webkit-keyframes fadeOut {
     0% {
         opacity: 0;

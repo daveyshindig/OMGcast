@@ -5,10 +5,12 @@
     <div>{{{body}}}</div>
   {{/each}}
   {{#if Template.subscriptionsReady}}
+  <div class='chat'>
     {{#if currentUser}}
-      {{> chapp_form}}
+      {{> chatForm}}
     {{else}}
       <p class='comments__text'>Please log in to leave a comment.</p>
     {{/if}}
+  </div>
   {{/if}}
 </template>
