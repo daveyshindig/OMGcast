@@ -86,10 +86,15 @@ img {
 .nav__logo {
     max-width: 36px;
 }
+.nav__search input {
+    margin-top: 10px;
+    font-size: 14px;
+}
 #spinner {
     height: 300px;
 }
 .info-box {
+    position: absolute;
     float: left;
     width: calc(33.33% - 1px);
     padding: 0;
@@ -104,10 +109,7 @@ img {
 }
 .info-box__content {
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    top: 0; left: 0; bottom: 0; right: 0;
     padding: 20px 15px;
 }
 .info-box__content p {
@@ -490,10 +492,13 @@ div.audio-player {
     padding: 0 15px 10px;
 }
 .dig__icon {
-    max-width: 34px;
-    margin: 8px 4px;
-    padding: 10px;
+    width: 28px;
+    height: 28px;
+    padding: 7px;
+    margin: 0 -5px 0 10px;
     cursor: pointer;
+    background: #fff;
+    border: 1pt #ccc solid;
 }
 .dig__tag-btn {
     width: 30px;
@@ -634,9 +639,6 @@ div.audio-player {
 @media (min-width: 768px) {
     .podcast__link {
         font-size: 18px;
-    }
-    .dig__icon {
-        margin-left: 10px;
     }
 }
 @media (max-width: 767px) {

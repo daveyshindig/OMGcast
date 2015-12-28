@@ -83,6 +83,7 @@ Template.podcastItem.events({
 
     $input.val($str);
     $input.keyup();
+    $('.info-box').hide();
   }
 });
 

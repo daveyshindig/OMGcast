@@ -43,8 +43,9 @@
             <audio id='audio-player' src='/audio/Interlude1.mp3' type='audio/mp3' controls='controls'></audio>
           </div>
         </li>
-        <li class='nav-item'>
+        <li class='nav-item nav__search'>
           <img class='dig__icon' src='/img/search.png'>
+          {{> EasySearch.Input index=podcastsIndex timeout=300}}
         </li>
       {{> loginButtons}}
       </ul>

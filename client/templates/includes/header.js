@@ -30,12 +30,15 @@ Template.header.onRendered(function () {
   });
   var mp3 = $('#audio-player').attr('src');
   Session.set('nowLoaded', mp3);
+
+  $('.nav__search input').attr('placeholder', 'Search DJ, genre, etc...');
 });
 
 Template.header.helpers({
   aboutPage: () => FlowRouter.path('about'),
   newsPage: () => FlowRouter.path('news'),
-  latest: () => Podcasts.findOne()
+  latest: () => Podcasts.findOne(),
+  podcastsIndex: () => PodcastsIndex // instanceof EasySearch.Index
 });
 
 Template.header.events({
@@ -57,8 +60,8 @@ Template.header.events({
       Session.set('isSearching', true);
     else
       Session.set('isSearching', Session.get('isSearching'));
-
-    $('.dig').toggleClass('hidden');
-    $('.dig__text-box input').focus();
+  },
+  'keypress .nav__search input': () => {
+    $('.info-box').hide();
   }
 });

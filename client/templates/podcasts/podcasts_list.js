@@ -12,7 +12,8 @@ Template.podcastsList.onRendered(function () {
   $podcasts.imagesLoaded(function() {
     $podcasts.masonry({
       itemSelector: '.podcast',
-      transitionDuration: 200
+      transitionDuration: 200,
+      stamp: '.info-box'
     });
   });
   Session.set('documentTitle', '808MiX');
@@ -57,5 +58,9 @@ Template.podcastsList.events({
 
     $input.val(hash);
     $input.keyup();
+    $('.info-box').hide();
+  },
+  'keypress .dig__text-box input': () => {
+    $('.info-box').hide();
   }
 });

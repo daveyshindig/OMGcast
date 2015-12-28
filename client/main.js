@@ -3,7 +3,7 @@
 player = null;
 
 window.addEventListener('resize', function() {
-  $('.podcasts').masonry('reload');
+  $('.podcasts').masonry('layout');
 });
 
 Session.set('hashesOpen', false);
