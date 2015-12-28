@@ -59,8 +59,5 @@ Template.podcastsList.events({
     $input.val(hash);
     $input.keyup();
     $('.info-box').hide();
-  },
-  'keypress .dig__text-box input': () => {
-    $('.info-box').hide();
   }
 });
