@@ -43,7 +43,7 @@ Template.chatForm.events({
        document.getElementById('chat__input').value = '';
        document.getElementById('chat__input').focus();
        var objDiv = document.getElementById('chat__text');
-       objDiv.scrollTop = objDiv.scrollHeight + 170;
+       objDiv.scrollTop = objDiv.scrollHeight + 270;
     }
   }
 });
