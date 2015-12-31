@@ -229,7 +229,6 @@ img {
     margin: auto;
     width: 175px;
     height: 70px;
-    margin: auto;
     padding: 12px 0;
     display: flex;
     flex-flow: row;
@@ -543,7 +542,13 @@ div.audio-player {
     height: 40px;
     padding: 3px 10px 0 0;
 }
-
+.under-construction {
+    max-width: 300px;
+    margin: auto;
+}
+.under-construction h3 {
+    text-align: center;
+}
 .chat {
     position:relative;
     width:100%;
@@ -646,8 +651,8 @@ div.audio-player {
     }
 }
 @media (max-width: 767px) {
-    .audio-player {
-        margin: 0 5px 7px 0;
+    div.audio-player {
+        margin: 0;
     }
 }
 @media (max-width: 666px) {

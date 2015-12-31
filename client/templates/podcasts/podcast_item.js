@@ -75,11 +75,7 @@ Template.podcastItem.events({
   },
   'click .podcast__tag': function (event) {
     var $str = $(event.target).text().slice(1);
-    var $input = $('.dig__text-box input');
-    if (Session.equals('isSearching', false)) {
-      Session.set('isSearching', true);
-      $('.dig').removeClass('hidden');
-    }
+    var $input = $('.nav__search input');
 
     $input.val($str);
     $input.keyup();

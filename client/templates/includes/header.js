@@ -12,9 +12,9 @@ Template.header.onRendered(function () {
     audioVolume: 'horizontal',
     audioWidth: 200,
     audioHeight: 20,
-    iPadUseNativeControls: true,
-    iPhoneUseNativeControls: true,
-    AndroidUseNativeControls: true,
+    iPadUseNativeControls: false,
+    iPhoneUseNativeControls: false,
+    AndroidUseNativeControls: false,
     success: function (mediaElement, domObject) {
       mediaElement.addEventListener('play', function(e) {
         Session.set('paused', false);
