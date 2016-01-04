@@ -6,6 +6,8 @@ Template.header.onCreated(function () {
 });
 
 Template.header.onRendered(function () {
+  var $searchInput = $('.nav__search input');
+
   $('#audio-player').mediaelementplayer({
     alwaysShowControls: true,
     features: ['playpause', 'progress'],
@@ -29,23 +31,29 @@ Template.header.onRendered(function () {
     }
   });
   var mp3 = $('#audio-player').attr('src');
-  Session.set('nowLoaded', mp3);
 
-  $('.nav__search input').attr('placeholder', 'Search DJ, genre, etc...');
+  Session.set('nowLoaded', mp3);
+  $searchInput.attr('placeholder', 'Search...');
+  $searchInput.focusin(function () {
+    $searchInput.attr('placeholder', 'Search DJ, genre, etc.');
+  });
+  $searchInput.focusout(function () {
+    $searchInput.attr('placeholder', 'Search...');
+  });
 });
 
 Template.header.helpers({
   aboutPage: () => FlowRouter.path('about'),
   newsPage: () => FlowRouter.path('news'),
   latest: () => Podcasts.findOne(),
-  podcastsIndex: () => PodcastsIndex // instanceof EasySearch.Index
+  podcastsIndex: () => PodcastsIndex, // instanceof EasySearch.Index
+  nowPlaying: () => Session.get('nowPlaying')
 });
 
 Template.header.events({
   'click .nav__play-btn': function (event) {
     event.preventDefault();
     var mp3Url = $(event.currentTarget).data('link');
-    var nowLoaded = Session.get('nowLoaded');
     Session.set('nowLoaded', mp3Url);
   },
   'click .dig__icon': function (event) {

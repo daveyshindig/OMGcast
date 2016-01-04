@@ -20,22 +20,11 @@ if (Podcasts.find().count() === 0) {
 
   var postId = Podcasts.insert({
     title: '808 Mixtapes — v. 107',
-    mp3: { 
-      "fileId" : "oobLXtL7bAWiJqyHS", 
-      "url" :  '/audio/ff.mp3'
-    },
+    mp3: '/audio/ff.mp3',
     episodeNumber: '107',
     host: 'Super CW',
-    coverImage: { 
-      "fileId" : "dobhXtL7bAWiJqyHS", 
-      "url" :  '/img/coverart/808-mixtapes-vol-107.jpg', 
-      "info" : { 
-        "width" : 800, 
-        "height" : 800, 
-        "backgroundColor" : "#616b61", 
-        "primaryColor" : "#fcfdfc", 
-        "secondaryColor" : "#fcfdfc" } 
-    },
+    coverImage: '/img/coverart/808-mixtapes-v107.jpg', 
+    imageCredit: '',
     userId: davey._id,
     commentCount: 0,
     tags: ['house', 'disco', 'electro-pop']
@@ -43,22 +32,11 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 94',
-    mp3: { 
-      "fileId" : "oobLXtL7kAWiJqyHS", 
-      "url" :  '/audio/ff.mp3'
-    },
+    mp3: '/audio/ff.mp3',
     episodeNumber: '94',
     host: 'Davey Shindig',
-    coverImage: { 
-      "fileId" : "oobfXtLjbAWiJqyHS", 
-      "url" :  '/img/coverart/808-mixtapes-vol-94.jpg', 
-      "info" : { 
-        "width" : 800, 
-        "height" : 800, 
-        "backgroundColor" : "#616b61", 
-        "primaryColor" : "#fcfdfc", 
-        "secondaryColor" : "#fcfdfc" } 
-    },
+    coverImage: '/img/coverart/808-mixtapes-v094.jpg', 
+    imageCredit: '',
     userId: davey._id,
     commentCount: 0,
     tags: ['house', 'disco', 'electro-pop']
@@ -66,22 +44,11 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 19',
-    mp3: { 
-      "fileId" : "oobLgtL7bAWlJqyHS", 
-      "url" :  '/audio/ff.mp3'
-    },
+    mp3: '/audio/ff.mp3',
     episodeNumber: '19',
     host: 'Davey Shindig',
-    coverImage: { 
-      "fileId" : "oobLXtL7biWiJqyHS", 
-      "url" :  '/img/coverart/808-mixtapes-vol-19.jpg', 
-      "info" : { 
-        "width" : 800, 
-        "height" : 800, 
-        "backgroundColor" : "#616b61", 
-        "primaryColor" : "#fcfdfc", 
-        "secondaryColor" : "#fcfdfc" } 
-    },
+    coverImage: '/img/coverart/808-mixtapes-v019.jpg', 
+    imageCredit: '',
     userId: davey._id,
     commentCount: 0,
     tags: ['house', 'disco', 'electro-pop']
@@ -89,22 +56,11 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 95',
-    mp3: { 
-      "fileId" : "oobLXqL7bAWiJqyHS", 
-      "url" :  '/audio/ff.mp3'
-    },
+    mp3: '/audio/ff.mp3',
     episodeNumber: '95',
     host: 'Haircuts for Men',
-    coverImage: { 
-      "fileId" : "oobLXtL7wAWiJqyHS", 
-      "url" :  '/img/coverart/808-mixtapes-vol-95.jpg', 
-      "info" : { 
-        "width" : 800, 
-        "height" : 800, 
-        "backgroundColor" : "#616b61", 
-        "primaryColor" : "#fcfdfc", 
-        "secondaryColor" : "#fcfdfc" } 
-    },
+    coverImage: '/img/coverart/808-mixtapes-v095.jpg', 
+    imageCredit: '',
     userId: davey._id,
     commentCount: 0,
     tags: ['wub', 'glitch-hop', 'rap']
@@ -112,22 +68,11 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 96',
-    mp3: { 
-      "fileId" : "oobLXtL7bAWeJqyHS", 
-      "url" :  '/audio/ff.mp3'
-    },
+    mp3: '/audio/ff.mp3',
     episodeNumber: '96',
     host: 'Jon Jon',
-    coverImage: { 
-      "fileId" : "oobLXtL7bAWirqyHS", 
-      "url" :  '/img/coverart/808-mixtapes-vol-96.jpg', 
-      "info" : { 
-        "width" : 800, 
-        "height" : 800, 
-        "backgroundColor" : "#616b61", 
-        "primaryColor" : "#fcfdfc", 
-        "secondaryColor" : "#fcfdfc" } 
-    },
+    coverImage: '/img/coverart/808-mixtapes-v096.jpg', 
+    imageCredit: '',
     userId: davey._id,
     commentCount: 0,
     tags: ['moombahton', 'dub', 'dubstep']
@@ -135,22 +80,11 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 97',
-    mp3: { 
-      "fileId" : "oobLXtL7btWiJqyHS", 
-      "url" :  '/audio/ff.mp3'
-    },
+    mp3: '/audio/ff.mp3',
     episodeNumber: '97',
     host: 'Weaver Beats',
-    coverImage: { 
-      "fileId" : "oobLXtL7byWiJqyHS", 
-      "url" :  '/img/coverart/808-mixtapes-vol-97.jpg', 
-      "info" : { 
-        "width" : 800, 
-        "height" : 800, 
-        "backgroundColor" : "#616b61", 
-        "primaryColor" : "#fcfdfc", 
-        "secondaryColor" : "#fcfdfc" } 
-    },
+    coverImage: '/img/coverart/808-mixtapes-v097.jpg', 
+    imageCredit: '',
     userId: davey._id,
     commentCount: 0,
     tags: ['wub', 'glitch-hop', 'rap']
@@ -158,22 +92,11 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 098',
-    mp3: { 
-      "fileId" : "oobLXtL7uAWiJqyHS", 
-      "url" :  '/audio/ff.mp3'
-    },
+    mp3: '/audio/ff.mp3',
     episodeNumber: '098',
     host: 'The ADHDJ',
-    coverImage: { 
-      "fileId" : "oobLXtL7bAiiJqyHS", 
-      "url" :  '/img/coverart/808-mixtapes-vol-098.jpg', 
-      "info" : { 
-        "width" : 800, 
-        "height" : 800, 
-        "backgroundColor" : "#616b61", 
-        "primaryColor" : "#fcfdfc", 
-        "secondaryColor" : "#fcfdfc" } 
-    },
+    coverImage: '/img/coverart/808-mixtapes-v098.jpg', 
+    imageCredit: '',
     userId: davey._id,
     commentCount: 0,
     tags: ['synth-pop', 'wave']
@@ -181,22 +104,11 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 100',
-    mp3: { 
-      "fileId" : "oobLXtL7oAWiJqyzS", 
-      "url" :  '/audio/ff.mp3'
-    },
+    mp3: '/audio/ff.mp3',
     episodeNumber: '100',
     host: 'MEDS',
-    coverImage: { 
-      "fileId" : "oobLXtL7bAWpJqyHS", 
-      "url" :  '/img/coverart/808-mixtapes-vol-100.jpg', 
-      "info" : { 
-        "width" : 800, 
-        "height" : 800, 
-        "backgroundColor" : "#616b61", 
-        "primaryColor" : "#fcfdfc", 
-        "secondaryColor" : "#fcfdfc" } 
-    },
+    coverImage: '/img/coverart/808-mixtapes-v100.jpg', 
+    imageCredit: '',
     userId: davey._id,
     commentCount: 0,
     tags: ['darkwave', 'minimal']
@@ -204,22 +116,11 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 101',
-    mp3: { 
-      "fileId" : "oobLXtL7bAxiJqyHS", 
-      "url" :  '/audio/ff.mp3'
-    },
+    mp3: '/audio/ff.mp3',
     episodeNumber: '101',
     host: 'Haircuts for Men',
-    coverImage: { 
-      "fileId" : "oobLXtL7bcWiJqyHS", 
-      "url" :  '/img/coverart/808-mixtapes-vol-101.jpg', 
-      "info" : { 
-        "width" : 800, 
-        "height" : 800, 
-        "backgroundColor" : "#616b61", 
-        "primaryColor" : "#fcfdfc", 
-        "secondaryColor" : "#fcfdfc" } 
-    },
+    coverImage: '/img/coverart/808-mixtapes-v101.jpg', 
+    imageCredit: '',
     userId: davey._id,
     commentCount: 0,
     tags: ['ambient', 'techno', 'dub']
@@ -227,22 +128,11 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 102',
-    mp3: { 
-      "fileId" : "oobLXtL7bvWiJqyHS", 
-      "url" :  '/audio/ff.mp3'
-    },
+    mp3: '/audio/ff.mp3',
     episodeNumber: '102',
     host: 'Kowai Kowai',
-    coverImage: { 
-      "fileId" : "oobLXtL7bbWiJqyHS", 
-      "url" : "https://s3-us-west-2.amazonaws.com/omgcast/orionjs/55f237e6-1241-4541-a25c-7bda21c1132f.jpg", 
-      "info" : { 
-        "width" : 800, 
-        "height" : 800, 
-        "backgroundColor" : "#616b61", 
-        "primaryColor" : "#fcfdfc", 
-        "secondaryColor" : "#fcfdfc" } 
-    },
+    coverImage: '/img/coverart/808-mixtapes-v102.jpg', 
+    imageCredit: '',
     userId: davey._id,
     commentCount: 0,
     tags: ['dream-pop', 'chillwave']
@@ -250,22 +140,11 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 103',
-    mp3: { 
-      "fileId" : "oobLXtL7bnWiJqyHS", 
-      "url" :  '/audio/SexyTerrorist.mp3'
-    },
+    mp3: '/audio/SexyTerrorist.mp3',
     episodeNumber: '103',
     host: 'Davey Shindig',
-    coverImage: { 
-      "fileId" : "oobLXtL7bmWiJqyHS", 
-      "url" :  '/img/coverart/808-mixtapes-vol-103.jpg', 
-      "info" : { 
-        "width" : 800, 
-        "height" : 800, 
-        "backgroundColor" : "#616b61", 
-        "primaryColor" : "#fcfdfc", 
-        "secondaryColor" : "#fcfdfc" } 
-    },
+    coverImage: '/img/coverart/808-mixtapes-v103.jpg', 
+    imageCredit: '',
     userId: davey._id,
     commentCount: 0,
     tags: ['dream-pop', 'chillwave']
@@ -273,22 +152,11 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 104',
-    mp3: { 
-      "fileId" : "oobLXtL7qwWiJqyHS", 
-      "url" :  '/audio/BirdMachine.mp3'
-    },
+    mp3: '/audio/BirdMachine.mp3',
     episodeNumber: '104',
     host: 'Ashan & Partius',
-    coverImage: { 
-      "fileId" : "oobLXtL7erWiJqyHS", 
-      "url" :  '/img/coverart/808-mixtapes-vol-104.jpg', 
-      "info" : { 
-        "width" : 800, 
-        "height" : 800, 
-        "backgroundColor" : "#616b61", 
-        "primaryColor" : "#fcfdfc", 
-        "secondaryColor" : "#fcfdfc" } 
-    },
+    coverImage: '/img/coverart/808-mixtapes-v104.jpg', 
+    imageCredit: '',
     userId: davey._id,
     commentCount: 0,
     tags: ['ambient', 'chill']
@@ -296,22 +164,11 @@ if (Podcasts.find().count() === 0) {
 
   Podcasts.insert({
     title: '808 Mixtapes — v. 105',
-    mp3: { 
-      "fileId" : "oobLXtL7tyWiJqyHS", 
-      "url" :  '/audio/Beginning.mp3'
-    },
+    mp3: '/audio/Beginning.mp3',
     episodeNumber: '105',
     host: 'Davey Shindig',
-    coverImage: { 
-      "fileId" : "oobLXtL7uiWiJqyHS", 
-      "url" :  '/img/coverart/808-mixtapes-vol-105.jpg', 
-      "info" : { 
-        "width" : 800, 
-        "height" : 800, 
-        "backgroundColor" : "#616b61", 
-        "primaryColor" : "#fcfdfc", 
-        "secondaryColor" : "#fcfdfc" } 
-    },
+    coverImage: '/img/coverart/808-mixtapes-v105.jpg',
+    imageCredit: '',
     userId: davey._id,
     commentCount: 0,
     tags: ['techno', 'bass', 'abstrak']

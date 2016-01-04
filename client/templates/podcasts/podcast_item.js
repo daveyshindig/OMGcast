@@ -71,7 +71,8 @@ Template.podcastItem.events({
     $thisPodcast.toggleClass('podcast_dbl-wide');
     $details.toggleClass('hidden');
     $controls.toggleClass('podcast__controls_move-up');
-    $('.podcasts').masonry('layout');
+    $('.podcasts').masonry('reloadItems')
+                  .masonry('layout');
   },
   'click .podcast__tag': function (event) {
     var $str = $(event.target).text().slice(1);

@@ -1,20 +1,13 @@
 <template name='podcastsList'>
-  <div class='dig hidden'>
-    <div class='dig__text-box'>
-      {{> EasySearch.Input index=podcastsIndex timeout=300}}
-      <button class='dig__tag-btn'><img src='/img/hash.png'></button>
-      {{#EasySearch.IfNoResults index=podcastsIndex}}
-        <span class="dig__no-results">No results found.</span>
-      {{/EasySearch.IfNoResults}}
+  <div class='dig {{#if isSearching}}{{else}}hidden{{/if}}'>
+    <div class='dig__tag-box'>
+      {{#each tags}}
+        <button class='dig__tag'>#{{this}}</button>
+      {{/each}}
+      {{#if moreTags}}
+        <button class='dig__more-tags'>More</button>
+      {{/if}}
     </div>
-    {{#if tagsOpen}}
-      <div class='dig__tag-box'>
-        {{#each tags}}
-          <button class='dig__tag'>#{{this}}</button>
-        {{/each}}
-        {{#if moreTags}}<button class='dig__more-tags'>More</button>{{/if}}
-      </div>
-    {{/if}}
   </div>
   <div class='clear'></div>
   <div class='podcasts'>
@@ -30,9 +23,10 @@
         <p class='info-box__show-description'>808 MIXTAPES is a radio show and mixtape series that showcases local DJs, as well as those who visit Hawaii. You can hear it live on air with your host, <a href='/shindig'>Davey Shindig</a>, every Friday night, 6-9pm HST, on <a href='http://ktuh.org/'>KTUH 90.3 FM Honolulu, 91.3 FM North Shore.</a> Or listen to the complete mix series here.</p>
       </div>
     </div>
+    <div class='podcast-sizer'></div>
     {{#EasySearch.Each index=podcastsIndex}}
       {{> podcastItem}}
     {{/EasySearch.Each}}
   </div>
-    <span class='load-more-button'>{{> EasySearch.LoadMore index=podcastsIndex}}</span>
+  <span class='load-more-button'>{{> EasySearch.LoadMore index=podcastsIndex}}</span>
 </template>

@@ -12,7 +12,9 @@ Template.podcastsList.onRendered(function () {
   $podcasts.imagesLoaded(function() {
     $podcasts.masonry({
       itemSelector: '.podcast',
-      transitionDuration: 200,
+      transitionDuration: 0,
+      isResizeBound: true,
+      columnWidth: '.podcast-sizer',
       stamp: '.info-box'
     });
   });

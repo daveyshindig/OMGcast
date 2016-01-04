@@ -2,10 +2,6 @@
 // session variable.
 player = null;
 
-window.addEventListener('resize', function() {
-  $('.podcasts').masonry('layout');
-});
-
 Session.set('hashesOpen', false);
 Session.set('isSearching', false);
 Session.set('numTags', 10);
