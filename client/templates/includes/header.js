@@ -1,7 +1,10 @@
 Template.header.onCreated(function () {
   var self = this;
   self.autorun(function () {
-    self.subscribe('latestPodcast');
+    self.subscribe('latestPodcast', function() {
+      var latest = Podcasts.findOne({}, { sort: {episodeNumber: -1} });
+      $('#audio-player').attr('src', latest.mp3);
+    });
   });
 });
 
@@ -53,6 +56,13 @@ Template.header.helpers({
 Template.header.events({
   'click .nav__play-btn': function (event) {
     event.preventDefault();
+    if (Session.equals('playingDefault', true)) {
+      var latest = Podcasts.findOne({}, { sort: {episodeNumber: -1} });
+
+      Session.set('playingDefault', false);
+      Bert.alert('Now playing ' + latest.title + ', mixed by '
+                                         + latest.host + '.');
+    }
     var mp3Url = $(event.currentTarget).data('link');
     Session.set('nowLoaded', mp3Url);
   },
