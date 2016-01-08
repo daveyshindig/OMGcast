@@ -523,6 +523,10 @@ div.audio-player {
   text-align: center;
   z-index: 9999;
 }
+.bert-alert .now-playing {
+    background: #ccc;
+    color: #333;
+}
 .dig {
     padding: 0 15px 10px;
 }
