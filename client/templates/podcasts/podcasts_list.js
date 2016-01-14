@@ -24,7 +24,6 @@ Template.podcastsList.onRendered(function () {
 Template.podcastsList.helpers({
   podcastsIndex: () => PodcastsIndex, // instanceof EasySearch.Index
   isSearching: () => Session.get('isSearching'),
-  tagsOpen: () => Session.get('hashesOpen'),
   tags: () => {
     var podcasts = Podcasts.find().fetch();
     var tags = [];
