@@ -27,6 +27,19 @@ Template.header.onRendered(function () {
       mediaElement.addEventListener('pause', function(e) {
         Session.set('paused', true);
       }, false);
+      // Display what's playing if user clicks the player without loading
+      // another song first.
+      $('.mejs-playpause-button').click(function () { 
+        if (Session.equals('defaultLoaded', true)) {
+          var latest = Podcasts.findOne({}, { sort: {episodeNumber: -1} });
+          var message = 'Now playing ' + latest.title + ', mixed by '
+                                                   + latest.host + '.';
+
+          Session.set('defaultLoaded', false);
+          Session.set('nowLoaded', latest.mp3);
+          Bert.alert(message, 'default', 'growl-top-right', 'fa-music');
+        }
+      });
       player = mediaElement; // make it available for other functions
     },
     error: function () {
@@ -54,17 +67,8 @@ Template.header.helpers({
 });
 
 Template.header.events({
-  'click .nav__play-btn': function (event) {
-    event.preventDefault();
-    if (Session.equals('playingDefault', true)) {
-      var latest = Podcasts.findOne({}, { sort: {episodeNumber: -1} });
-
-      Session.set('playingDefault', false);
-      Bert.alert('Now playing ' + latest.title + ', mixed by '
-                                         + latest.host + '.');
-    }
-    var mp3Url = $(event.currentTarget).data('link');
-    Session.set('nowLoaded', mp3Url);
+  'click .mejs-playpause-button': function (event) {
+    console.log('yah event went');
   },
   'click .dig__icon': function (event) {
     var rerouted = false;
@@ -77,7 +81,7 @@ Template.header.events({
     if (rerouted)
       Session.set('isSearching', true);
     else
-      Session.set('isSearching', Session.get('isSearching'));
+      Session.set('isSearching', !Session.get('isSearching'));
   },
   'keypress .nav__search input': () => {
     $('.info-box').hide();

@@ -48,6 +48,7 @@ Template.podcastItem.events({
     var mp3Url = $(event.currentTarget).data('path');
     var nowLoaded = Session.get('nowLoaded');
 
+    Session.set('defaultLoaded', false);
     if (nowLoaded != mp3Url) {
       player.setSrc(mp3Url);
       Session.set('nowLoaded', mp3Url);

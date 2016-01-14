@@ -21,3 +21,6 @@ Meteor.startup(function () {
     Session.set(IGNORE_CONNECTION_ISSUE_KEY, false);
   }, CONNECTION_ISSUE_TIMEOUT);
 });
+
+Bert.defaults.hideDelay(6000);
+Bert.icons['now-playing'] = 'fa-music';
