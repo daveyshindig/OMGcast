@@ -1,5 +1,6 @@
 Template.podcastPage.onCreated(function () {
   var self = this;
+
   self.autorun(function() {
     var epNum = FlowRouter.getParam('episodeNumber');
     self.subscribe('podcast', epNum);
@@ -20,17 +21,23 @@ Template.podcastPage.onRendered(function () {
 Template.podcastPage.helpers({
   podcast: function() {
     var epNum = FlowRouter.getParam('episodeNumber');
-    return Podcasts.findOne();
+
+    return Podcasts.findOne({ episodeNumber: Number(epNum) });
   },
   playlist: function() {
     var epNum = FlowRouter.getParam('episodeNumber');
-    return Playlists.findOne();
+
+    return Playlists.findOne({ episodeNumber: Number(epNum) });
   },
   comments: function() {
-    return Comments.find();
+    var epNum = FlowRouter.getParam('episodeNumber');
+    var p = Podcasts.findOne({ episodeNumber: Number(epNum) });
+
+    return Comments.find({ postId: p._id });
   },
   isPlaying: function(mp3) {
     var isPlaying = Session.get('nowLoaded') == mp3 && !Session.get('paused');
+
     return isPlaying;
   }
 });
