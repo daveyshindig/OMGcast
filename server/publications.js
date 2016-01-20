@@ -55,7 +55,7 @@ Meteor.publish('album', function (slug) {
   return Photos.find({ title: slug });
 })
 
-Meteor.publish("chats", function(docId, dateNow) {
+Meteor.publish('chats', function(docId, dateNow) {
   check(docId, Match.Any);
   check(dateNow, Date);
 
@@ -73,4 +73,8 @@ Meteor.publish("chats", function(docId, dateNow) {
     },
     limit: 50
   });
+});
+
+Meteor.publish('parties', function() {
+  return Parties.find();
 });

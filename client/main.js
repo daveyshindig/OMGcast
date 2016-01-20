@@ -8,5 +8,5 @@ Session.set('numTags', 10);
 Session.set('documentTitle', '808MIX');
 Session.set('defaultLoaded', true);
 
-Bert.defaults.hideDelay(6000);
+Bert.defaults.hideDelay = 6000;
 Bert.icons['now-playing'] = 'fa-music';

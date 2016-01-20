@@ -59,8 +59,8 @@ Template.header.onRendered(function () {
 });
 
 Template.header.helpers({
-  aboutPage: () => FlowRouter.path('about'),
   newsPage: () => FlowRouter.path('news'),
+  partyPage: () => FlowRouter.path('party'),
   latest: () => Podcasts.findOne(),
   podcastsIndex: () => PodcastsIndex, // instanceof EasySearch.Index
   nowPlaying: () => Session.get('nowPlaying')

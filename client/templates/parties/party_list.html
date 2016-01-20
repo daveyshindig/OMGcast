@@ -1,0 +1,15 @@
+<template name='partyList'>
+  <div class='party-header'>
+    <h1 class='party-header__text'>808 PARTIES</h1>
+    {{#if currentUser}}
+      <a href='/party/new'><button type="button" class="btn btn-default btn-md party-header__button">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New
+      </button></a>
+    {{/if}}
+  </div>
+  <div class='parties'>
+    {{#each parties}}
+      {{> partyItem}}
+    {{/each}}
+  </div>
+</template>

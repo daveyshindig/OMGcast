@@ -58,6 +58,12 @@ img {
 }
 .alert {
     float: left !important;
+    animation: fadeOut 2700ms ease-in 0s 1 forwards;
+    -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;
+    -moz-animation: fadeOut 2700ms ease-in 0s 1 forwards;
+    clear: both;
+    margin-bottom: 5px;
+    pointer-events: auto;
 }
 .page {
     position: absolute;
@@ -157,7 +163,6 @@ img {
 .logo-img {
     max-width: 100%;
     margin: auto;
-
 }
 .podcasts {
     display: flex;
@@ -622,6 +627,13 @@ div.audio-player {
 .chat__date,
 .chat__username {
     color: #666;
+}
+.party-header__text {
+    float: left;
+}
+.party-header__button {
+    float: right;
+    margin-top: 20px;
 }
 @-webkit-keyframes fadeOut {
     0% {
