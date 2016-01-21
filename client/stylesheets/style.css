@@ -131,7 +131,7 @@ img {
             transition-timing-function: ease-out;
 }
 #spinner {
-    margin-top: 75px;
+    margin-top: 120px;
     height: 300px;
 }
 .info-box {
@@ -295,9 +295,6 @@ img {
     cursor: pointer;
     background: rgba(256, 256, 256, .8);
 }
-.podcast-page {
-    margin-left: 10px;
-}
 .podcast-page__info {
     float: left;
     padding-left: 15px;
@@ -314,12 +311,15 @@ img {
 ol.podcast-page__playlist {
     padding: 12px 0 0 14px;
 }
-.podcast-page__cover-div {
+.podcast-page__cover-div,
+.flyer-div {
     position: relative;
     float: left;
     width: 50%;
 }
-.podcast-page__cover-img {
+.podcast-page__cover-img ,
+.flyer-div__front,
+.flyer-div__back, {
     position: relative;
 }
 .podcast-page__play-btn {

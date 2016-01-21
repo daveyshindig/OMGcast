@@ -11,9 +11,6 @@ Template.newsItem.onCreated(function () {
   });
 });
 
-Template.newsItem.onRendered(function () {
-});
-
 Template.newsItem.helpers({
   post: function () {
     return Posts.findOne();

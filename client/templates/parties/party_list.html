@@ -8,8 +8,12 @@
     {{/if}}
   </div>
   <div class='parties'>
+  {{#if Template.subscriptionsReady}}
     {{#each parties}}
       {{> partyItem}}
     {{/each}}
+  {{else}}
+    {{> spinner}}
+  {{/if}}
   </div>
 </template>

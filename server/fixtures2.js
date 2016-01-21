@@ -190,3 +190,46 @@ if (Podcasts.find().count() === 0) {
     });
   }
 }
+
+if (Parties.find().count() === 0) {
+  var davey = Accounts.findUserByUsername( 'davey' );
+
+  OrionFiles.insert({ 
+    "_id" : "7QMJycqBipCXvYzH4", 
+    "url" : "https://s3-us-west-2.amazonaws.com/omgcast/orionjs/ac1deb33-2e7e-41fd-ace7-fe21e3a7e118.jpg", 
+    "meta" : { "s3Path" : "/orionjs/ac1deb33-2e7e-41fd-ace7-fe21e3a7e118.jpg" }, 
+    "name" : "superbowl.jpg", 
+     "uploader" : "image-attribute" 
+  });
+
+  Parties.insert({ 
+    "title" : "Superb Owl Sunday", 
+    "startTime" : ISODate("2016-02-07T22:00:00Z"), 
+    "endTime" : ISODate("2016-02-08T04:00:00Z"), 
+    "location" : "Davey's House", 
+    "flyerFront" : { 
+      "fileId" : "7QMJycqBipCXvYzH4", 
+      "url" : "https://s3-us-west-2.amazonaws.com/omgcast/orionjs/ac1deb33-2e7e-41fd-ace7-fe21e3a7e118.jpg", 
+      "info" : { 
+        "width" : 1024, 
+        "height" : 799, 
+        "backgroundColor" : "#0e0e0b", 
+        "primaryColor" : "#fcfcfa", 
+        "secondaryColor" : "#807d78" 
+      }
+    },
+    "submitted" : ISODate("2016-01-20T00:00:00Z"), 
+    "userId" : "davey", 
+    "commentCount" : 0, 
+    "upvoteCount" : 0, 
+    "tags" : [ "sports", "house party" ], 
+    "isPinned" : true, 
+    "friendlySlugs" : { 
+      "slug" : { 
+        "base" : "superb-owl-sunday", 
+        "index" : 0 
+      } 
+    }, 
+    "slug" : "superb-owl-sunday" 
+  });
+}

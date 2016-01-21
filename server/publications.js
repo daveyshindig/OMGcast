@@ -75,6 +75,11 @@ Meteor.publish('chats', function(docId, dateNow) {
   });
 });
 
-Meteor.publish('parties', function() {
+Meteor.publish('parties', function () {
   return Parties.find();
+});
+
+Meteor.publish('party', function (slug) {
+  check(slug, String);
+  return Parties.find({ slug: slug });
 });
