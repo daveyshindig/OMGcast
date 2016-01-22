@@ -655,6 +655,32 @@ div.audio-player {
     float: right;
     margin-top: 20px;
 }
+.party__flyer {
+
+}
+.party {
+    position: relative;
+}
+.party-details {
+    position: absolute;
+    right: 15px; bottom: 15px;
+    padding: 5px;
+    background: rgba(0,0,0,.5);
+}
+.party-upvotes__arrow,
+.party-upvotes__count {
+    color: #fff;
+    font-size: 20px;
+}
+.party-upvotes__arrow {
+    cursor: pointer;
+}
+.party-upvotes__count {
+    margin: 0 0 0 10px;
+}
+.upvoted {
+    color: #577bf3;
+}
 @-webkit-keyframes fadeOut {
     0% {
         opacity: 0;

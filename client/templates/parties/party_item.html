@@ -1,5 +1,6 @@
 <template name='partyItem'>
   <div class='party'>
-      <a href='/party/{{slug}}'><img class='party__flyer-front' src='{{flyerFront.url}}'></a>
-    </div>  
+    <a href='/party/{{slug}}'><img class='party__flyer' src='{{flyerFront.url}}'></a>
+    <div class='party-details'><span class='party-upvotes__arrow glyphicon glyphicon-arrow-up {{upvoted upvoters}}'></span><span class='party-upvotes__count'>{{upvoteCount}}</span></div>
+  </div>
 </template>
