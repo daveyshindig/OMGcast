@@ -56,6 +56,9 @@ img {
 #main {
     position: relative;
 }
+.clear {
+    clear: both;
+}
 .alert {
     float: left !important;
     animation: fadeOut 2700ms ease-in 0s 1 forwards;
@@ -648,12 +651,14 @@ div.audio-player {
 .chat__username {
     color: #666;
 }
+.party-header {
+}
 .party-header__text {
     float: left;
+    margin-top: 0;
 }
 .party-header__button {
     float: right;
-    margin-top: 20px;
 }
 .party__flyer {
 

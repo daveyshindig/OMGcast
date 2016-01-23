@@ -1,6 +1,4 @@
 <template name='partyCreate'>
-  <div class="input-group datetimepicker">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-    <input class="set-due-date form-control" type="text"/>
-  </div>
+  <h1>New Party</h1>
+  {{> quickForm id='partyForm' schema='PartySchema' omitFields='commentCount,upvoters,upvoteCount,isPinned,submitted,userId,author'}}
 </template>

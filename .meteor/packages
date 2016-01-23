@@ -44,4 +44,6 @@ meteorhacks:picker
 rss
 mrt:moment
 themeteorchef:bert
-tsega:bootstrap3-datetimepicker
+drewy:datetimepicker
+tsega:bootstrap3-datetimepicker@=3.1.3_3
+aldeed:autoform-bs-datetimepicker

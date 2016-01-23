@@ -1,6 +1,7 @@
 accounts-base@1.2.2
 accounts-password@1.1.4
 aldeed:autoform@5.7.1
+aldeed:autoform-bs-datetimepicker@1.0.6
 aldeed:collection2@2.8.0
 aldeed:collection2-core@1.0.0
 aldeed:schema-deny@1.0.1
@@ -34,6 +35,7 @@ ddp-server@1.2.2
 delgermurun:mediaelementjs@2.16.1_1
 deps@1.0.9
 diff-sequence@1.0.1
+drewy:datetimepicker@1.0.3
 easy:search@2.0.7
 easysearch:components@2.0.6
 easysearch:core@2.0.5
@@ -134,7 +136,7 @@ themeteorchef:bert@2.1.0
 todda00:friendly-slugs@0.3.6
 tomwasd:flow-router-seo@0.0.3
 tracker@1.0.9
-tsega:bootstrap3-datetimepicker@4.17.37_1
+tsega:bootstrap3-datetimepicker@3.1.3_3
 twbs:bootstrap@3.3.6
 ui@1.0.8
 underscore@1.0.4
