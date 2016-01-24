@@ -1,4 +1,4 @@
 <template name='partyCreate'>
-  <h1>New Party</h1>
-  {{> quickForm id='partyForm' schema='PartySchema' omitFields='commentCount,upvoters,upvoteCount,isPinned,submitted,userId,author'}}
+  <h1>Create Party</h1>
+  {{> quickForm id='partyForm' schema='PartySchema' omitFields='commentCount,upvoters,upvoteCount,isPinned,submitted,userId,author' collection='Parties' type='insert'}}
 </template>

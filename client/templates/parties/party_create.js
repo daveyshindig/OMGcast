@@ -1,3 +1,6 @@
 Template.partyCreate.onRendered(function() {
-    this.$('.datetimepicker').datetimepicker();
+  var self = this;
+  self.autorun(function() {
+    Meteor.subscribe('parties');
+  });
 });

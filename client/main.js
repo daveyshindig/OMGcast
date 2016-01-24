@@ -23,3 +23,10 @@ Meteor.startup(function () {
     Session.set(IGNORE_CONNECTION_ISSUE_KEY, false);
   }, CONNECTION_ISSUE_TIMEOUT);
 });
+
+AutoForm.addHooks(['partyForm'],{
+  onSuccess: function(formType, result) {
+    console.log(typeof result);
+    FlowRouter.go('/party/new/' + result);
+  }
+});

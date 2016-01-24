@@ -79,7 +79,12 @@ Meteor.publish('parties', function () {
   return Parties.find();
 });
 
-Meteor.publish('party', function (slug) {
+Meteor.publish('partyBySlug', function (slug) {
   check(slug, String);
   return Parties.find({ slug: slug });
+});
+
+Meteor.publish('partyById', function (id) {
+  check(id, String);
+  return Parties.find({ _id: id });
 });
