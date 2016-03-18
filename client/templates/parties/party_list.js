@@ -5,6 +5,19 @@ Template.partyList.onCreated(function() {
   });
 });
 
+Template.partyList.onRendered(function () {
+  var $parties = $('.parties');
+
+  $parties.imagesLoaded(function() {
+    $parties.masonry({
+      itemSelector: '.party',
+      transitionDuration: 0,
+      isResizeBound: true
+    });
+  });
+  Session.set('documentTitle', '808PaRtY');
+});
+
 Template.partyList.helpers({
   newPartyUrl: () => FlowRouter.path('partyCreate'),
   parties: function () {

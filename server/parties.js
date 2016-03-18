@@ -10,12 +10,15 @@ Meteor.methods({
       return;
     }
 
-    if (p.upvoters.indexOf(u.username) >= 0) {
+    if (p.upvoters.indexOf && p.upvoters.indexOf(u.username) >= 0) {
       Parties.update({_id: partyId}, {$inc: {upvoteCount: -1},
-                                  $pull: {upvoters: u.username}});
-    } else {
+                      $pull: {upvoters: u.username}});
+    } else if (p.upvoters.indexOf && p.upvoters.indexOf(u.username) < 0) {
       Parties.update({_id: partyId}, {$inc: {upvoteCount: 1},
-                                  $addToSet: {upvoters: u.username}});
+                      $addToSet: {upvoters: u.username}});
+    }
+    else {
+      throw new Meteor.Error(100003, 'No method \'indexOf\' of undefined.');
     }
 	}
 });

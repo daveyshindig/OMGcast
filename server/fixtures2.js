@@ -194,34 +194,34 @@ if (Podcasts.find().count() === 0) {
 if (Parties.find().count() === 0) {
   var davey = Accounts.findUserByUsername( 'davey' );
 
-  OrionFiles.insert({
-    _id : '7QMJycqBipCXvYzH4',
-    url : 'https://s3-us-west-2.amazonaws.com/omgcast/orionjs/ac1deb33-2e7e-41fd-ace7-fe21e3a7e118.jpg',
-    meta : { 's3Path' : '/orionjs/ac1deb33-2e7e-41fd-ace7-fe21e3a7e118.jpg' },
-    name : 'superbowl.jpg',
-     uploader : 'image-attribute'
-  });
+  // OrionFiles.insert({
+  //   _id : '7QMJycqBipCXvYzH4',
+  //   url : 'https://s3-us-west-2.amazonaws.com/omgcast/orionjs/ac1deb33-2e7e-41fd-ace7-fe21e3a7e118.jpg',
+  //   meta : { 's3Path' : '/orionjs/ac1deb33-2e7e-41fd-ace7-fe21e3a7e118.jpg' },
+  //   name : 'superbowl.jpg',
+  //    uploader : 'image-attribute'
+  // });
 
-  OrionFiles.insert({
-    _id : 'pzeRPyRSpHofuTuqj',
-    url : 'hhttps://s3-us-west-2.amazonaws.com/omgcast/orionjs/7e9a3d39-39d3-47ef-91b0-8be4dda0b30c.jpg',
-    meta : { 's3Path' : '/orionjs/7e9a3d39-39d3-47ef-91b0-8be4dda0b30c.jpg' },
-    name : 'club_underground.jpg',
-     uploader : 'image-attribute'
-  });
+  // OrionFiles.insert({
+  //   _id : 'pzeRPyRSpHofuTuqj',
+  //   url : 'hhttps://s3-us-west-2.amazonaws.com/omgcast/orionjs/7e9a3d39-39d3-47ef-91b0-8be4dda0b30c.jpg',
+  //   meta : { 's3Path' : '/orionjs/7e9a3d39-39d3-47ef-91b0-8be4dda0b30c.jpg' },
+  //   name : 'club_underground.jpg',
+  //    uploader : 'image-attribute'
+  // });
 
-  OrionFiles.insert({
-    _id : 'aqNbp2Yq5o6QRBfr4',
-    url : 'https://s3-us-west-2.amazonaws.com/omgcast/orionjs/b9ed6036-1cef-4071-b10c-035861872888.jpg',
-    meta : { 's3Path' : '/orionjs/b9ed6036-1cef-4071-b10c-035861872888.jpg' },
-    name : 'club_underground_1_yr_anniversary.jpg',
-     uploader : 'image-attribute'
-  });
+  // OrionFiles.insert({
+  //   _id : 'aqNbp2Yq5o6QRBfr4',
+  //   url : 'https://s3-us-west-2.amazonaws.com/omgcast/orionjs/b9ed6036-1cef-4071-b10c-035861872888.jpg',
+  //   meta : { 's3Path' : '/orionjs/b9ed6036-1cef-4071-b10c-035861872888.jpg' },
+  //   name : 'club_underground_1_yr_anniversary.jpg',
+  //    uploader : 'image-attribute'
+  // });
 
   Parties.insert({
     title : 'Superb Owl Sunday',
-    startTime : ISODate('2016-02-07T22:00:00Z'),
-    endTime : ISODate('2016-02-08T04:00:00Z'),
+    startTime : Date('2016-02-07T22:00:00Z'),
+    endTime : Date('2016-02-08T04:00:00Z'),
     location : 'Davey\'s House',
     flyerFront : {
       fileId : '7QMJycqBipCXvYzH4',
@@ -234,8 +234,9 @@ if (Parties.find().count() === 0) {
         secondaryColor : '#807d78'
       }
     },
-    submitted : ISODate('2016-01-20T00:00:00Z'),
-    userId : 'davey',
+    submitted : Date('2016-01-20T00:00:00Z'),
+    userId : davey._id,
+    author : davey.profile.name,
     commentCount : 0,
     upvoteCount : 1,
     upvoters: ['davey'],
@@ -252,8 +253,8 @@ if (Parties.find().count() === 0) {
 
   Parties.insert({
     title : 'Club Underground',
-    startTime : ISODate('2016-02-06T07:00:00Z'),
-    endTime : ISODate('2016-02-06T12:00:00Z'),
+    startTime : Date('2016-02-06T07:00:00Z'),
+    endTime : Date('2016-02-06T12:00:00Z'),
     location : 'The Downbeat Lounge',
     flyerFront : {
       fileId : 'pzeRPyRSpHofuTuqj',
@@ -277,8 +278,9 @@ if (Parties.find().count() === 0) {
         secondaryColor : '#802118'
       }
     },
-    submitted : ISODate('2016-01-20T00:00:00Z'),
-    userId : 'davey',
+    submitted : Date('2016-01-20T00:00:00Z'),
+    userId : davey._id,
+    author : davey.profile.name,
     commentCount : 0, 'upvoteCount' : 0,
     tags : [ 'rock' ],
     isPinned : true,

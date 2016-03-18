@@ -7,6 +7,11 @@ Template.partyItem.helpers({
     if (i >= 0) {
       return 'upvoted';
     };
+
+    $('.party').imagesLoaded(function() {
+      $('.parties').masonry('reloadItems')
+                    .masonry('layout');
+    });
   }
 });
 
@@ -14,11 +19,11 @@ Template.partyItem.events({
   'click .party-upvotes__arrow': (event, template) => {
     var user = Meteor.userId();
 
-    if (!user == null) {
-      Bert.alert('Please log in to upvote.', 'info');
-      return;
+    if (user === null) {
+      Bert.alert('Please log in (or register) to upvote.', 'info');
     }
-
-    Meteor.call('upvoteParty', template.data._id);
+    else {
+      Meteor.call('upvoteParty', template.data._id);
+    }
   }
-})
+});

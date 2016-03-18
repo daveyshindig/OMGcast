@@ -4,3 +4,9 @@ Template.partyCreate.onRendered(function() {
     Meteor.subscribe('parties');
   });
 });
+
+AutoForm.hooks('partyForm', {
+  onSuccess: function () {
+    FlowRouter.go('/party/' + this.docId);
+  }
+});

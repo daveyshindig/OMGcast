@@ -32,7 +32,7 @@ Meteor.publish('commentsIndex', function () {
 Meteor.publish('notifications', function () {
   return Notifications.find({userId: this.userId, read: false});
 });
-
+ 
 Meteor.publish('posts', function (options) {
   check(options, {
     sort: Object,
@@ -79,12 +79,11 @@ Meteor.publish('parties', function () {
   return Parties.find();
 });
 
-Meteor.publish('partyBySlug', function (slug) {
-  check(slug, String);
-  return Parties.find({ slug: slug });
-});
-
-Meteor.publish('partyById', function (id) {
-  check(id, String);
-  return Parties.find({ _id: id });
+Meteor.publish('singleParty', function (selector) {
+  check(selector, Match.OneOf({slug: String},
+                              {id: String}));
+  if (selector.slug)
+    return Parties.find({ slug: selector.slug });
+  else
+    return Parties.find({ slug: selector.id });
 });

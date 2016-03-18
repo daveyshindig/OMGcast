@@ -42,8 +42,8 @@ todda00:friendly-slugs
 email
 meteorhacks:picker
 rss
-mrt:moment
 themeteorchef:bert
 drewy:datetimepicker
-tsega:bootstrap3-datetimepicker@=3.1.3_3
+tsega:bootstrap3-datetimepicker@3.1.3_3
 aldeed:autoform-bs-datetimepicker
+momentjs:moment
