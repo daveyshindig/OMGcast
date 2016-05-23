@@ -39,10 +39,10 @@ if (Podcasts.find().count() === 0) {
 
     var postId = Podcasts.insert({
       title: '808 Mixtapes — v. ' + v,
-      mp3: 'http://808mix.com/audio/808-mixtapes-v' + v + '.mp3',
+      mp3: '/audio/808-mixtapes-v' + v + '.mp3',
       episodeNumber: v,
       host: '?',
-      coverImage: 'http://808mix.com/img/coverart/808-mixtapes-v' + v + '.jpg',
+      coverImage: '/img/coverart/808-mixtapes-v' + v + '.jpg',
       imageCredit: '',
       userId: davey._id,
       commentCount: 0,

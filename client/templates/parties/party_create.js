@@ -5,8 +5,4 @@ Template.partyCreate.onRendered(function() {
   });
 });
 
-AutoForm.hooks('partyForm', {
-  onSuccess: function () {
-    FlowRouter.go('/party/' + this.docId);
-  }
-});
+SimpleSchema.debug = true;
