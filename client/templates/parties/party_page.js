@@ -3,16 +3,8 @@
 
   self.autorun(function () {
     var slug = FlowRouter.getParam('slug');
-    var selector = {};
 
-    if (slug) {
-      selector.slug = slug;
-    } else {
-      var id = FlowRouter.getParam('partyId');
-      selector._id = id;
-    }
-
-    self.subscribe('singleParty', selector, {
+    self.subscribe('singleParty', slug, {
       onReady: function () {
         var post = Parties.findOne();
         self.subscribe('comments', post._id);

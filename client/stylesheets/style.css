@@ -323,12 +323,13 @@ ol.podcast-page__playlist {
     width: 50%;
 }
 .flyer-div {
-    width: 100%;
+    width: 50%;
 }
-.podcast-page__cover-img ,
 .flyer-div__front,
-.flyer-div__back, {
+.flyer-div__back {
     position: relative;
+    margin: 0 20px 20px 0;
+    float: left;
 }
 .podcast-page__play-btn {
     position: absolute;
@@ -699,7 +700,7 @@ div.audio-player {
     margin: 0 0 0 10px;
 }
 .party-info {
-
+    margin-top: 20px;
 }
 .upvoted {
     color: #577bf3;
@@ -775,6 +776,13 @@ div.audio-player {
 @media (max-width: 767px) {
     div.audio-player {
         margin: 0;
+    }
+    .flyer-div {
+        width: 100%;
+    }
+    .flyer-div__front,
+    .flyer-div__back {
+        width: 0 0 20px 0;
     }
 }
 @media (max-width: 666px) {
