@@ -12,7 +12,7 @@ Template.newsList.onCreated(function () {
 });
 
 Template.newsList.onRendered(function () {
-  Session.set('documentTitle', '808NEWS');
+  Session.set('documentTitle', '808news');
 });
 
 Template.newsList.helpers({

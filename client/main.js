@@ -10,7 +10,7 @@ player = null;
 Session.set('hashesOpen', false);
 Session.set('isSearching', false);
 Session.set('numTags', 10);
-Session.set('documentTitle', '808 MiX');
+Session.set('documentTitle', '808mix');
 Session.set('defaultLoaded', true);
 
 Bert.defaults.hideDelay = 6000;
@@ -24,9 +24,9 @@ Meteor.startup(function () {
   }, CONNECTION_ISSUE_TIMEOUT);
 });
 
-// AutoForm.addHooks(['partyForm'],{
-//   onSuccess: function(formType, result) {
-//     console.log("Successfully submitted partyForm!\nthis.docId = " + this.docId);
-//     FlowRouter.go('/party/' + this.docId);
-//   }
-// });
+AutoForm.addHooks(['partyForm'],{
+  onSuccess: function(formType, result) {
+    console.log("Successfully submitted partyForm!\nthis.docId = " + this.docId);
+    FlowRouter.go('/party/' + this.docId);
+  }
+});

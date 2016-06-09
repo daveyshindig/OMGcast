@@ -7,18 +7,15 @@ Template.podcastsList.onCreated(function() {
 
 Template.podcastsList.onRendered(function () {
   var $podcasts = $('.podcasts');
-  var $infoBox = $('.info-box');
 
-  $podcasts.imagesLoaded(function() {
-    $podcasts.masonry({
-      itemSelector: '.podcast',
-      transitionDuration: 0,
-      isResizeBound: true,
-      columnWidth: '.podcast-sizer',
-      stamp: '.info-box'
-    });
+  $podcasts.masonry({
+    itemSelector: '.podcast',
+    transitionDuration: 0,
+    isResizeBound: true,
+    columnWidth: '.podcast__sizer'
   });
-  Session.set('documentTitle', '808MiX');
+  
+  Session.set('documentTitle', '808mix');
 });
 
 Template.podcastsList.helpers({

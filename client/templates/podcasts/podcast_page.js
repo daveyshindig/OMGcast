@@ -14,7 +14,7 @@ Template.podcastPage.onCreated(function () {
 });
 
 Template.podcastPage.onRendered(function () {
-  Session.set('documentTitle', '808MiX - v.' +
+  Session.set('documentTitle', '808mix - v.' +
               FlowRouter.getParam('episodeNumber'));
 });
 

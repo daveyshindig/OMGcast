@@ -5,12 +5,15 @@ Template.podcastItem.onCreated(function () {
   });
 });
 
-Template.podcastItem.onRendered(function () {
-  $('.podcast').imagesLoaded(function() {
-    $('.podcasts').masonry('reloadItems')
-                  .masonry('layout');
-  });
-});
+// Template.podcastItem.onRendered(function () {
+//   $('.podcast').imagesLoaded(function() {
+//     $('.podcasts').masonry('appended', $('.podcast').last());
+//   });
+// });
+
+// Template.podcastItem.onDestroyed(function () {
+//   $('.podcasts').masonry('reloadItems').masonry('layout');
+// });
 
 Template.podcastItem.helpers({
   domain: function () {
@@ -47,6 +50,7 @@ Template.podcastItem.events({
     event.preventDefault();
     var mp3Url = $(event.currentTarget).data('path');
     var nowLoaded = Session.get('nowLoaded');
+    var details = $(event.currentTarget).closest('.podcast__details');
 
     Session.set('defaultLoaded', false);
     if (nowLoaded != mp3Url) {
@@ -60,11 +64,10 @@ Template.podcastItem.events({
       player.pause();
     }
   },
-  'click .podcast__view-btn': function (event) {
+  'click .podcast__cover-img, click .podcast__overlay': function (event) {
     var $thisPodcast = $(event.target).closest('.podcast');
-    var $details = $(event.target).parents('.podcast__overlay')
-                                  .children('.podcast__details');
-    var $controls = $(event.target).parent('.podcast__controls');
+    var $details = $thisPodcast.find('.podcast__details');
+    var $controls = $thisPodcast.find('.podcast__controls');
 
     $('.podcast').not($thisPodcast).removeClass('podcast_dbl-wide');
     $('.podcast__details').not($details).addClass('hidden');

@@ -11,22 +11,10 @@
   </div>
   <div class='clear'></div>
   <div class='podcasts'>
-    <div class='info-box'>
-      <div class='info-box__content'>
-        <a href='{{newsPage}}'><img class='logo-img' src='/img/808-mixtapes-logo-v4.png'></a>
-        <div class='info-box__social'>
-          <a href='http://soundcloud.com/808mixtapes' target="_blank"><img src='/img/soundcloud.png'></a>
-          <a href='http://808mixtapes.tumblr.com' target="_blank"><img src='/img/tumblr.png'></a>
-          <a href='http://twitter.com/daveyshindig' target="_blank"><img src='/img/twitter.png'></a>
-          <a href='http://facebook.com/davey.shindig' target="_blank"><img src='/img/facebook.png'></a>
-        </div>
-        <p class='info-box__show-description'>808 MIXTAPES is a radio show and mixtape series that showcases local DJs, as well as those who visit Hawaii. You can hear it live on air with your host, <a href='/shindig'>Davey Shindig</a>, every Friday night, 6-9pm HST, on <a href='http://ktuh.org/'>KTUH 90.3 FM Honolulu, 91.3 FM North Shore.</a> Or listen to the complete mix series here.</p>
-      </div>
-    </div>
-    <div class='podcast-sizer'></div>
     {{#EasySearch.Each index=podcastsIndex}}
       {{> podcastItem}}
     {{/EasySearch.Each}}
+    <div class='podcast__sizer'></div>
   </div>
-  <span class='load-more-button'>{{> EasySearch.LoadMore index=podcastsIndex}}</span>
+  <div class='load-more-button'>{{> EasySearch.LoadMore index=podcastsIndex}}</div>
 </template>
