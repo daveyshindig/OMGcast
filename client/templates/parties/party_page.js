@@ -1,4 +1,4 @@
- Template.partyPage.onCreated(function () {
+Template.partyPage.onCreated(function () {
   var self = this;
 
   self.autorun(function () {
@@ -17,12 +17,18 @@ Template.partyPage.helpers({
   party: function () {
     return Parties.findOne();
   },
+  ownParty: function () {
+    if (Meteor.userId() && Parties.findOne().userId == Meteor.userId())
+      return true;      
+  },
   comments: function () {
     return Comments.find();
   },
   time: function (t) {
     var fmt = "HH:mm, DD MMM YYYY"
     return moment(t).format(fmt);
+  },
+  slug: function () {
+    return FlowRouter.getParam('slug');
   }
-
 });

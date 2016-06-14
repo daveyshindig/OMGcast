@@ -15,7 +15,7 @@ Template.partyList.onRendered(function () {
       isResizeBound: true
     });
   });
-  Session.set('documentTitle', '808PaRtY');
+  Session.set('documentTitle', '808party');
 });
 
 Template.partyList.helpers({

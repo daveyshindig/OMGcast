@@ -14,10 +14,32 @@ Template.commentSubmit.helpers({
 Template.commentSubmit.events({
   'submit form': function(e, template) {
     e.preventDefault();
+
     var $body = $(e.target).find('[name=body]');
+    var postId = null;
+
+    // not an ideal solution; i'm just having trouble w/ parent Template data.
+    switch(FlowRouter.getRouteName()) {
+      case "partyPage":
+          postId = Parties.findOne()._id;
+          break;
+      case "newsPage":
+          postId = Posts.findOne()._id;
+          break;
+      case "podcastPage":
+          var epNum = FlowRouter.getParam('episodeNumber');
+          
+          postId = Podcasts.findOne({ episodeNumber: Number(epNum) })._id;
+          break;
+      default:
+          throwError("Cannot comment on this page!");
+          return;
+    };
+
     var comment = {
       body: $body.val(),
-      postId: template.data._id
+      postId: postId,
+      type: FlowRouter.getRouteName()
     };
     var errors = {};
     if (! comment.body) {

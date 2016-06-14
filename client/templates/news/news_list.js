@@ -19,7 +19,7 @@ Template.newsList.helpers({
   posts: function () {
     return Posts.find();
   },
-  newsItemPath: function (slug) {
+  newsPagePath: function (slug) {
     var params = { slug: slug };
 
     return FlowRouter.path('news/:slug', params);

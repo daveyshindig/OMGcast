@@ -5,7 +5,7 @@
       <div class='podcast__controls'>
         <img class='podcast__play-btn' data-path='{{mp3}}' src={{#if isPlaying mp3}}/img/pause.png{{else}}/img/play.png{{/if}}>
       </div>
-      <div class='podcast__details hidden'>
+      <div class='podcast__details'>
         <a class='podcast__link' href='{{podcastPage episodeNumber}}'><h3>{{title}}<br><small>mixed by</small><br>{{host}}</h3>
         {{#with playlist}}
           <ol class='podcast__playlist'>

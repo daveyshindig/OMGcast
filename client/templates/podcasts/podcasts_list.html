@@ -1,15 +1,5 @@
 <template name='podcastsList'>
-  <div class='dig {{#if isSearching}}{{else}}hidden{{/if}}'>
-    <div class='dig__tag-box'>
-      {{#each tags}}
-        <button class='dig__tag'>#{{this}}</button>
-      {{/each}}
-      {{#if moreTags}}
-        <button class='dig__more-tags'>More</button>
-      {{/if}}
-    </div>
-  </div>
-  <div class='clear'></div>
+  {{> tags}}
   <div class='podcasts'>
     {{#EasySearch.Each index=podcastsIndex}}
       {{> podcastItem}}

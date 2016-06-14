@@ -67,23 +67,10 @@ Template.header.helpers({
 });
 
 Template.header.events({
-  'click .mejs-playpause-button': function (event) {
-    console.log('yah event went');
+  'click .glyphicon-search': function (event) {
+    $('.nav__search input').focus();
   },
-  'click .dig__icon': function (event) {
-    var rerouted = false;
-
-    if (FlowRouter.getRouteName() != 'home') {
-      FlowRouter.go('/');
-      rerouted = true;
-    }
-
-    if (rerouted)
-      Session.set('isSearching', true);
-    else
-      Session.set('isSearching', !Session.get('isSearching'));
-  },
-  'keypress .nav__search input': () => {
-    $('.info-box').hide();
+  'click .glyphicon-tag': function (event) {
+    $('.tags').toggleClass('hidden');
   }
 });
