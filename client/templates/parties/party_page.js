@@ -13,6 +13,10 @@ Template.partyPage.onCreated(function () {
   });
 });
 
+Template.partyPage.onCreated(function () {
+  Session.set('documentTitle', '808party');
+});
+
 Template.partyPage.helpers({
   party: function () {
     return Parties.findOne();
