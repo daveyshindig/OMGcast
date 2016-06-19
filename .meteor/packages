@@ -35,7 +35,6 @@ orionjs:summernote
 orionjs:image-attribute
 orionjs:file-attribute
 orionjs:s3
-spiderable
 tomwasd:flow-router-seo
 todda00:friendly-slugs
 email
