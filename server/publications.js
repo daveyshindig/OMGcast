@@ -80,10 +80,10 @@ Meteor.publish('parties', function () {
 });
 
 Meteor.publish('singleParty', function (selector) {
-  check(selector, Match.OneOf({slug: String},
-                              {id: String}));
-  if (selector.slug)
-    return Parties.find({ slug: selector.slug });
-  else
-    return Parties.find({ slug: selector.id });
+  check(selector, String);
+  var parties = Parties.find({ slug: selector });
+  if (parties.count() > 0)
+    return parties;
+  else 
+    return Parties.find({ _id: selector });
 });

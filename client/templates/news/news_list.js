@@ -12,14 +12,14 @@ Template.newsList.onCreated(function () {
 });
 
 Template.newsList.onRendered(function () {
-  Session.set('documentTitle', '808NEWS');
+  Session.set('documentTitle', '808news');
 });
 
 Template.newsList.helpers({
   posts: function () {
     return Posts.find();
   },
-  newsItemPath: function (slug) {
+  newsPagePath: function (slug) {
     var params = { slug: slug };
 
     return FlowRouter.path('news/:slug', params);

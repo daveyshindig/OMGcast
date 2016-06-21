@@ -1,3 +1,5 @@
 settings.json
 *.mp3
 *.m4a
+build
+node_modules

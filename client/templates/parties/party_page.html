@@ -6,6 +6,48 @@
       <div class='party-details'>
         <span class='party-upvotes__arrow glyphicon glyphicon-arrow-up {{upvoted upvoters}}'></span><span class='party-upvotes__count'>{{upvoteCount}}</span>
       </div>
-	</div>
+    </div>
   </div>
+  <div class='party-link'>
+    <a href='/party'>← all parties</a>
+    {{#if ownParty}}
+      <a href='/party/edit/{{slug}}'><button type="button" class="btn btn-default btn-md party-header__button">
+      <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button></a>
+    {{/if}}
+  </div>
+  {{#if Template.subscriptionsReady}}
+    {{#with party}}
+      <div class='flyer-div'>
+        <img class='flyer-div__front' src='{{flyerFront.url}}'>
+        {{#if flyerBack.url}}
+          <img class='flyer-div__back' src='{{flyerBack.url}}'>
+        {{/if}}
+      </div>
+      <div class='party-info'>
+        <h3>{{title}}</h3>
+        <h5>{{location}}</h5>
+        <h5>Start: {{time startTime}}</h5>
+        <h5>End: {{time endTime}}</h5>
+        <p>{{description}}</p>
+        <p>{{#each tag in tags}}#{{tag}}&nbsp;{{/each}}</p>
+      </div>
+    {{/with}}
+    {{#if comments}}
+      <div class='comments'>
+        <h3 class='comments__header'>Comments</h3>
+        <ul class='comments__list'>
+          {{#each comments}}
+            {{> commentItem}}
+          {{/each}}
+        </ul>
+        {{#if currentUser}}
+          {{> commentSubmit}}
+        {{else}}
+          <p class='comments__text'>Please log in to leave a comment.</p>
+        {{/if}}
+      </div>
+    {{/if}}
+  {{else}}
+    {{> spinner}}
+  {{/if}}
 </template>

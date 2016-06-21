@@ -5,7 +5,7 @@ Accounts.ui.config({
 SEO = new FlowRouterSEO({ database: true });
 
 SEO.setDefaults({
-  title: '808MiX',
+  title: '808mix',
   description: 'A community website for Hawaii music, culture, and nightlife.',
   meta: {
     'name="viewport"': 'width=device-width, initial-scale=1',

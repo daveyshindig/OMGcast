@@ -3,23 +3,21 @@
     {{#if Template.subscriptionsReady}}
       {{#with podcast}}
         <div class='podcast-page'>
-          <div class='podcast-page__box-1'>
-            <div class='podcast-page__cover-div'>
-              <img class='podcast-page__cover-img' src='{{coverImage}}'>
-              <img class='podcast-page__play-btn' data-path='{{mp3}}' src={{#if isPlaying mp3}}/img/pause.png{{else}}/img/play.png{{/if}}>
-            </div>
-            <div class='podcast-page__info'>
-              <span class='podcast-page__title'>{{title}}</span><br>
-              <span class='podcast-page__host'>mixed by {{host}}</span><br>
-              <div><ol class='podcast-page__playlist'>
-                {{#with playlist}}
-                  {{#each tracks}}
-                    <li class='podcast-page__track'>
-                    <b>{{artist}}</b>: '{{title}}'{{#if featuring}} [{{featuring}}]{{/if}}{{#if remix}} ({{remix}}){{/if}}{{#if label}} <small>({{label}})</small>{{/if}}</li>
-                  {{/each}}
-                {{/with}}
-              </ol></div>
-            </div>
+          <div class='podcast-page__cover-div'>
+            <img class='podcast-page__cover-img' src='{{coverImage}}'>
+            <img class='podcast-page__play-btn' data-path='{{mp3}}' src={{#if isPlaying mp3}}/img/pause.png{{else}}/img/play.png{{/if}}>
+          </div>
+          <div class='podcast-page__info'>
+            <span class='podcast-page__title'>{{title}}</span><br>
+            <span class='podcast-page__host'>mixed by {{host}}</span><br>
+            <div><ol class='podcast-page__playlist'>
+              {{#with playlist}}
+                {{#each tracks}}
+                  <li class='podcast-page__track'>
+                  <b>{{artist}}</b>: '{{title}}'{{#if featuring}} [{{featuring}}]{{/if}}{{#if remix}} ({{remix}}){{/if}}{{#if label}} <small>({{label}})</small>{{/if}}</li>
+                {{/each}}
+              {{/with}}
+            </ol></div>
           </div>
           {{#if comments}}
           <div class='comments'>
@@ -41,5 +39,5 @@
     {{else}}
       {{>spinner}}
     {{/if}}
-      </div>
+  </div>
 </template>
