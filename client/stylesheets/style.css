@@ -178,7 +178,7 @@ img {
 .podcasts {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;        
+    justify-content: flex-start;
     width: 100%;
     background: #fff;
 }
@@ -402,7 +402,7 @@ ol.podcast-page__playlist {
     height: auto;
 }
 .notifications {
-  position: absolute; 
+  position: absolute;
   top: 10; left: 10;
   z-index: 1;
 }
@@ -750,8 +750,8 @@ div.audio-player {
     .info-box {
         max-width: 90px;
     }
-    .info-box__social { 
-        display: none; 
+    .info-box__social {
+        display: none;
     }
     .navbar-nav {
         margin: 4px 0;
@@ -773,8 +773,8 @@ div.audio-player {
     .flyer-div__back {
         width: 0 0 20px 0;
     }
-    .info-box__social { 
-        display: inherit; 
+    .info-box__social {
+        display: inherit;
     }
     .info-box {
         margin-bottom: 10px;
