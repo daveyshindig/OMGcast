@@ -29,7 +29,7 @@ Template.header.onRendered(function () {
       }, false);
       // Display what's playing if user clicks the player without loading
       // another song first.
-      $('.mejs-playpause-button').click(function () { 
+      $('.mejs-playpause-button').click(function () {
         if (Session.equals('defaultLoaded', true)) {
           var latest = Podcasts.findOne({}, { sort: {episodeNumber: -1} });
           var message = 'Now playing ' + latest.title + ', mixed by '
@@ -61,6 +61,7 @@ Template.header.onRendered(function () {
 Template.header.helpers({
   newsPage: () => FlowRouter.path('news'),
   partyPage: () => FlowRouter.path('party'),
+	reviewsPage: () => FlowRouter.path('reviews'),
   latest: () => Podcasts.findOne(),
   podcastsIndex: () => PodcastsIndex, // instanceof EasySearch.Index
   nowPlaying: () => Session.get('nowPlaying')

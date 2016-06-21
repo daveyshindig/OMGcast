@@ -134,7 +134,7 @@ standard-minifier-css@1.0.7
 standard-minifier-js@1.0.7
 standard-minifiers@1.0.6
 stylus@2.512.1
-summernote:standalone@0.8.1
+summernote:standalone@0.6.16
 templating@1.1.10
 templating-tools@1.0.4
 themeteorchef:bert@2.1.0
