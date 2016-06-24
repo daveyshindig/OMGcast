@@ -6,7 +6,10 @@ Template.podcastItem.onCreated(function () {
 });
 
 Template.podcastItem.onRendered(function () {
-  $('.podcasts').masonry('appended', this.find('.podcast'));
+	var eh = this;
+	$('.podcasts').imagesLoaded(function() {
+  	$('.podcasts').masonry('appended', eh.find('.podcast'));
+ 	});
 });
 
 Template.podcastItem.onDestroyed(function () {
@@ -52,7 +55,7 @@ Template.podcastItem.events({
     else if (player.paused) {
       player.play();
       event.stopImmediatePropagation();
-    } 
+    }
     else if (!player.paused) {
       player.pause();
       event.stopImmediatePropagation();

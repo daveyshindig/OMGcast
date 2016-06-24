@@ -46,6 +46,10 @@ Meteor.publish('singlePost', function (slug) {
   return Posts.find({ slug: slug });
 });
 
+Meteor.publish('allPosts', function() {
+	return Posts.find();
+});
+
 Meteor.publish('tags', function () {
   return Podcasts.find({}, {fields: {tags: 1}});
 });

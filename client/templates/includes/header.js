@@ -61,7 +61,7 @@ Template.header.onRendered(function () {
 Template.header.helpers({
   newsPage: () => FlowRouter.path('news'),
   partyPage: () => FlowRouter.path('party'),
-	reviewsPage: () => FlowRouter.path('reviews'),
+	reviewsPage: () => FlowRouter.path('reviewsPage'),
   latest: () => Podcasts.findOne(),
   podcastsIndex: () => PodcastsIndex, // instanceof EasySearch.Index
   nowPlaying: () => Session.get('nowPlaying')

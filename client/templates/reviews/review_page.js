@@ -5,14 +5,12 @@ Template.reviewPage.onCreated(function() {
 		var slug = FlowRouter.getParam('slug');
 		self.subscribe('singleReview', slug, {
 			onReady: function() {
-
+				var obj = Reviews.findOne({slug: slug});
+				var artist = obj.artist, name = obj.releaseName, year = obj.year;
+			  Session.set('documentTitle', artist + " - " + name + " (" + year + ")");
 			}
 		});
 	});
-});
-
-Template.reviewPage.onCreated(function () {
-  Session.set('documentTitle', 'Review');
 });
 
 Template.reviewPage.helpers({
