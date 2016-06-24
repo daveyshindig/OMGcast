@@ -23,7 +23,7 @@ Template.partyPage.helpers({
   },
   ownParty: function () {
     if (Meteor.userId() && Parties.findOne().userId == Meteor.userId())
-      return true;      
+      return true;
   },
   comments: function () {
     return Comments.find();
@@ -34,5 +34,20 @@ Template.partyPage.helpers({
   },
   slug: function () {
     return FlowRouter.getParam('slug');
-  }
+  },
+	upvoted: function(upvoters) {
+		var username = Meteor.user().username;
+    var a = upvoters || [];
+    var i = a.indexOf(username);
+		var r = '';
+
+    if (i >= 0) {
+      r = 'upvoted';
+    };
+
+		return r;
+	},
+	upvoters: function() {
+		return Parties.findOne({slug: FlowRouter.getParam('slug')}).upvoters;
+	}
 });

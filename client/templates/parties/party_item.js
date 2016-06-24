@@ -1,23 +1,28 @@
 Template.partyItem.helpers({
   upvoted: upvoters => {
-    var username = Meteor.user().username;
-    var a = upvoters || [];
-    var i = a.indexOf(username);
+    let username = Meteor.user().username;
+    let a = upvoters || [];
+    let i = a.indexOf(username);
+		let r = '';
 
     if (i >= 0) {
-      return 'upvoted';
+      r = 'upvoted';
     };
 
-    $('.party').imagesLoaded(function() {
-      $('.parties').masonry('reloadItems')
-                    .masonry('layout');
-    });
+		return r;
   }
+});
+
+Template.partyItem.onRendered(function() {
+	$('.party').imagesLoaded(function() {
+		$('.parties').masonry('reloadItems')
+									.masonry('layout');
+	});
 });
 
 Template.partyItem.events({
   'click .party-upvotes__arrow': (event, template) => {
-    var user = Meteor.userId();
+    let user = Meteor.userId();
 
     if (user === null) {
       Bert.alert('Please log in (or register) to upvote.', 'info');
