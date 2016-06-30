@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import Parties from '../imports/api/collections/parties.js';
+import 'meteor/check';
+
 Meteor.methods({
 	upvoteParty: function(partyId) {
 		check(partyId, String);

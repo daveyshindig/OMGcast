@@ -1,3 +1,6 @@
+import '/imports/startup/client';
+import { Meteor } from 'meteor/meteor';
+
 var IGNORE_CONNECTION_ISSUE_KEY = 'ignoreConnectionIssue';
 var CONNECTION_ISSUE_TIMEOUT = 5000;
 

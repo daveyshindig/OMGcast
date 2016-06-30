@@ -1,10 +1,12 @@
+import { Meteor } from 'meteor/meteor';
+
 Meteor.startup(function () {
-  process.env.MAIL_URL = 'smtp://' + 
+  process.env.MAIL_URL = 'smtp://' +
     encodeURIComponent(Meteor.settings.emailUsername) + ':' +
     encodeURIComponent(Meteor.settings.emailPassword) + '@' +
     encodeURIComponent(Meteor.settings.emailServer) + ':'  +
     Meteor.settings.emailPort;
-  
+
   Accounts.emailTemplates.siteName = '808 Mix';
 
   Accounts.emailTemplates.verifyEmail.subject = function() {
