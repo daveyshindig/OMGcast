@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { $ } from 'meteor/jquery';
+import { throwError } from '../../../../client/helpers/errors.js';
 
 Template.commentSubmit.onCreated( function() {
   Session.set('commentSubmitErrors', {});

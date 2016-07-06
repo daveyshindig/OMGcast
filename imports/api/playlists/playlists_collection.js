@@ -1,9 +1,9 @@
 import { Mongo } from 'meteor/mongo';
 import { orion } from 'meteor/orionjs:core';
 
-import PlaylistsSchema from '../schemas/playlists.js';
+import { PlaylistsSchema } from './playlists_schema.js';
 
-Playlists = new orion.collection('playlists', {
+export const Playlists = new orion.collection('playlists', {
   singularName: 'playlist',
   pluralName: 'playlists',
   tabular: {
@@ -17,5 +17,3 @@ Playlists = new orion.collection('playlists', {
 });
 
 Playlists.attachSchema(PlaylistsSchema);
-
-export default Playlists;

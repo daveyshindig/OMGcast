@@ -1,12 +1,13 @@
 import './podcasts_list.html';
 import '../tags/tags.js';
-import './podcast_item.js';
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
-import Podcasts from '../../../api/collections/podcasts.js';
-import { PodcastsIndex } from '../../../api/search/indices.js';
+import { Podcasts } from '../../../api/podcasts/podcasts_collection.js';
+import { PodcastsIndex } from '../../../api/podcasts/podcast_index.js';
 import { EasySearch } from 'meteor/easy:search';
 import { $ } from 'meteor/jquery';
+import './podcast_item.js';
+import '../tags/tags.html';
 
 Template.podcastsList.onRendered(function () {
   var $podcasts = $('.podcasts');
@@ -18,7 +19,6 @@ Template.podcastsList.onRendered(function () {
     	columnWidth: '.podcast__sizer'
   	});
 	});
-
   Session.set('documentTitle', '808mix');
 });
 

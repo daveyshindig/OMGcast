@@ -1,5 +1,8 @@
 import '/imports/startup/client';
 import { Meteor } from 'meteor/meteor';
+import { Bert } from 'meteor/themeteorchef:bert';
+import { AutoForm } from 'meteor/aldeed:autoform';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 var IGNORE_CONNECTION_ISSUE_KEY = 'ignoreConnectionIssue';
 var CONNECTION_ISSUE_TIMEOUT = 5000;

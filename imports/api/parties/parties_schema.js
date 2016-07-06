@@ -1,6 +1,6 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-export default PartySchema = new SimpleSchema({
+export const PartySchema = new SimpleSchema({
   title: {
     type: String,
     label: 'Title'

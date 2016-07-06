@@ -7,7 +7,7 @@ import './chat.html';
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
 import { moment } from 'meteor/momentjs:moment';
-import Chats from '../../../api/collections/chats.js';
+import { Chats } from '../../../api/chats/chats_collection.js';
 
 Template.chatForm.onCreated(function() {
   var self = this;

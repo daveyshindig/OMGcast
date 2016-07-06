@@ -1,9 +1,9 @@
 import { Mongo } from 'meteor/mongo';
 import { orion } from 'meteor/orionjs:core';
 
-import PartySchema from '../schemas/parties.js';
+import { PartySchema } from './parties_schema.js';
 
-Parties = new orion.collection('parties', {
+export const Parties = new orion.collection('parties', {
   singularName: 'party',
   pluralName: 'parties',
   tabular: {
@@ -50,4 +50,3 @@ Parties.friendlySlugs({
 });
 
 Parties.attachSchema(PartySchema);
-export default Parties;

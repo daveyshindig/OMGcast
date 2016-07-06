@@ -2,8 +2,8 @@ import './header.html';
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { EasySearch } from 'meteor/easy:search';
-import Podcasts from '../../../api/collections/podcasts.js';
-import { PodcastsIndex } from '../../../api/search/indices.js';
+import { Podcasts } from '../../../api/podcasts/podcasts_collection.js';
+import { PodcastsIndex } from '../../../api/podcasts/podcast_index.js';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { $ } from 'meteor/jquery';
 

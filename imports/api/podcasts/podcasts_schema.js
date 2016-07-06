@@ -1,6 +1,6 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-export default PodcastsSchema = new SimpleSchema({
+export const PodcastsSchema = new SimpleSchema({
   title: {
     type: String,
     optional: false,

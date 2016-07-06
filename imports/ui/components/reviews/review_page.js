@@ -1,5 +1,5 @@
 import './review_page.html';
-import Reviews from '../../../api/collections/reviews.js';
+import { Reviews } from '../../../api/reviews/reviews_collection.js';
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';

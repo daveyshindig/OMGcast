@@ -1,6 +1,8 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { Meteor } from 'meteor/meteor';
+import { orion } from 'meteor/orionjs:core';
 
-export default ReviewsSchema = new SimpleSchema({
+export const ReviewsSchema = new SimpleSchema({
 	userId: {
     type: String,
 		autoform: {

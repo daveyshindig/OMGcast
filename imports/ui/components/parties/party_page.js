@@ -1,8 +1,8 @@
 import './party_page.html'
 import { Meteor } from 'meteor/meteor';
 import { moment } from 'meteor/momentjs:moment';
-import Parties from '../../../api/collections/parties.js';
-import Comments from '../../../api/collections/comments.js';
+import { Parties } from '../../../api/parties/parties_collection.js';
+import { Comments } from '../../../api/comments/comments_collection.js';
 import '../comments/comment_submit.js';
 import '../comments/comment_item.js';
 import { Template } from 'meteor/templating';

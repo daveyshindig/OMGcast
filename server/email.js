@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor';
+import { Accounts } from 'meteor/accounts-base';
 
 Meteor.startup(function () {
   process.env.MAIL_URL = 'smtp://' +

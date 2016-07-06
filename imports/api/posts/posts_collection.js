@@ -1,8 +1,8 @@
 import { Mongo } from 'meteor/mongo';
 import { orion } from 'meteor/orionjs:core';
-import { PostsSchema } from '../schemas/posts.js';
+import { PostsSchema } from './posts_schema.js';
 
-Posts = new orion.collection('posts', {
+export const Posts = new orion.collection('posts', {
   singularName: 'post',
   pluralName: 'posts',
   link: {
@@ -37,5 +37,3 @@ Posts.friendlySlugs({
 });
 
 Posts.attachSchema(PostsSchema);
-
-export default Posts;

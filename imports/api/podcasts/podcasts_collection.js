@@ -1,9 +1,9 @@
 import { Mongo } from 'meteor/mongo';
 import { orion } from 'meteor/orionjs:core';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import PodcastsSchema from '../schemas/podcasts.js';
+import { PodcastsSchema } from './podcasts_schema.js';
 
-Podcasts = new orion.collection('podcasts', {
+export const Podcasts = new orion.collection('podcasts', {
   singularName: 'podcast',
   pluralName: 'podcasts',
   tabular: {
@@ -29,4 +29,3 @@ Podcasts = new orion.collection('podcasts', {
 });
 
 Podcasts.attachSchema(PodcastsSchema);
-export default Podcasts;

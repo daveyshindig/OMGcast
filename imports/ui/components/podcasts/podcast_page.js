@@ -1,11 +1,11 @@
 import './podcast_page.html';
 import '../comments/comment_submit.js';
 import { Meteor } from 'meteor/meteor';
-import Podcasts from '../../../api/collections/podcasts.js';
-import Playlists from '../../../api/collections/playlists.js';
+import { Podcasts } from '../../../api/podcasts/podcasts_collection.js';
+import { Playlists } from '../../../api/playlists/playlists_collection.js';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import Comments from '../../../api/collections/comments.js';
+import { Comments } from '../../../api/comments/comments_collection.js';
 import '../comments/comment_item.js';
 
 Template.podcastPage.onCreated(function () {

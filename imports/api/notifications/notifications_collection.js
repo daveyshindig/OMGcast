@@ -1,7 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import { orion } from 'meteor/orionjs:core';
 
-Notifications = new Mongo.Collection('notifications');
+export const Notifications = new Mongo.Collection('notifications');
 
 Notifications.allow({
   update: function(userId, doc, fieldNames) {
@@ -11,7 +11,7 @@ Notifications.allow({
   }
 });
 
-export default createCommentNotification = function(comment) {
+export const createCommentNotification = function (comment) {
   Notifications.insert({
     userId: comment.userId,
     postId: comment.postId,
@@ -20,5 +20,3 @@ export default createCommentNotification = function(comment) {
     read: false
   });
 };
-
-export default Notifications;

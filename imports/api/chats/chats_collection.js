@@ -1,4 +1,5 @@
 import { Mongo } from 'meteor/mongo';
+import { Meteor } from 'meteor/meteor';
 import { orion } from 'meteor/orionjs:core';
 
 export const ChatOptions = {
@@ -6,4 +7,4 @@ export const ChatOptions = {
     defaultDocId: 'openchat'
 };
 
-export default Chats = new Meteor.Collection("chats");
+export const Chats = new Meteor.Collection("chats");

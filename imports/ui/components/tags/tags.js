@@ -1,7 +1,7 @@
 import './tags.html';
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
-import Podcasts from '../../../api/collections/podcasts.js';
+import { Podcasts } from '../../../api/podcasts/podcasts_collection.js';
 import { _ } from 'meteor/underscore';
 import { $ } from 'meteor/jquery';
 

@@ -3,7 +3,7 @@ import './party_item.js';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Meteor } from 'meteor/meteor';
-import Parties from '../../../api/collections/parties.js';
+import { Parties } from '../../../api/parties/parties_collection.js';
 import { $ } from 'meteor/jquery';
 
 Template.partyList.onCreated(function() {

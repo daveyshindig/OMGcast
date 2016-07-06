@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-import Parties from '../imports/api/collections/parties.js';
-import 'meteor/check';
+import { Parties } from '../imports/api/parties/parties_collection.js';
+import { check } from 'meteor/check';
 
 Meteor.methods({
 	upvoteParty: function(partyId) {

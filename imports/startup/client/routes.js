@@ -1,6 +1,5 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
-import { EasySearch } from 'meteor/easy:search';
 
 import '../../ui/components/application/layout.js';
 import '../../ui/components/includes/header.js';

@@ -1,6 +1,6 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-export default PlaylistsSchema = new SimpleSchema({
+export const PlaylistsSchema = new SimpleSchema({
   episodeNumber: {
     type: Number,
     label: 'Episode Number',

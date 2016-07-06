@@ -1,7 +1,7 @@
 //electric boogaloo
-import Podcasts from '/imports/api/collections/podcasts.js';
-import Playlists from '/imports/api/collections/playlists.js';
-import Parties from '/imports/api/collections/parties.js';
+import { Podcasts } from '/imports/api/podcasts/podcasts_collection.js';
+import { Playlists } from '/imports/api/playlists/playlists_collection.js';
+import { Parties } from '/imports/api/parties/parties_collection.js';
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/nicolaslopezj:roles';
 

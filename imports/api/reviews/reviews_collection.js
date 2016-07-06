@@ -1,8 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import { orion } from 'meteor/orionjs:core';
-import ReviewsSchema from '../schemas/reviews.js';
-
-Reviews = new orion.collection('reviews', {
+import { ReviewsSchema } from './reviews_schema';
+export const Reviews = new orion.collection('reviews', {
 	singularName: 'review',
 	pluralName: 'reviews',
 	link: {
@@ -56,4 +55,3 @@ Reviews.friendlySlugs({
 });
 
 Reviews.attachSchema(ReviewsSchema);
-export default Reviews;

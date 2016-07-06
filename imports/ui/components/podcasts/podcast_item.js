@@ -2,8 +2,8 @@ import './podcast_item.html';
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import Podcasts from '../../../api/collections/podcasts.js';
-import Playlists from '../../../api/collections/playlists.js';
+import { Podcasts } from '../../../api/podcasts/podcasts_collection.js';
+import { Playlists } from '../../../api/playlists/playlists_collection.js';
 import { $ } from 'meteor/jquery';
 
 Template.podcastItem.onCreated(function () {
