@@ -48,4 +48,4 @@ standard-minifier-js
 sjors:meteor-masonry
 tsega:bootstrap3-datetimepicker@=3.1.3_3
 qubitdev:autoform-bs-datetimepicker-updated
-summernote:standalone@0.6.16
+summernote:standalone
