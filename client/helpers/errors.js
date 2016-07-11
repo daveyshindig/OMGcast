@@ -1,8 +1,10 @@
  // Local (client-only) collection
-Errors = new Mongo.Collection(null);
+import { Mongo } from 'meteor/mongo';
+import { Bert } from 'meteor/themeteorchef:bert';
 
-throwError = function(message, type) { 
+export default Errors = new Mongo.Collection(null);
+
+export function throwError(message, type) {
   var type = type || 'default';
   Bert.alert(message, type);
 };
-

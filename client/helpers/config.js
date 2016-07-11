@@ -1,3 +1,6 @@
+import { Accounts } from 'meteor/accounts-base';
+import { FlowRouterSEO } from 'meteor/tomwasd:flow-router-seo';
+
 Accounts.ui.config({
   passwordSignupFields: 'USERNAME_AND_EMAIL'
 });
@@ -21,3 +24,5 @@ SEO.setDefaults({
     'name="twitter:card"': 'summary'
   }
 });
+
+export default SEO;
