@@ -14,15 +14,15 @@ Template.podcastItem.onCreated(function () {
 });
 
 Template.podcastItem.onRendered(function () {
-	var eh = this;
+	var self = this;
 	$('.podcasts').imagesLoaded(function() {
-  	$('.podcasts').masonry('appended', eh.find('.podcast'));
+  	$('.podcasts').masonry('appended', self.find('.podcast'));
  	});
 });
 
 Template.podcastItem.onDestroyed(function () {
-  $('.podcasts').masonry('remove', this.find('.podcast'))
-                .masonry('layout');
+  var self = this;
+  $('.podcasts').masonry('remove', self.find('.podcast'));
 });
 
 Template.podcastItem.helpers({
@@ -36,7 +36,8 @@ Template.podcastItem.helpers({
     return FlowRouter.path('podcastPage', epNum);
   },
   isPlaying: function(mp3) {
-    var isPlaying = Session.get('nowLoaded') == mp3 && !Session.get('paused');
+    var isPlaying = Session.get('nowLoaded') == mp3 
+                  && Session.get('paused') === false;
     return isPlaying;
   },
   playlist: function () {

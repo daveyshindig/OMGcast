@@ -61,3 +61,17 @@ Template.partyPage.helpers({
 		return Parties.findOne({slug: FlowRouter.getParam('slug')}).upvoters;
 	}
 });
+
+Template.partyPage.events({
+  'click .party-info__heart': (event, template) => {
+    let user = Meteor.userId();
+
+    if (user === null) {
+      Bert.alert('Please log in (or register) to upvote.', 'info');
+    }
+    else {
+      Meteor.call('upvoteParty', Parties.findOne()._id);
+    }
+  }
+});
+

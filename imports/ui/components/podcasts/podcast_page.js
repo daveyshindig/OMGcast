@@ -43,7 +43,8 @@ Template.podcastPage.helpers({
     return Comments.find();
   },
   isPlaying: function(mp3) {
-    var isPlaying = Session.get('nowLoaded') == mp3 && !Session.get('paused');
+    var isPlaying = Session.get('nowLoaded') == mp3 
+                  && Session.get('paused') === false;
 
     return isPlaying;
   }
@@ -52,7 +53,7 @@ Template.podcastPage.helpers({
 Template.podcastPage.events({
   'click .podcast-page__play-btn': function (event) {
     event.preventDefault();
-    var mp3Url = Podcasts.findOne().mp3.url;
+    var mp3Url = Podcasts.findOne().mp3;
     var nowLoaded = Session.get('nowLoaded');
 
     Session.set('defaultLoaded', false);

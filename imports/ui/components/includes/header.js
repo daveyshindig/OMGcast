@@ -60,10 +60,16 @@ Template.header.onRendered(function () {
   Session.set('nowLoaded', mp3);
   $searchInput.attr('placeholder', 'Search...');
   $searchInput.focusin(function () {
+    if (FlowRouter.getRouteName() != 'home')
+      FlowRouter.go('home');
     $searchInput.attr('placeholder', 'Search DJ, genre, etc.');
+    $('.tags').removeClass('hidden');
   });
-  $searchInput.focusout(function () {
+  $searchInput.focusout(function() {
     $searchInput.attr('placeholder', 'Search...');
+    if (!Session.get('mouseIsOverTag')) {
+      $('.tags').addClass('hidden');
+    }
   });
 });
 
@@ -79,8 +85,5 @@ Template.header.helpers({
 Template.header.events({
   'click .glyphicon-search': function (event) {
     $('.nav__search input').focus();
-  },
-  'click .glyphicon-tag': function (event) {
-    $('.tags').toggleClass('hidden');
   }
 });

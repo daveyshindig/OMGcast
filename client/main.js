@@ -18,6 +18,7 @@ Session.set('isSearching', false);
 Session.set('numTags', 10);
 Session.set('documentTitle', '808mix');
 Session.set('defaultLoaded', true);
+Session.set('mouseIsOverTag', false);
 
 Bert.defaults.hideDelay = 6000;
 Bert.icons['now-playing'] = 'fa-music';

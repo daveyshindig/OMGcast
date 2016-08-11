@@ -12,6 +12,14 @@ Template.tags.onCreated(function() {
   });
 });
 
+Template.header.onRendered(function () {
+  $('.tags__tag-box').mouseover(function() {
+      Session.set('mouseIsOverTag', true);
+  }).mouseleave(function() {
+      Session.set('mouseIsOverTag', false);
+  });
+});
+
 Template.tags.helpers({
   tags: () => {
     var podcasts = Podcasts.find().fetch();
@@ -39,7 +47,7 @@ Template.tags.events({
   'click .tags__tag-btn': () => {
     Session.set('hashesOpen', !Session.get('hashesOpen'));
   },
-  'click .tags__more-tags': () => {
+    'click .tags__more-tags': () => {
     Session.set('numTags', Session.get('numTags') + 10);
   },
   'click .tags__tag': event => {
@@ -48,5 +56,6 @@ Template.tags.events({
 
     $input.val($hash);
     $input.keyup();
+    $('.tags').addClass('hidden');
   }
 });

@@ -41,7 +41,6 @@ email
 meteorhacks:picker
 rss
 themeteorchef:bert
-aldeed:autoform-bs-datetimepicker
 momentjs:moment
 standard-minifier-css
 standard-minifier-js
@@ -49,3 +48,4 @@ sjors:meteor-masonry
 tsega:bootstrap3-datetimepicker@=3.1.3_3
 qubitdev:autoform-bs-datetimepicker-updated
 summernote:standalone
+okgrow:analytics

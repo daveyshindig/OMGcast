@@ -10,14 +10,11 @@ import './podcast_item.js';
 import '../tags/tags.html';
 
 Template.podcastsList.onRendered(function () {
-  var $podcasts = $('.podcasts');
-	$podcasts.imagesLoaded(function() {
-  	$podcasts.masonry({
-    	itemSelector: '.podcast',
-    	transitionDuration: 0,
-    	isResizeBound: true,
-    	columnWidth: '.podcast__sizer'
-  	});
+  $('.podcasts').masonry({
+  	itemSelector: '.podcast',
+  	transitionDuration: 0,
+  	isResizeBound: true,
+  	columnWidth: '.podcast__sizer'
 	});
   Session.set('documentTitle', '808mix');
 });

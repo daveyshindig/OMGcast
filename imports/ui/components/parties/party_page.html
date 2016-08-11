@@ -1,12 +1,6 @@
 <template name='partyPage'>
   <div class='party-header'>
     <h1 class='party-header__text'>808 PARTIES</h1>
-    <div class='party'>
-      <a href='/party/{{slug}}'><img class='party__flyer' src='{{flyerFront.url}}'></a>
-      <div class='party-details'>
-        <span class='party-upvotes__arrow glyphicon glyphicon-arrow-up {{upvoted upvoters}}'></span><span class='party-upvotes__count'>{{upvoteCount}}</span>
-      </div>
-    </div>
   </div>
   <div class='party-link'>
     <a href='/party'>← all parties</a>
@@ -30,6 +24,9 @@
         <h5>End: {{time endTime}}</h5>
         <p>{{description}}</p>
         <p>{{#each tag in tags}}#{{tag}}&nbsp;{{/each}}</p>
+        <div class='party-info__details'>
+          <span class='party-info__heart glyphicon glyphicon-heart {{upvoted upvoters}}'></span><span class='party-info__upvotes-count'>{{upvoteCount}}</span>
+        </div>
       </div>
     {{/with}}
     {{#if comments}}

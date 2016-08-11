@@ -5,16 +5,20 @@ import { Bert } from 'meteor/themeteorchef:bert';
 
 Template.partyItem.helpers({
   upvoted: upvoters => {
-    let username = Meteor.user().username;
-    let a = upvoters || [];
-    let i = a.indexOf(username);
-		let r = '';
+    if (Meteor.user() && Meteor.user().username) {
+      let username = Meteor.user().username;
+    }
+    else return '';
+
+    let upvoters_ = upvoters || [];
+    let i = upvoters_.indexOf(username);
+		let str = '';
 
     if (i >= 0) {
-      r = 'upvoted';
+      str = 'upvoted';
     };
 
-		return r;
+		return str;
   }
 });
 
@@ -26,7 +30,7 @@ Template.partyItem.onRendered(function() {
 });
 
 Template.partyItem.events({
-  'click .party-upvotes__arrow': (event, template) => {
+  'click .party-upvotes__heart': (event, template) => {
     let user = Meteor.userId();
 
     if (user === null) {

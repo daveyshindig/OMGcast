@@ -5,6 +5,10 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { $ } from 'meteor/jquery';
 import { throwError } from '../../../../client/helpers/errors.js';
 
+import { Parties } from '../../../api/parties/parties_collection.js';
+import { Posts } from '../../../api/posts/posts_collection.js';
+import { Podcasts } from '../../../api/podcasts/podcasts_collection.js';
+
 Template.commentSubmit.onCreated( function() {
   Session.set('commentSubmitErrors', {});
 });

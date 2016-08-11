@@ -1,7 +1,6 @@
 accounts-base@1.2.8
 accounts-password@1.1.12
 aldeed:autoform@5.8.1
-aldeed:autoform-bs-datetimepicker@1.0.6
 aldeed:collection2@2.9.1
 aldeed:collection2-core@1.1.1
 aldeed:schema-deny@1.0.1
@@ -88,6 +87,7 @@ nicolaslopezj:router-layer@0.0.11
 npm-bcrypt@0.8.6_2
 npm-mongo@1.4.45
 observe-sequence@1.0.12
+okgrow:analytics@2.0.0
 ordered-dict@1.0.8
 orionjs:accounts@1.8.1
 orionjs:attributes@1.8.0

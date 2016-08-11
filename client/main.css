@@ -152,8 +152,8 @@ img {
 .nav__search input:before {
 
 }
-#spinner {
-    margin-top: 150px;
+#spinner, .spinner {
+    margin-top: 300px;
     height: 300px;
 }
 .navbar-default {
@@ -321,7 +321,9 @@ ol.podcast-page__playlist {
     margin: 0 40px 0 0;
 }
 .flyer-div {
+    float: left;
     width: 50%;
+    padding-right: 20px;
 }
 .flyer-div__front,
 .flyer-div__back {
@@ -548,7 +550,7 @@ div.audio-player {
     color: #333;
 }
 .tags {
-    padding: 0 15px 10px;
+    padding: 0 10px 10px;
 }
 .glyphicon-tag, .glyphicon-search {
     top: 2px;
@@ -644,9 +646,6 @@ div.audio-player {
 .chat__username {
     color: #666;
 }
-.party-info h3 {
-    margin: 15px 0;
-}
 .party-header__button {
     float: right;
     margin-bottom: 10px;
@@ -669,14 +668,14 @@ div.audio-player {
     position: absolute;
     right: 15px; bottom: 15px;
     padding: 5px;
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.4);
 }
-.party-upvotes__arrow,
+.party-upvotes__heart,
 .party-upvotes__count {
     color: #fff;
     font-size: 16px;
 }
-.party-upvotes__arrow {
+.party-upvotes__heart {
     cursor: pointer;
     font-size: 14px;
 }
@@ -684,10 +683,27 @@ div.audio-player {
     margin: 0 0 0 10px;
 }
 .party-info {
-    margin-top: 20px;
+    float: left;
+    width: 50%;
+}
+.party-info h3 {
+    margin: 0;
+}
+.party-info__details{
+    width: 43px;
+    height: 29px;
+    padding: 5px;
+    background: rgba(0,0,0,.4);
+}
+.party-info__heart {
+    padding-right: 7px;
+    cursor: pointer;
+}
+.party-info__upvotes-count {
+    color: #fff;
 }
 .upvoted {
-    color: #577bf3;
+    color: #e9212d;
 }
 @-webkit-keyframes fadeOut {
     0% {
@@ -768,6 +784,7 @@ div.audio-player {
     }
     .flyer-div {
         width: 100%;
+        margin-right: 20px;
     }
     .flyer-div__front,
     .flyer-div__back {
@@ -788,6 +805,9 @@ div.audio-player {
     .party {
         width: 100%;
     }
+    .party-info {
+        margin-top: 20px;
+    }
     .podcast_dbl-wide {
         width: 100%;
     }
@@ -796,6 +816,7 @@ div.audio-player {
     }
     .podcast-page__cover-div {
         max-width: 100%;
+        margin: 0;
     }
     .podcast-page__info {
         padding: 25px 0;
