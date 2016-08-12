@@ -58,15 +58,18 @@ Template.header.onRendered(function () {
   var mp3 = $('#audio-player').attr('src');
 
   Session.set('nowLoaded', mp3);
-  $searchInput.attr('placeholder', 'Search...');
+  $searchInput.css('font-family', 'Glyphicons Halflings');
+  $searchInput.attr('placeholder', '\ue003');
   $searchInput.focusin(function () {
     if (FlowRouter.getRouteName() != 'home')
       FlowRouter.go('home');
+    $searchInput.css('font-family', 'Sweden Sans');
     $searchInput.attr('placeholder', 'Search DJ, genre, etc.');
     $('.tags').removeClass('hidden');
   });
   $searchInput.focusout(function() {
-    $searchInput.attr('placeholder', 'Search...');
+    $searchInput.css('font-family', 'Glyphicons Halflings');
+    $searchInput.attr('placeholder', '\ue003');
     if (!Session.get('mouseIsOverTag')) {
       $('.tags').addClass('hidden');
     }

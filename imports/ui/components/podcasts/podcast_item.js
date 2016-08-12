@@ -15,8 +15,11 @@ Template.podcastItem.onCreated(function () {
 
 Template.podcastItem.onRendered(function () {
 	var self = this;
-	$('.podcasts').imagesLoaded(function() {
-  	$('.podcasts').masonry('appended', self.find('.podcast'));
+	var $podcasts = $('.podcasts');
+
+  $podcasts.imagesLoaded(function() {
+  	$podcasts.masonry('appended', self.find('.podcast'));
+    $podcasts.masonry('reloadItems').masonry('layout');
  	});
 });
 
@@ -36,7 +39,7 @@ Template.podcastItem.helpers({
     return FlowRouter.path('podcastPage', epNum);
   },
   isPlaying: function(mp3) {
-    var isPlaying = Session.get('nowLoaded') == mp3 
+    var isPlaying = Session.get('nowLoaded') == mp3
                   && Session.get('paused') === false;
     return isPlaying;
   },

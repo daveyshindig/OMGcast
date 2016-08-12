@@ -6,6 +6,7 @@ import { Playlists } from '../../../api/playlists/playlists_collection.js';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Comments } from '../../../api/comments/comments_collection.js';
+import { Bert } from 'meteor/themeteorchef:bert';
 import '../comments/comment_item.js';
 
 Template.podcastPage.onCreated(function () {
