@@ -11,6 +11,8 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 Template.partyPage.onCreated(function () {
   var self = this;
 
+  Session.set('documentTitle', '808party');
+
   self.autorun(function () {
     var slug = FlowRouter.getParam('slug');
 
@@ -23,17 +25,13 @@ Template.partyPage.onCreated(function () {
   });
 });
 
-Template.partyPage.onCreated(function () {
-  Session.set('documentTitle', '808party');
-});
-
 Template.partyPage.helpers({
   party: function () {
     return Parties.findOne();
   },
   ownParty: function () {
-    if (Meteor.userId() && Parties.findOne().userId == Meteor.userId())
-      return true;
+    return Meteor.userId() && Parties.findOne() &&
+           Parties.findOne().userId == Meteor.userId();
   },
   comments: function () {
     return Comments.find();

@@ -685,6 +685,7 @@ div.audio-player {
 }
 .party-info__heart {
     padding-right: 7px;
+    color: #fff;
     cursor: pointer;
 }
 .party-info__upvotes-count {

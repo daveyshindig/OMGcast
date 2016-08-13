@@ -1,4 +1,4 @@
-import './comment_submit.html'
+import './comment_submit.html';
 import '../../../api/comments/comments_methods.js';
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
