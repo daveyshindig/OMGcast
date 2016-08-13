@@ -6,7 +6,6 @@ import { Posts } from '../posts/posts_collection.js';
 import { Podcasts } from '../podcasts/podcasts_collection.js';
 import { Comments } from '../comments/comments_collection.js';
 
-
 Meteor.methods({
   commentInsert: function(commentAttributes) {
     check(this.userId, String);

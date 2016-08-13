@@ -44,7 +44,7 @@ if (Podcasts.find().count() === 0) {
     }
 
     var postId = Podcasts.insert({
-      title: '808 Mixtapes — v. ' + v,
+      title: '808 Mixtapes v.' + v,
       mp3: '/audio/808-mixtapes-v' + v + '.mp3',
       episodeNumber: v,
       host: '?',

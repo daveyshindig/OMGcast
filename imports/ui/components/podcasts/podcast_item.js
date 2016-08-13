@@ -9,13 +9,13 @@ import { $ } from 'meteor/jquery';
 Template.podcastItem.onCreated(function () {
   var self = this;
   self.autorun(function() {
-    self.subscribe('playlist', String(self.data.episodeNumber));
+    self.subscribe('playlist', self.data.episodeNumber);
   });
 });
 
 Template.podcastItem.onRendered(function () {
 	var self = this;
-	var $podcasts = $('.podcasts');
+  var $podcasts = $('.podcasts');
 
   $podcasts.imagesLoaded(function() {
   	$podcasts.masonry('appended', self.find('.podcast'));
@@ -44,6 +44,7 @@ Template.podcastItem.helpers({
     return isPlaying;
   },
   playlist: function () {
+    console.log("Playlist:\n"+Playlists.findOne())
     return Playlists.findOne();
   }
 });

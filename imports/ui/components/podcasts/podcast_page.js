@@ -1,5 +1,5 @@
 import './podcast_page.html';
-import '../comments/comment_submit.js';
+
 import { Meteor } from 'meteor/meteor';
 import { Podcasts } from '../../../api/podcasts/podcasts_collection.js';
 import { Playlists } from '../../../api/playlists/playlists_collection.js';
@@ -14,13 +14,13 @@ Template.podcastPage.onCreated(function () {
 
   self.autorun(function() {
     var epNum = FlowRouter.getParam('episodeNumber');
-    self.subscribe('podcast', epNum);
-    self.subscribe('playlist', epNum, {
+    self.subscribe('podcast', epNum, {
       onReady: function () {
         var podcast = Podcasts.findOne({episodeNumber: Number(epNum)});
         self.subscribe('comments', podcast._id);
       }
     });
+    self.subscribe('playlist', epNum);
   });
 });
 

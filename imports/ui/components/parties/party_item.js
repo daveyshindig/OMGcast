@@ -2,17 +2,19 @@ import './party_item.html';
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
 import { Bert } from 'meteor/themeteorchef:bert';
+import { _ } from 'meteor/underscore';
 
 Template.partyItem.helpers({
   upvoted: upvoters => {
+    var username;
     if (Meteor.user() && Meteor.user().username) {
-      let username = Meteor.user().username;
+      username = Meteor.user().username;
     }
     else return '';
 
-    let upvoters_ = upvoters || [];
-    let i = upvoters_.indexOf(username);
-		let str = '';
+    var upvoters_ = upvoters || [];
+    var i = upvoters_.indexOf(username);
+		var str = '';
 
     if (i >= 0) {
       str = 'upvoted';
