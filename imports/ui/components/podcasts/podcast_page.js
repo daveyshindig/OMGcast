@@ -14,8 +14,9 @@ Template.podcastPage.onCreated(function () {
 
   self.autorun(function() {
     var epNum = FlowRouter.getParam('episodeNumber');
-    self.subscribe('podcast', epNum);
-    self.subscribe('playlist', epNum, {
+
+    self.subscribe('playlist', epNum);
+    self.subscribe('podcast', epNum, {
       onReady: function () {
         var podcast = Podcasts.findOne({episodeNumber: Number(epNum)});
         self.subscribe('comments', podcast._id);
@@ -25,7 +26,7 @@ Template.podcastPage.onCreated(function () {
 });
 
 Template.podcastPage.onRendered(function () {
-  Session.set('documentTitle', '808mix - v.' +
+  Session.set('documentTitle', '808mix v.' +
               FlowRouter.getParam('episodeNumber'));
 });
 
