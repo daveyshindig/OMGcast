@@ -33,7 +33,7 @@ FlowRouter.notFound = {
   }
 }
 
-FlowRouter.route('/podcast/:episodeNumber', {
+FlowRouter.route('/mix/:episodeNumber', {
   name: 'podcastPage',
   action: function () {
     BlazeLayout.render('layout', {content: 'podcastPage'});

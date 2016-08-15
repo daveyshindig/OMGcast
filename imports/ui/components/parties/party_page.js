@@ -61,7 +61,7 @@ Template.partyPage.helpers({
 });
 
 Template.partyPage.events({
-  'click .party-info__heart': (event, template) => {
+  'click .party-info__star': (event, template) => {
     let user = Meteor.userId();
 
     if (user === null) {

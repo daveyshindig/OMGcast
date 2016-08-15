@@ -48,10 +48,5 @@ export const PodcastsSchema = new SimpleSchema({
     type: Date,
     label: 'Submitted',
     defaultValue: new Date()
-  },
-  playCount: {
-    type: Number,
-    label: 'Play Count',
-    defaultValue: 0
   }
 });

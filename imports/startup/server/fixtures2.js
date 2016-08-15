@@ -19,7 +19,20 @@ if (!Accounts.findUserByUsername('davey')) {
     password: '123456'
   });
 
-  Roles.addUserToRoles( daveyId ,  ['admin'] );
+  Roles.addUserToRoles( daveyId,  ['admin'] );
+
+  nickiId = Accounts.createUser({
+    profile: {
+      name: 'Nicki Ralar'
+    },
+    username: 'badlimbs',
+    emails: [
+      { address: 'nickiralar@gmail.com', verified: true }
+    ],
+    password: '654321'
+  });
+
+  Roles.addUserToRoles( nickiId,  ['admin'] );
 };
 
 if (Podcasts.find().count() === 0) {
@@ -103,7 +116,7 @@ if (Parties.find().count() === 0) {
     location : 'Davey\'s House',
     flyerFront : {
       fileId : '7QMJycqBipCXvYzH4',
-      url : 'http://www2.hawaii.edu/~dwilkie/808flyer.jpg',
+      url : 'https://www2.hawaii.edu/~dwilkie/808flyer.jpg',
       info : {
         width : 500,
         height : 500,
@@ -136,7 +149,7 @@ if (Parties.find().count() === 0) {
     location : 'The Downbeat Lounge',
     flyerFront : {
       fileId : 'pzeRPyRSpHofuTuqj',
-      url : 'http://www2.hawaii.edu/~dwilkie/ff2.jpg',
+      url : 'https://www2.hawaii.edu/~dwilkie/ff2.jpg',
       info : {
         width : 791,
         height : 791,
@@ -147,7 +160,7 @@ if (Parties.find().count() === 0) {
     },
     flyerBack : {
       fileId : 'aqNbp2Yq5o6QRBfr4',
-      url : 'http://www2.hawaii.edu/~dwilkie/cattop1.jpg',
+      url : 'https://www2.hawaii.edu/~dwilkie/cattop1.jpg',
       info : {
         width : 1280,
         height : 960,

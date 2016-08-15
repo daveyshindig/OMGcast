@@ -3,14 +3,10 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Podcasts } from '../../../api/podcasts/podcasts_collection.js';
-import { Playlists } from '../../../api/playlists/playlists_collection.js';
 import { $ } from 'meteor/jquery';
 
 Template.podcastItem.onCreated(function () {
   var self = this;
-  self.autorun(function() {
-    self.subscribe('playlist', self.data.episodeNumber);
-  });
 });
 
 Template.podcastItem.onRendered(function () {
@@ -42,10 +38,6 @@ Template.podcastItem.helpers({
     var isPlaying = Session.get('nowLoaded') == mp3
                   && Session.get('paused') === false;
     return isPlaying;
-  },
-  playlist: function () {
-    console.log("Playlist:\n"+Playlists.findOne())
-    return Playlists.findOne();
   }
 });
 
