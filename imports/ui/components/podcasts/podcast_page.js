@@ -55,7 +55,8 @@ Template.podcastPage.helpers({
 Template.podcastPage.events({
   'click .podcast-page__play-btn': function (event) {
     event.preventDefault();
-    var mp3Url = Podcasts.findOne().mp3;
+    var epNum = FlowRouter.getParam('episodeNumber');
+    var mp3Url = Podcasts.findOne({ episodeNumber: Number(epNum) }).mp3;
     var nowLoaded = Session.get('nowLoaded');
 
     Session.set('defaultLoaded', false);
