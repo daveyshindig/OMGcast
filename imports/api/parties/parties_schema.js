@@ -80,6 +80,6 @@ export const PartySchema = new SimpleSchema({
   isApproved: {
     type: Boolean,
     label: 'Approved',
-    defaultValue: true
+    defaultValue: false
   }
 });

@@ -154,8 +154,8 @@ img {
             transition-timing-function: ease-out;
 }
 #spinner, .spinner {
-    margin-top: 300px;
-    height: 300px;
+    margin-top: 45%;
+    height: 45%;
 }
 .navbar-default {
     background-color: #fff;
@@ -254,8 +254,9 @@ a.podcast__track {
     background: rgba(256, 256, 256, .8);
     border-radius: 4px;
 }
-.podcast__tags {
-    padding: 10px 0 0;
+.podcast__tags,
+.podcast-page__tags {
+    padding: 10px 0;
     text-align: center;
     font-size: .85em;
     color: #666;
@@ -296,7 +297,7 @@ a.podcast__track {
 
 }
 ol.podcast-page__playlist {
-    margin: 12px 0 0 -40px;
+    margin: 12px 0 10px -40px;
     list-style: inside decimal;
 }
 .podcast-page__cover-div {

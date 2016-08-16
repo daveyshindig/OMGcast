@@ -80,6 +80,7 @@ Template.podcastItem.events({
     var $str = $(event.target).text().slice(1);
     var $input = $('.nav__search input');
 
+    $input.css('font-family', 'Sweden Sans');
     $input.val($str);
     $input.keyup();
   }
