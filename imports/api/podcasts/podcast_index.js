@@ -8,5 +8,8 @@ export const PodcastsIndex = new EasySearch.Index({
     sort: function () {
       return { episodeNumber: -1 };
     }
-  })
+  }),
+  defaultSearchOptions: {
+    limit: 12
+  }
 });

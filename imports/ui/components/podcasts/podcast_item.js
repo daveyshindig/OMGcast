@@ -71,9 +71,15 @@ Template.podcastItem.events({
     var $overlay = $thisPodcast.find('.podcast__overlay');
 
     $('.podcast__overlay').not($overlay).addClass('hidden');
-    $overlay.toggleClass('hidden');
-    $('.podcast').not($thisPodcast).removeClass('podcast_dbl-wide');
-    $thisPodcast.toggleClass('podcast_dbl-wide');
+    $('.podcast').not($thisPodcast).removeClass('podcast__dbl-wide');
+
+    if ($thisPodcast.hasClass('podcast__dbl-wide')) {
+      $overlay.toggleClass('hidden');
+    } else {
+      $thisPodcast.addClass('podcast__dbl-wide');
+      $overlay.removeClass('hidden');
+    }
+
     $('.podcasts').masonry('reloadItems').masonry('layout');
   },
   'click .podcast__tag': function (event) {

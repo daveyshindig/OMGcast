@@ -68,8 +68,10 @@ Template.header.onRendered(function () {
     $('.tags').removeClass('hidden');
   });
   $searchInput.focusout(function() {
-    $searchInput.css('font-family', 'Glyphicons Halflings');
-    $searchInput.attr('placeholder', '\ue003');
+    if ($searchInput.val().length === 0) {
+      $searchInput.css('font-family', 'Glyphicons Halflings');
+      $searchInput.attr('placeholder', '\ue003');
+    }
     if (!Session.get('mouseIsOverTag')) {
       $('.tags').addClass('hidden');
     }

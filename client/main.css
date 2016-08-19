@@ -207,7 +207,7 @@ img {
     float: left;
     margin-top: 7px;
 }
-.podcast_dbl-wide {
+.podcast__dbl-wide {
     width: 66.666666666%;
 }
 .podcast.invisible {
@@ -710,7 +710,7 @@ div.audio-player {
     .party {
         width: 33.3333333%;
     }
-    .podcast_dbl-wide {
+    .podcast__dbl-wide {
         width: 50%;
     }
     .shindig__big-pic {
@@ -773,7 +773,7 @@ div.audio-player {
     .party-info {
         margin-top: 20px;
     }
-    .podcast_dbl-wide {
+    .podcast__dbl-wide {
         width: 100%;
     }
     .podcast-page__cover-div {
@@ -790,7 +790,7 @@ div.audio-player {
     .podcast {
         width: 100%;
     }
-    .podcast_dbl-wide {
+    .podcast__dbl-wide {
         width: 100%;
     }
 }
