@@ -10,8 +10,9 @@
           <span class='podcast-page__title'><b>{{title}}</b></span><br>
           <span class='podcast-page__host'>mixed by <b>{{host}}</b></span><br>
           <img class='podcast-page__play-btn' data-path='{{mp3}}' src={{#if isPlaying mp3}}/img/pause.png{{else}}/img/play.png{{/if}}>
-          <div>
-            <ol class='podcast-page__playlist'>
+          <div class='podcast-page__playlist'>
+            {{{textPlaylist}}}
+            <ol>
             {{#with playlist}}
               {{#each tracks}}
                 <li class='podcast-page__track'>

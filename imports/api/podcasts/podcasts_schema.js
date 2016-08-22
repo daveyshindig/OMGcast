@@ -48,5 +48,11 @@ export const PodcastsSchema = new SimpleSchema({
     type: Date,
     label: 'Submitted',
     defaultValue: new Date()
-  }
+  },
+  textPlaylist: orion.attribute('summernote', {
+    type: String,
+    optional: true,
+    label: "Playlist",
+    defaultValue: "",
+  })
 });

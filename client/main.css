@@ -154,8 +154,8 @@ img {
             transition-timing-function: ease-out;
 }
 #spinner, .spinner {
-    margin-top: 45%;
-    height: 45%;
+    margin-top: 25%;
+    height: 25%;
 }
 .navbar-default {
     background-color: #fff;
@@ -283,6 +283,10 @@ a.podcast__track {
     margin: auto;
     cursor: pointer;
 }
+.podcast-page__info {
+    max-width: 50%;
+    float: left;
+}
 .podcast-page__play-btn {
     width: 55px; height: 55px;
     margin-top: 7px;
@@ -294,16 +298,18 @@ a.podcast__track {
 .podcast__playlist,
 .podcast-page__playlist {
     font-size: .9em;
-
 }
-ol.podcast-page__playlist {
-    margin: 12px 0 10px -40px;
+.podcast-page__playlist {
+    margin: 12px 0 10px 0;
+}
+.podcast-page__playlist ol {
+    margin-left: -40px;
     list-style: inside decimal;
 }
 .podcast-page__cover-div {
     float: left;
     max-width: 50%;
-    margin: 0 30px 0 0;
+    padding: 0 30px 0 0;
 }
 .flyer-div {
     float: left;
@@ -782,10 +788,15 @@ div.audio-player {
         margin: 0;
     }
     .podcast-page__info {
+        width: 100%;
         padding: 20px 0;
     }
 }
 @media (max-width: 430px) {
+    .podcast__overlay {
+        top: 18%;
+        width: 75%;
+    }
     .podcast__sizer,
     .podcast {
         width: 100%;
