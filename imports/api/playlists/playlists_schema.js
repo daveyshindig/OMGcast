@@ -12,7 +12,7 @@ export const PlaylistsSchema = new SimpleSchema({
   },
   'tracks.$.title': {
     type: String,
-    optional: false,
+    optional: true,
     label: 'Title *'
   },
   'tracks.$.artist': {

@@ -16,12 +16,14 @@
             {{#with playlist}}
               {{#each tracks}}
                 <li class='podcast-page__track'>
-                <b>{{artist}}</b>: '{{title}}'{{#if featuring}} [{{featuring}}]{{/if}}{{#if remix}} ({{remix}}){{/if}}{{#if label}} <small>({{label}})</small>{{/if}}</li>
+                <b>{{artist}}</b>: '{{title}}'{{#if featuring}} [feat. {{featuring}}]{{/if}}{{#if remix}} ({{remix}}){{/if}}{{#if label}} <small>({{label}})</small>{{/if}}</li>
               {{/each}}
             {{/with}}
             </ol>
           </div>
-          <span class='podcast-page__tags'>{{#each tags}}#{{this}}{{/each}}</span>
+          {{#each tags}}
+            <span class=' podcast__tag'>#{{this}}&nbsp;&nbsp;</span>
+          {{/each}}
         </div>
         {{#if comments}}
         <div class='comments'>

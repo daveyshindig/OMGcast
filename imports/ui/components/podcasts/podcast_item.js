@@ -69,11 +69,13 @@ Template.podcastItem.events({
   'click .podcast__cover-img, click .podcast__overlay': function (event) {
     var $thisPodcast = $(event.target).closest('.podcast');
     var $overlay = $thisPodcast.find('.podcast__overlay');
+    var $nearestOverlay = $(event.target).closest('.podcast__overlay');
 
     $('.podcast__overlay').not($overlay).addClass('hidden');
     $('.podcast').not($thisPodcast).removeClass('podcast__dbl-wide');
 
-    if ($thisPodcast.hasClass('podcast__dbl-wide')) {
+    if ($thisPodcast.hasClass('podcast__dbl-wide') && 
+        $nearestOverlay.length === 0) {
       $overlay.toggleClass('hidden');
     } else {
       $thisPodcast.addClass('podcast__dbl-wide');

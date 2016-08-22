@@ -70,5 +70,14 @@ Template.podcastPage.events({
     } else {
       player.pause();
     }
+  },
+  'click .podcast__tag': function (event) {
+    var $str = $(event.target).text().slice(1);
+    var $input = $('.nav__search input');
+
+    $input.css('font-family', 'Sweden Sans');
+    $input.val($str);
+    $input.keyup();
+    FlowRouter.go('home');
   }
 });
