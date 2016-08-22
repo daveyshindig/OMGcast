@@ -1,6 +1,6 @@
-import FlowRouterSEO from 'meteor/tomwasd:flow-router-seo';
+import { FlowRouterSEO } from 'meteor/tomwasd:flow-router-seo';
 
-SEO = new FlowRouterSEO({ database: true });
+export const SEO = new FlowRouterSEO({ database: true });
 
 SEO.setDefaults({
   title: '808mix',
@@ -16,8 +16,6 @@ SEO.setDefaults({
     'name="twitter:site"': '@808mix',
     'name="twitter:image"': 'http://808mix.com/img/808-mixtapes-logo-v4.png',
     'name="twitter:url"': 'http://808mix.com',
-    'name="twitter:card"': 'summary'
+    'name="twitter:card"': 'A community website for Hawaii music, culture, and nightlife.'
   }
 });
-
-export default SEO;

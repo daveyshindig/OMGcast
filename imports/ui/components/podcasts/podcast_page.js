@@ -3,6 +3,7 @@ import './podcast_page.html';
 import { Meteor } from 'meteor/meteor';
 import { Podcasts } from '../../../api/podcasts/podcasts_collection.js';
 import { Playlists } from '../../../api/playlists/playlists_collection.js';
+import { SEO } from '../../../api/flow-router-seo-config.js';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Comments } from '../../../api/comments/comments_collection.js';
@@ -19,6 +20,16 @@ Template.podcastPage.onCreated(function () {
       onReady: function () {
         var podcast = Podcasts.findOne({episodeNumber: Number(epNum)});
         self.subscribe('comments', podcast._id);
+        SEO.set({
+          title: '808mix v.' + podcast.episodeNumber + ' mixed by ' +
+                 podcast.host,
+          description: 'This is volume ' + podcast.episodeNumber + ' of the ' +
+                       '808mix series, mixed by ' + podcast.host + '.',
+          meta: {
+            'property="og:image"': podcast.coverImage,
+            'name="twitter:image"': podcast.coverImage
+          }
+        });
       }
     });
     self.subscribe('playlist', epNum);
