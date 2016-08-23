@@ -20,7 +20,6 @@ kadira:flow-router
 kadira:blaze-layout
 sacha:spin
 accounts-password
-bojicas:howler2
 orionjs:core
 fortawesome:fontawesome
 orionjs:bootstrap
@@ -45,7 +44,9 @@ momentjs:moment
 standard-minifier-css
 standard-minifier-js
 sjors:meteor-masonry
-tsega:bootstrap3-datetimepicker@=3.1.3_3
 qubitdev:autoform-bs-datetimepicker-updated
 summernote:standalone
 okgrow:analytics
+aldeed:autoform
+aldeed:autoform-bs-datetimepicker
+tsega:bootstrap3-datetimepicker

@@ -1,6 +1,7 @@
 accounts-base@1.2.8
 accounts-password@1.1.12
 aldeed:autoform@5.8.1
+aldeed:autoform-bs-datetimepicker@1.0.6
 aldeed:collection2@2.9.1
 aldeed:collection2-core@1.1.1
 aldeed:schema-deny@1.0.1
@@ -19,7 +20,6 @@ blaze@2.1.8
 blaze-html-templates@1.0.4
 blaze-tools@1.0.9
 boilerplate-generator@1.0.9
-bojicas:howler2@2.0.0_9
 caching-compiler@1.0.6
 caching-html-compiler@1.0.6
 callback-hook@1.0.9
@@ -141,7 +141,7 @@ themeteorchef:bert@2.1.0
 todda00:friendly-slugs@0.5.0
 tomwasd:flow-router-seo@0.0.3
 tracker@1.0.14
-tsega:bootstrap3-datetimepicker@3.1.3_3
+tsega:bootstrap3-datetimepicker@4.17.37_1
 twbs:bootstrap@3.3.6
 ui@1.0.11
 underscore@1.0.9

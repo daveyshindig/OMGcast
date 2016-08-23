@@ -1,4 +1,5 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { orion } from 'meteor/orionjs:core';
 
 export const PartySchema = new SimpleSchema({
   title: {
@@ -9,6 +10,7 @@ export const PartySchema = new SimpleSchema({
     type: Date,
     label: 'Start Time',
     autoform: {
+      type: "bootstrap-datetimepicker",
       afFieldInput: {
         type: 'bootstrap-datetimepicker'
       }
@@ -18,6 +20,7 @@ export const PartySchema = new SimpleSchema({
     type: Date,
     label: 'End Time',
     autoform: {
+      type: "bootstrap-datetimepicker",
       afFieldInput: {
         type: 'bootstrap-datetimepicker'
       }
@@ -71,11 +74,6 @@ export const PartySchema = new SimpleSchema({
     type: [String],
     label: 'Tags',
     optional: true
-  },
-  isPinned: {
-    type: Boolean,
-    label: 'Pinned',
-    defaultValue: false
   },
   isApproved: {
     type: Boolean,

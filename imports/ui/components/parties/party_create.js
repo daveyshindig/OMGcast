@@ -17,5 +17,3 @@ Template.partyCreate.helpers({
 		return Parties;
 	}
 });
-
-SimpleSchema.debug = true;

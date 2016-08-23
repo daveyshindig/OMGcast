@@ -28,5 +28,3 @@ Template.partyEdit.helpers({
 		return Parties.findOne({slug: FlowRouter.getParam('slug')});
 	}
 });
-
-SimpleSchema.debug = true;
