@@ -44,9 +44,8 @@ momentjs:moment
 standard-minifier-css
 standard-minifier-js
 sjors:meteor-masonry
-qubitdev:autoform-bs-datetimepicker-updated
 summernote:standalone
 okgrow:analytics
 aldeed:autoform
-aldeed:autoform-bs-datetimepicker
 tsega:bootstrap3-datetimepicker
+qubitdev:autoform-bs-datetimepicker-updated
