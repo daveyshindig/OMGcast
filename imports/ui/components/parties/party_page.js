@@ -37,7 +37,7 @@ Template.partyPage.helpers({
     return Comments.find();
   },
   time: function (t) {
-    var fmt = "HH:mm, DD MMM YYYY"
+    var fmt = "dddd, MMMM Do YYYY, h:mm a"
     return moment(t).format(fmt);
   },
   slug: function () {

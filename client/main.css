@@ -253,6 +253,7 @@ img {
     font-size: 13px;
     color: #666;
 }
+.party__tag,
 .podcast__tag {
     font-size: 13px;
     color: #666;
@@ -534,7 +535,6 @@ div.audio-player {
 .tags {
     padding: 0 10px 10px;
 }
-
 .tags__tag-btn {
     width: 30px;
     height: 30px;
@@ -559,7 +559,6 @@ div.audio-player {
     border-radius: 3px;
     background: none;
 }
-
 .shindig__big-pic {
     float: left;
     margin-bottom: 10px;

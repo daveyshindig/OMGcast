@@ -1,7 +1,4 @@
 <template name='partyPage'>
-  <div class='party-header'>
-    <h1 class='party-header__text'>808 PARTIES</h1>
-  </div>
   <div class='party-link'>
     <a href='/party'>← all parties</a>
     {{#if ownParty}}
@@ -18,12 +15,11 @@
         {{/if}}
       </div>
       <div class='party-info'>
-        <h3>{{title}}</h3>
-        <h5>{{location}}</h5>
-        <h5>Start: {{time startTime}}</h5>
-        <h5>End: {{time endTime}}</h5>
+        <h3><b>{{title}}</b></h3>
+        <h4>{{location}}</h4>
+        <h5>{{time startTime}}</h5>
         <p>{{description}}</p>
-        <p>{{#each tag in tags}}#{{tag}}&nbsp;{{/each}}</p>
+        <p class='party__tag'>{{#each tag in tags}}#{{tag}}&nbsp;{{/each}}</p>
         <div class='party-info__details'>
           <span class='party-info__star glyphicon glyphicon-star {{upvoted upvoters}}'></span><span class='party-info__upvotes-count'>{{upvoteCount}}</span>
         </div>

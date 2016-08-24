@@ -30,6 +30,10 @@ export const PartySchema = new SimpleSchema({
     type: String,
     label: 'Location'
   },
+  address: {
+    type: String,
+    label: 'Address'
+  },
   flyerFront: orion.attribute('image', {
     label: 'Flyer Front Image'
   }),
