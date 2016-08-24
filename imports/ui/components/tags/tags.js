@@ -54,6 +54,7 @@ Template.tags.events({
     var $hash = $(event.target).text().substring(1);
     var $input = $('.nav__search input');
 
+    $input.css('font-family', 'Sweden Sans');
     $input.val($hash);
     $input.keyup();
     $('.tags').addClass('hidden');
