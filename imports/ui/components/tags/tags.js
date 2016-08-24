@@ -13,10 +13,17 @@ Template.tags.onCreated(function() {
 });
 
 Template.header.onRendered(function () {
-  $('.tags__tag-box').mouseover(function() {
-      Session.set('mouseIsOverTag', true);
-  }).mouseleave(function() {
-      Session.set('mouseIsOverTag', false);
+  $(document).on('mouseenter', '.tags__tag', function() {
+    Session.set('mouseIsOverTag', true);
+  });
+  $(document).on('mouseleave', '.tags__tag', function() {
+    Session.set('mouseIsOverTag', false);
+  });
+  $(document).on('mouseenter', '.tags__more-tags', function() {
+    Session.set('mouseIsOverTag', true);
+  });
+  $(document).on('mouseleave', '.tags__more-tags', function() {
+    Session.set('mouseIsOverTag', false);
   });
 });
 
