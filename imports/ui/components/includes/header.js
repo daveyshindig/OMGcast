@@ -13,6 +13,7 @@ Template.header.onCreated(function () {
     self.subscribe('latestPodcast', function() {
       var latest = Podcasts.findOne({}, { sort: {episodeNumber: -1} });
       $('#audio-player').attr('src', latest.mp3);
+      Session.set('nowPlaying', latest.title + ' mixed by ' + latest.host);
     });
   });
 });

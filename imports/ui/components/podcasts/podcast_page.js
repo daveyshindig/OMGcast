@@ -67,13 +67,14 @@ Template.podcastPage.events({
   'click .podcast-page__play-btn': function (event) {
     event.preventDefault();
     var epNum = FlowRouter.getParam('episodeNumber');
-    var mp3Url = Podcasts.findOne({ episodeNumber: Number(epNum) }).mp3;
+    var podcast = Podcasts.findOne({ episodeNumber: Number(epNum) });
     var nowLoaded = Session.get('nowLoaded');
 
     Session.set('defaultLoaded', false);
-    if (nowLoaded != mp3Url) {
-      player.setSrc(mp3Url);
-      Session.set('nowLoaded', mp3Url);
+    Session.set('nowPlaying', podcast.title + ' mixed by ' + podcast.host);
+    if (nowLoaded != podcast.mp3) {
+      player.setSrc(podcast.mp3);
+      Session.set('nowLoaded', podcast.mp3);
     }
 
     if (player.paused) {

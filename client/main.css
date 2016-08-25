@@ -273,14 +273,14 @@ img {
     color: #666;
 }
 .podcast__controls {
-    display: flex;
-    left: 0; right: 0;
+    margin: auto;
     margin-top: 10px;
 }
 .podcast__play-btn {
+    display: block;
+    margin: 10px auto 0;
     width: 55px;
     height: 55px;
-    margin: auto;
     cursor: pointer;
 }
 .podcast-page__info {
